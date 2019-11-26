@@ -3,15 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://ccambo.github.io/categories/</loc>
+    <loc>/Git/</loc>
   </url>
   
   <url>
-    <loc>https://ccambo.github.io/</loc>
+    <loc>/Cloud/</loc>
   </url>
   
   <url>
-    <loc>https://ccambo.github.io/tags/</loc>
+    <loc>/Languages/</loc>
+  </url>
+  
+  <url>
+    <loc>/Cloud/Docker/</loc>
+  </url>
+  
+  <url>
+    <loc>/Languages/Golang/</loc>
+  </url>
+  
+  <url>
+    <loc>/Cloud/Kubernetes/</loc>
+  </url>
+  
+  <url>
+    <loc>/Cloud/Docker/Tips/</loc>
+  </url>
+  
+  <url>
+    <loc>/Git/Tips/</loc>
+  </url>
+  
+  <url>
+    <loc>/</loc>
   </url>
   
 </urlset>
