@@ -1,23 +1,37 @@
 [
 {
+	"uri": "/Git/Basics/",
+	"title": "Basics",
+	"tags": [],
+	"description": "",
+	"content": " Basics 이 문서에서는 Git 사용에 필요한 기본적인 정보들을 정리하고 있습니다.\n"
+},
+{
 	"uri": "/Git/",
 	"title": "Git",
 	"tags": [],
-	"description": "이 페이지는 Git 활용을 정리합니다.",
-	"content": " Git 관련 정보들 정리!!! "
+	"description": "",
+	"content": " Git 관련 정보들 정리 이 문서에서는 Git 사용에 필요한 정보들을 정리하고 있습니다.\n"
 },
 {
 	"uri": "/Cloud/",
-	"title": "CLOUD",
+	"title": "Cloud",
 	"tags": [],
-	"description": "이 페이지는 Cloud와 관련된 정보들을 정리합니다.",
+	"description": "",
 	"content": " Cloud 관련 정보들 정리!!! "
 },
 {
-	"uri": "/Languages/",
-	"title": "Languages",
+	"uri": "/Git/Submdule/",
+	"title": "Submodule",
 	"tags": [],
-	"description": "이 페이지는 언어적인 특성들을 정리합니다.",
+	"description": "",
+	"content": " Submodule 이 문서에서는 Git의 Submodule에 관련된 정보들을 정리하고 있습니다.\n"
+},
+{
+	"uri": "/Languages/",
+	"title": "LANG",
+	"tags": [],
+	"description": "",
 	"content": " 개발 언어 관련 정보들 정리!!! "
 },
 {
@@ -32,7 +46,7 @@
 	"title": "Go",
 	"tags": [],
 	"description": "이 페이지는 Go 특성들을 정리합니다.",
-	"content": " GO 관련 정보들 정리!!! "
+	"content": " GOLANG "
 },
 {
 	"uri": "/Cloud/Kubernetes/",
@@ -52,8 +66,8 @@
 	"uri": "/Git/Tips/",
 	"title": "Tips",
 	"tags": [],
-	"description": "Git 사용 중에 발생한 오류들의 해결방법이나 유용한 정보들을 정리합니다.",
-	"content": " Tips "
+	"description": "",
+	"content": " Tips 이 문서에서는 Git 사용 중에 발생한 오류들의 해결 방법이나 유용한 정보들을 정리하고 있습니다.\n"
 },
 {
 	"uri": "/",

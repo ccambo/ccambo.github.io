@@ -3,39 +3,69 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/Git/Basics/</loc>
+    <lastmod>2019-11-26T18:18:01+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
     <loc>/Git/</loc>
+    <lastmod>2019-11-26T18:18:01+09:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>/Cloud/</loc>
+    <lastmod>2019-11-26T18:18:01+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>/Git/Submdule/</loc>
+    <lastmod>2019-11-26T18:18:01+09:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>/Languages/</loc>
+    <lastmod>2019-11-26T18:18:01+09:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>/Cloud/Docker/</loc>
+    <lastmod>2019-11-26T18:18:01+09:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>/Languages/Golang/</loc>
+    <lastmod>2019-11-26T18:18:01+09:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>/Cloud/Kubernetes/</loc>
+    <lastmod>2019-11-26T18:18:01+09:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>/Cloud/Docker/Tips/</loc>
+    <lastmod>2019-11-26T18:18:01+09:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>/Git/Tips/</loc>
+    <lastmod>2019-11-26T18:18:01+09:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>/</loc>
+    <lastmod>2019-11-26T18:18:01+09:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   
 </urlset>
