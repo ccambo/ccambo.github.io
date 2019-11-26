@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.58.3" />
-    <meta name="description" content="MSFL 운영 중에 접한 각종 정보들을 정리한 지식 저장소입니다.">
+    <meta name="description" content="Git 사용 중에 사용자 변경 관련 오류를 해결하는 방법을 정리합니다.">
 <meta name="author" content="MSFL">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
@@ -19,7 +19,7 @@
   gtag('config', 'UA-83841390-5');
 </script>
 
-    <title>Git :: [ MSFL-지식 저장소 ]</title>
+    <title>How to Change Users :: [ MSFL-지식 저장소 ]</title>
 
     
     <link href="/css/nucleus.css?1574764967" rel="stylesheet">
@@ -53,7 +53,7 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
   </head>
-  <body class="" data-url="/Git/">
+  <body class="" data-url="/Git/Tips/how-to-change-users/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -97,7 +97,7 @@
     
     <li data-nav-id="/Git/" title="Git" class="dd-item 
         parent
-        active
+        
         
         ">
       <a href="/Git/">
@@ -206,7 +206,7 @@
   
     
     <li data-nav-id="/Git/Tips/" title="Tips" class="dd-item 
-        
+        parent
         
         
         ">
@@ -232,7 +232,7 @@
  
   
     
-      <li data-nav-id="/Git/Tips/how-to-change-users/" title="How to Change Users" class="dd-item ">
+      <li data-nav-id="/Git/Tips/how-to-change-users/" title="How to Change Users" class="dd-item active">
         <a href="/Git/Tips/how-to-change-users/">
         How to Change Users
         <i class="fas fa-check read-icon"></i>
@@ -505,6 +505,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -515,7 +517,19 @@
             
           
           
-            <a href='/'>MSFL</a> > Git
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>MSFL</a> > <a href='/Git/'>Git</a> > <a href='/Git/Tips/'>Tips</a> > How to Change Users
+          
+         
+          
+         
           
          
           
@@ -524,16 +538,43 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#발생-상황">발생 상황</a></li>
+<li><a href="#해결-방법">해결 방법</a></li>
+<li><a href="#결론">결론</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
         <div id="head-tags">
         
+<div class="tags">
+
+  <a class="tag-link" href="/tags/Git">Git</a>
+
+  <a class="tag-link" href="/tags/Change-Users">Change Users</a>
+
+</div>
+
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              How to Change Users
+            </h1>
           
 
         
@@ -541,22 +582,123 @@
 
 
 
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1122795820579236"
+     data-ad-slot="8454132912"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+
+<p>대부분의 경우는 단일 사용자로 Git를 운영하겠지만 다양한 이유에 의해서 Git 사용자를 변경해야 하는 상황이 존재한다.</p>
+
+<p>여기서는 이런 문제를 해결하는 방법에 대해서 알아본다.</p>
+
+<h2 id="발생-상황">발생 상황</h2>
+
+<p>git 설치 후에 기본 환경 설정을 했을 것이다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 전역 설정인 경우</span>
+$ git config --global user.name <span style="color:#e6db74">&#34;user name&#34;</span>
+$ git config --global user.email <span style="color:#e6db74">&#34;user email&#34;</span>
+
+<span style="color:#75715e"># git 단위 설정인 경우</span>
+$ git config user.name <span style="color:#e6db74">&#34;user name&#34;</span>
+$ git config user.email <span style="color:#e6db74">&#34;user email&#34;</span></code></pre></div>
+<p>이런 상황에서 지정한 사용자로 Git에 로그인 한 후에 다른 사용자를 사용해서 push를 하면 다음과 같은 오류가 발생하게 된다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git push origin master    <span style="color:#75715e"># terminal에서 실행한 것과 VSCode와 같은 IDE에 연동한 경우도 동일한 상황이 발생한다.</span>
+remote: Permission <span style="color:#f92672">[</span>git_url.git<span style="color:#f92672">]</span> denied to <span style="color:#f92672">[</span>user_id<span style="color:#f92672">]</span>
+fatal: unable to acess <span style="color:#e6db74">`</span><span style="color:#f92672">[</span>git_url<span style="color:#f92672">]</span><span style="color:#e6db74">`</span>: The requested URL returned error: <span style="color:#ae81ff">403</span>
+...</code></pre></div>
+<p>오류 메시지 내용은 해당 사용자로 remote repository에 push할 권한이 없다는 것이다.</p>
+
+<h2 id="해결-방법">해결 방법</h2>
+
+<p>구글을 검색해 보면 대부분 아래와 같은 해법을 제시한다.</p>
+
+<ul>
+<li><p>사용할 git 프로젝트에서 config 설정을 사용자에 맞도록 변경하면 된다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git config user.name <span style="color:#e6db74">&#34;new user name&#34;</span>
+$ git config user.email <span style="color:#e6db74">&#34;new user email&#34;</span></code></pre></div>
+<p>권장하는 방식으로 해 봐도 동일한 오류가 발생한다. (당연히 이미 로그인 사용자 정보를 기준으로 하므로 설정을 바꾼다고 해서 로그인 정보가 변경되지는 않는다)</p></li>
+
+<li><p>ssh 키 관련해서 여러 가지 처리를 제시하는 것도 있지만, 제대로 안되는 상황이 발생한다.</p></li>
+</ul>
+
+<p>환경 설정을 바꿨기 때문에 지금 push 하려는 사용자와 로그인 사용자가 달라졌으므로 로그인을 다시 물어봐야 할 것 같은데, 실제로는 로그인을 다시 물어보지 않는다.</p>
+
+<p>의외로 쉽게 해결하는 방법은 다음과 같다.</p>
+
+<ul>
+<li>Mac 환경
+
+<ul>
+<li>Spotlight 검색 등으로 <code>키 체인 접근</code> 앱을 실행한다.
+<img src="/images/content/spotlight_key_chain_access.png" alt="spotlight search" /></li>
+<li>키 체인 접근 앱에서 <code>로그인</code>을 선택하고 <code>github.com</code>을 찾아서 더블클릭한다.
+<img src="/images/content/key_chain_access.png" alt="key chaing access" /></li>
+<li>로그인 정보 창에서 <code>계정</code>과 <code>암호</code>를 변경하고 저장한다.
+<img src="/images/content/github_login_change.png" alt="github login change" /></li>
+</ul></li>
+<li>Windows 환경
+
+<ul>
+<li>제어판 &gt; 사용자 계정 &gt; 자격 증명 관리자를 실행한다.</li>
+<li>windows 자격 증명 항목의 github 관련 정보를 수정한다.</li>
+<li>위와 같이 설정한 후에 다시 push를 실행하면 잘 처리가 된다.</li>
+</ul></li>
+</ul>
+
+<h2 id="결론">결론</h2>
+
+<p>오류의 원인이 로그인된 사용자 정보를 그대로 사용하려고 하는 것이기 때문에 터미널을 사용하던 VSCode와 같이 IDE에 연동해서 사용하던 이미 사용했던 로그인 정보를 삭제 또는 변경해서
+로그인을 다시하면 쉽게 해결이 가능하다.</p>
+
+
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1122795820579236"
+     data-ad-slot="8454132912"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
 	
-
-<h1 id="git-관련-정보들-정리">Git 관련 정보들 정리</h1>
-
-<p>이 문서에서는 Git 사용에 필요한 정보들을 정리하고 있습니다.</p>
+	<div id="disqus_thread"></div>
+<script>
 
 
 
+
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://ccambo-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	<script id="dsq-count-scr" src="//ccambo-github-io.disqus.com/count.js" async></script>
 
 
 <footer class=" footline" >
 	
 </footer>
 
-        
-            </div> 
+
         
         </div> 
         
@@ -655,6 +797,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -668,6 +811,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -689,6 +833,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -796,10 +943,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/" title="MSFL"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/Git/Tips/" title="Tips"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/Git/Basics/" title="Basics" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/Cloud/" title="Cloud" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -828,3 +975,4 @@
     
   </body>
 </html>
+

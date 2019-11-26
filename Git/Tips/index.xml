@@ -10,5 +10,17 @@
 	<atom:link href="/Git/Tips/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>How to Change Users</title>
+      <link>/Git/Tips/how-to-change-users/</link>
+      <pubDate>Thu, 21 Nov 2019 17:33:13 +0900</pubDate>
+      
+      <guid>/Git/Tips/how-to-change-users/</guid>
+      <description>대부분의 경우는 단일 사용자로 Git를 운영하겠지만 다양한 이유에 의해서 Git 사용자를 변경해야 하는 상황이 존재한다.
+여기서는 이런 문제를 해결하는 방법에 대해서 알아본다.
+발생 상황 git 설치 후에 기본 환경 설정을 했을 것이다.
+# 전역 설정인 경우 $ git config --global user.name &amp;#34;user name&amp;#34; $ git config --global user.email &amp;#34;user email&amp;#34; # git 단위 설정인 경우 $ git config user.name &amp;#34;user name&amp;#34; $ git config user.email &amp;#34;user email&amp;#34; 이런 상황에서 지정한 사용자로 Git에 로그인 한 후에 다른 사용자를 사용해서 push를 하면 다음과 같은 오류가 발생하게 된다.</description>
+    </item>
+    
   </channel>
 </rss>
