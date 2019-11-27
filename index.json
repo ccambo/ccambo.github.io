@@ -1,5 +1,12 @@
 [
 {
+	"uri": "/Dev/UI-Framework/Vue/vue/",
+	"title": "Vue 정리",
+	"tags": ["UI Framework", "Vue"],
+	"description": "Vue.js에 대한 내용을 정리합니다.",
+	"content": " Vue?? Vue 새로운 기능들  올해 Vue.js v2.6 발표  참고자료  Naver D2 - 2019년과 이후 Javascript 동향 - 라이브러리와 프레임워크 1  "
+},
+{
 	"uri": "/Git/Tips/how-to-change-users/",
 	"title": "How to Change Users",
 	"tags": ["Git", "Change Users"],
@@ -21,6 +28,13 @@
 	"content": " Basics 이 문서에서는 Git 사용에 필요한 기본적인 정보들을 정리하고 있습니다.\n"
 },
 {
+	"uri": "/Cloud/Concepts/",
+	"title": "Concepts",
+	"tags": [],
+	"description": "",
+	"content": " Concepts Cloud와 연계되는 개념들을 정리합니다.\n"
+},
+{
 	"uri": "/Git/",
 	"title": "Git",
 	"tags": [],
@@ -32,7 +46,7 @@
 	"title": "Cloud",
 	"tags": [],
 	"description": "",
-	"content": " Cloud 관련 정보들 정리!!! "
+	"content": " Cloud 이 문서에서는 Cloud에 필요한 정보들을 정리하고 있습니다.\n"
 },
 {
 	"uri": "/Git/Submdule/",
@@ -42,11 +56,18 @@
 	"content": " Submodule 이 문서에서는 Git의 Submodule에 관련된 정보들을 정리하고 있습니다.\n"
 },
 {
-	"uri": "/Languages/",
-	"title": "LANG",
+	"uri": "/Dev/",
+	"title": "Dev",
 	"tags": [],
 	"description": "",
-	"content": " 개발 언어 관련 정보들 정리!!! "
+	"content": " Developments 이 문서에서는 개발에 필요한 정보들을 정리하고 있습니다.\n"
+},
+{
+	"uri": "/FunnyLab/",
+	"title": "FunnyLab",
+	"tags": [],
+	"description": "",
+	"content": " Funny Lab 틀리면 어때?! 엉뚱하고 재미있는 상상들을 정리하고 있습니다.\n"
 },
 {
 	"uri": "/Cloud/Docker/",
@@ -54,13 +75,6 @@
 	"tags": [],
 	"description": "이 페이지는 Docker에 대한 관련된 정보들을 정리합니다.",
 	"content": " Docker 관련 정보들 정리!!! "
-},
-{
-	"uri": "/Languages/Golang/",
-	"title": "Go",
-	"tags": [],
-	"description": "이 페이지는 Go 특성들을 정리합니다.",
-	"content": " GOLANG "
 },
 {
 	"uri": "/Cloud/Kubernetes/",
@@ -84,9 +98,23 @@
 	"content": " Tips 이 문서에서는 Git 사용 중에 발생한 오류들의 해결 방법이나 유용한 정보들을 정리하고 있습니다.\n"
 },
 {
+	"uri": "/Dev/UI-Framework/Vue/",
+	"title": "",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "/",
 	"title": "MSFL",
 	"tags": [],
 	"description": "",
 	"content": " 지식 저장소 여러 가지 정보들을 하나의 지식 저장소처럼 꾸미는 꿈을 가지고 진행하고 있습니다.\n"
+},
+{
+	"uri": "/Dev/UI-Framework/",
+	"title": "",
+	"tags": [],
+	"description": "",
+	"content": ""
 }]
