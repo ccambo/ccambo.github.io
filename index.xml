@@ -12,12 +12,13 @@
     
     
     <item>
-      <title>Vue 정리</title>
-      <link>/Dev/UI-Framework/Vue/vue/</link>
-      <pubDate>Wed, 27 Nov 2019 14:27:00 +0900</pubDate>
+      <title>Edge Computing</title>
+      <link>/Cloud/Concepts/edge-computing/</link>
+      <pubDate>Wed, 27 Nov 2019 15:55:00 +0900</pubDate>
       
-      <guid>/Dev/UI-Framework/Vue/vue/</guid>
-      <description> Vue?? Vue 새로운 기능들  올해 Vue.js v2.6 발표  참고자료  Naver D2 - 2019년과 이후 Javascript 동향 - 라이브러리와 프레임워크 1  </description>
+      <guid>/Cloud/Concepts/edge-computing/</guid>
+      <description>엣지 컴퓨팅이란? 클라우드 컴퓨팅이란 인터넷을 통해 서버, 저장소, 소프트웨어, 분석 등의 컴퓨팅 서비스를 제공하는 것을 말한다. 이미 많은 기업들이 클라우드 환경으로 전환했으며, 이 과정에서 여러 가지 문제점들이 발생하게 된다.
+ 사용자의 폭발적인 증가로 인해 서버 및 데이터 센터에서 처리할 수 있는 데이터 양을 넘어서기 시작하면서 데이터 처리 속도 문제 데이터의 송/수신 과정의 지연 현상 발생 (Latency) 통신 과정 상의 보안 문제  이런 문제점들을 해결하기 위해서 &amp;ldquo;사용자의 단말 또는 가까운 위치에서 컴퓨팅을 수행&amp;rdquo;하는 방식의 엣지 컴퓨팅 개념이 탄생했다.</description>
     </item>
     
     <item>
