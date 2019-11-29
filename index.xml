@@ -12,6 +12,28 @@
     
     
     <item>
+      <title>Vue 키 포인트 소개</title>
+      <link>/Dev/Vue/intro_key_of_vue/</link>
+      <pubDate>Fri, 29 Nov 2019 15:41:00 +0900</pubDate>
+      
+      <guid>/Dev/Vue/intro_key_of_vue/</guid>
+      <description>프로젝트에서 사용할 Front-End Framework을 고심하던 중에 Gregg이 Vue.js를 소개하는 공식 자료를 보고 Vue를 선택했다. 아래의 내용은 참고자료에 언급한 원문을 번역하면서 나름대로 정리한 것으로 왜 Vue가 43%의 개발자들이 vue.js를 배우려고 하는지를 알 수 있다.
+현재 TOP 3 (Angular, React, Vue)의 자바스크립트들에 대한 비교는 vue.js 공식문서를 참고하면 된다.
+ 점진적인 프레임워크 Vue는 진입장벽이 낮고, 유연하고, 성능이 우수하고, 유지보수와 테스트가 편한 자바스크립트 프레임워크로 점진적인 프레임워크를 지향  하고 있다. 점진적인 프레임워크라는 것은 웹 어플리케이션 전체를 한꺼번에 하나의 프레임워크 구조로 구조화하지 않아도 일정 부분만 적용 가능  해서 사용자에게 더 좋은 사용자 경험을 제공할 수 있다는 것을 의미한다.</description>
+    </item>
+    
+    <item>
+      <title>NPM vs YARN</title>
+      <link>/Dev/Web/npm_vs_yarn/</link>
+      <pubDate>Fri, 29 Nov 2019 11:52:00 +0900</pubDate>
+      
+      <guid>/Dev/Web/npm_vs_yarn/</guid>
+      <description>node + npm이 기본이었는데, 몇 가지 npm의 문제점을 해결하기 위해 yarn이 발표되었다.
+기존 NPM은 배포가 쉽고, 종속성을 쉽게 해결할 수 있지만 패키지가 중복으로 설치될 수 있고, 파일이 많은 경우에 문제가 될 수 있다. 페이스북에서는 이런 문제점들을 해결하기 위해서 yarn을 발표했다.
+ npm3 보다 패키지 설치 속도가 빠르다. json 포맷을 사용하지 않는다. offline 모드가 가능하다.  YARN 설치  설치페이지를 통해서 직접 설치가 가능하다. 맥북이라면 brew를 이용해서 설치가 가능하다. npm을 통해서도 설치가 가능하다.</description>
+    </item>
+    
+    <item>
       <title>Edge Computing</title>
       <link>/Cloud/Concepts/edge-computing/</link>
       <pubDate>Wed, 27 Nov 2019 15:55:00 +0900</pubDate>

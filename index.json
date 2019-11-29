@@ -1,5 +1,33 @@
 [
 {
+	"uri": "/Dev/Vue/",
+	"title": "Vue",
+	"tags": [],
+	"description": "",
+	"content": " Vue Vue에 대한 소개 및 사용하는데 필요한 정보들을 정리합니다.\n Vue 키 포인트 소개  프로젝트에 Vue를 도입한 결정적인 이유\n "
+},
+{
+	"uri": "/Dev/Vue/intro_key_of_vue/",
+	"title": "Vue 키 포인트 소개",
+	"tags": ["Vue"],
+	"description": "프로젝트에 Vue를 도입한 결정적인 이유",
+	"content": " 프로젝트에서 사용할 Front-End Framework을 고심하던 중에 Gregg이 Vue.js를 소개하는 공식 자료를 보고 Vue를 선택했다. 아래의 내용은 참고자료에 언급한 원문을 번역하면서 나름대로 정리한 것으로 왜 Vue가 43%의 개발자들이 vue.js를 배우려고 하는지를 알 수 있다.\n현재 TOP 3 (Angular, React, Vue)의 자바스크립트들에 대한 비교는 vue.js 공식문서를 참고하면 된다.\n 점진적인 프레임워크 Vue는 진입장벽이 낮고, 유연하고, 성능이 우수하고, 유지보수와 테스트가 편한 자바스크립트 프레임워크로 점진적인 프레임워크를 지향  하고 있다. 점진적인 프레임워크라는 것은 웹 어플리케이션 전체를 한꺼번에 하나의 프레임워크 구조로 구조화하지 않아도 일정 부분만 적용 가능  해서 사용자에게 더 좋은 사용자 경험을 제공할 수 있다는 것을 의미한다. 물론 전체를 처음부터 Vue로 구현할 수도 있다. Vue가 큰 규모의 어플리케이션을 개발할 수 있도록 핵심 라이브러리와 주변 생태계를 제공하고 있다.\n [출처:Vuejs - 점진적인 프레임워크]  재 사용 가능한 컴포넌트 (단일 파일 컴포넌트) 다른 프레임워크들처럼 재 사용이 가능한 컴포넌트로 웹 페이지를 구성할 수 있으며, 각 컴포넌트는 페이지 영역을 표시하는데 필요한 HTML, CSS, Script 를 가지는 단일 파일 컴포넌트 구조를 제공한다.\n [출처:Vuejs - 컴포넌트로 페이지 구성]  프로젝트로 알아보기 아주 간략하고 특징적인 Vue의 주요 컨셉을 알아볼 수 있다.\n대 부분의 자바스크립트와 같이 페이지에 데이터를 표시하는 것부터 시작한다.\n [출처:Vuejs - 페이지에 데이터 표시]  위의 그림에 표시된 것과 같이 \u0026ldquo;X\u0026rdquo;의 위치에 스크립트에서 설정한 \u0026ldquo;Boots\u0026rdquo;를 표시하고 싶으면 아래와 같이 구현하면 된다.\n [출처:Vuejs - Vue로 페이지에 데이터 표시]  위의 내용을 좀 더 자세히 확인하면 다음과 같다.\n 정보를 표시할는 것은 Vue의 데이터를 바인딩할 때 사용하는 \u0026ldquo;{{ ... }}\u0026rdquo; 를 사용한다. 위의 예는 Vue 에서 관리하는 데이터 중에서 \u0026ldquo;product\u0026rdquo;라는 정보를 출력한다는 의미다. 물론 아직 데이터는 없다. \u0026lt;script\u0026gt;...\u0026lt;/script\u0026gt; 로 Vue 라이브러리를 포함시키고 구동 가능한 상태로 만든다. const app = new Vue({ ... }) 코드로 Vue 인스턴스를 생성한다. Vue 인스턴스를 생성할 떄 동작에 필요한 옵션을 지정한다.  el : Vue 인스턴스가 DOM과 연계될 수 있도록 대상 엘리먼트를 지정한다. data : Vue 동작에 필요한 데이터를 JSON 형식으로 지정한다.   위의 코드를 실행하면 아래와 같이 결과를 확인할 수 있다.\n [출처:Vuejs - 정적 데이터 표시]  위의 결과까지는 일반적인 수준이지만 정적이 아닌 동적으로 데이터가 변경될 때 Vue의 마법을 경험할 수 있다. 아래와 같이 개발자 도구의 콘솔에서 데이터를 변경하면 어떻게 데이터가 연동되는지를 확인할 수 있다.\n [출처:Vuejs - 동적 데이터 표시]  위의 결과에서 알 수 있듯이 Vue는 데이터가 변경되면 Vue에서 알아서 변경된 내용을 처리하는 방식을 제공한다. 이 동작은 문자열뿐만 아니라 모든 유형의 데이터에 모두 적용된다. 이를 확인해 보기 위해서 위의 샘플 코드를 배열을 처리할 수 있도록 \u0026quot;ul\u0026quot; 태그와 \u0026quot;li\u0026quot; 태그 구조로 변경한다. 이때 템플릿처럼 구성하는 것이기 때문에 v-for라는 특별한 속성을 지정 (foreach 문장구조와 비슷)  해야 한다. 그리고 Vue 인스턴스 생성할 떄의 data 부분을 배열구조인 products로 변경한다.\n [출처:Vuejs - 동적 데이터 표시 (v-for 지시자 사용)]  변경된 코드를 브라우저에서 실행해 보면 아래와 같은 결과를 확인할 수 있다.\n [출처:Vuejs - 동적 데이터 표시 결과]  좀 더 확장을 해서 서버를 호출해서 데이터를 받아온 결과를 기준으로 화면에 동적으로 출력하는 것으로 가정하면 아래와 같이 코드를 구성하면 된다.\n [출처:Vuejs - 동적 데이터 표시 (API 호출))]  위의 코드를 살펴보면 다음과 같은 변화가 있다.\n data를 products라는 빈 배열로 초기화만 처리한다. created 라는 vue 인스턴스의 생성시점에 호출되는 이벤트를 사용해서 API 호출 코드를 작성한다.  fetch 메서드를 통해서 API를 호출한다. then 메서드를 이용해서 API 호출 결과를 Vue에서 관리하는 데이터로 변환해서 설정한다.   위의 코드에서 호출된 API의 결과는 JSON형식으로 실행된 화면은 아래와 같이 표시된다.\n [출처:Vuejs - 동적 데이터 표시 (API 호출 결과))]  API에서 반환된 JSON을 그대로 출력한 것이기 떄문에 이를 좀 더 사용자에게 친숙한 형식으로 처리하기 위해서 아래와 같이 View 처리를 변경한다.\n [출처:Vuejs - v-for 지시자 표현식)]  수행된 결과는 반환된 결과에서 product.quantity와 product.name 만을 출력하는 것으로 변경했기 때문에 아래와 같이 나타난다.\n [출처:Vuejs - v-for 지시자 표현식 결과)]  각 데이터 항목중에서 갯수가 0인게 있으면 사용자가 좀 더 잘 인식할 수 있도록 \u0026ldquo;\u0026lt;span\u0026gt;\u0026rdquo; 태그를 사용해서 item.quantity === 0 일 때만 \u0026ldquo;OUT OF STOCK\u0026rdquo; 텍스트가 보이도록 아래와 같이 변경한다.\n [출처:Vuejs - v-for 지시자 표현식)]  위의 표현식에서는 v-if 지시자를 이용해서 조건식을 구성해서 재고 여부를 좀 더 확실하게 구분할 수 있도록 변경했다.\n [출처:Vuejs - v-if 지시자 표현식)]  이제 모든 상품의 총 재고량을 목록 아래쪽에 표시하려면 totalProducts라는 computed 속성을 활용하면 된다. 만일 자바스크립트의 reduce() API가 익숙하지 않다면 그냥 재고 총합을 구하는 동작이라고 이해하면 된다.\n [출처:Vuejs - computed 속성)]  실행을 해 보면 아래와 같이 모든 상품의 총 재고량이 계산되어 표시된다.\n [출처:Vuejs - computed 속성 결과)]  Vue 개발자 도구(Vue.js Chrome Extension)의 장점 중에 하나는 페이지상에 표시된 데이터를 살펴볼 수 있다는 점이다.\n [출처:Vuejs - Vue Dev Tools)]  앞에서 보았던 데이터의 변화가 View에 동적으로 표현되는 부분을 다시 한번 확인할 겸해서 개발자 도구의 콘솔에서 2개의 product를 제거해 보면 아래와 같이 리스트뿐만 아니라 총 재고량도 변경되는 것을 확인할 수 있다.\n [출처:Vuejs - Vue Dev Tools에서 데이터 변경 결과]  이번에는 버튼을 사용해서 페이지에 이벤트를 추가하고 버튼을 눌렀을 때 각 상품의 재고량을 1개씩 늘리는 것으로 변경해 보도록 한다.\n [출처:Vuejs - v-on click 이벤트)]  실행해 보면 Add 버튼을 눌렀을 때 각 상품의 재고와 총 재고량의 숫자를 증가시키는 것과 Jacket 상품에서는 OUT OF STOCK 글씨도 사라지는 것을 확인할 수 있다.\n [출처:Vuejs - v-on click 이벤트 결과)]  좀 더 확장해서 재고량을 직접 입력할 수 있도록 input 박스를 추가하고 v-model 지시자를 연결하고 입력되는 값은 항상 숫자인 것으로 지정하도록 변경한다.\n [출처:Vuejs - v-model 지시자)]  위의 input 박스에는 양방향 바인딩을 위한 v-model 지시자를 이용해서 숫자인 데이터를 Vue에서 관리하고 있는 데이터 항목에 연동하는 설정을 한 것이다.\n이제 버튼을 통한 것뿐만 아니라 사용자가 직접 숫자를 입력해서 재고를 변경할 수도 있다. 물론 0으로 숫자를 설정하는 OUT OF STOCK이 표시되는 것도, Add 버튼 처리도 모두 잘 동작하는 것을 확인할 수 있다.\n [출처:Vuejs - v-model 지시자 결과)]  지금까지 설명하고 실행해서 검증했던 소스는 JSFIDDLE에서 확인할 수 있다.\n추가적인 Vue 특징  규모가 있는 어플리케이션을 구축한다면 여러 개의 컴포넌트를 조합해야 한다.   [출처:Vuejs - Single file components)] \n Vue는 CLI (Command Line Interface) 명령어 도구를 이용해서 쉽게 프로젝트를 생성할 수 있다. 아래의 명령으로 프로젝트를 시작하면 된다.  [출처:Vuejs - Vue-cli)] \n 컴포넌트 별로 .vue 파일을 생성해서 관리할 수 있고, 각 .vue 파일에는 HTML, Javascript, CSS \u0026amp; SCSS 가 들어간다. (Single file component)  [출처:Vuejs - Vue Component System)] \n  결론 지금까지 Vue가 할 수 있는 기능들 중에서 아주 기초적인 일부만 확인해 봤다. Vue에는 프론트엔드 화면을 개발하고, 구성하고, 빌드하기 위한 더 많은 기능들이 존재한다. 만일 Vue를 배우고 싶다면 아래의 2가지 자료를 추천한다.\n VueMastery의 Vue Guide \u0026amp; CheatSheet : 무료 소개 과정과 계정을 만들면 CheatSheet를 받을 수 있다. Vue.js 공식 문서  참고자료  Why 43% of Front-End Developers want to learn Vue.js  "
+},
+{
+	"uri": "/Dev/Web/npm_vs_yarn/",
+	"title": "NPM vs YARN",
+	"tags": ["npm", "yarn"],
+	"description": "npm과 yarn에 대한 비교",
+	"content": " node + npm이 기본이었는데, 몇 가지 npm의 문제점을 해결하기 위해 yarn이 발표되었다.\n기존 NPM은 배포가 쉽고, 종속성을 쉽게 해결할 수 있지만 패키지가 중복으로 설치될 수 있고, 파일이 많은 경우에 문제가 될 수 있다. 페이스북에서는 이런 문제점들을 해결하기 위해서 yarn을 발표했다.\n npm3 보다 패키지 설치 속도가 빠르다. json 포맷을 사용하지 않는다. offline 모드가 가능하다.  YARN 설치  설치페이지를 통해서 직접 설치가 가능하다. 맥북이라면 brew를 이용해서 설치가 가능하다. npm을 통해서도 설치가 가능하다.  터미널에서의 설치는 다음의 명령으로 처리하면 된다.\n$ npm install -g yarn # npm 사용 $ brew install yarn # 맥북 명령 비교    npm 명령 yarn 명령 설명     npm init yarn init 프로젝트 초기화   npm install yarn or yarn install package.json 의 패키지 설치   npm install \u0026ndash;save [package name] yarn add [package name ] 패키지를 프로젝트 의존성 수준으로 추가 (dependencies)   npm install \u0026ndash;save-dev [package name] yarn add \u0026ndash;dev [package name] 패키지를 프로젝트 개발 의존성 수준으로 추가 (Devdependencies)   npm install \u0026ndash;global [package name] yarn global add [package name] 패키지를 전역 수준으로 추가   npm update \u0026ndash;save yarn upgrade 프로젝트의 패키지 업데이트   npm run [script name] yarn [script name] package.json의 scripts에 지정된 명령 실행   npm uninstall \u0026ndash;save [package name] yarn remove [package name] 패키지 삭제   npm cache clean yarn cache clean 캐시 삭제    참고자료  yarn 특징과 성능  "
+},
+{
+	"uri": "/Dev/Web/",
+	"title": "Web",
+	"tags": [],
+	"description": "",
+	"content": " Web 이 문서에서는 웹 구성에 필요한 정보들을 정리하고 있습니다.\n NPM vs YARN  npm과 yarn에 대한 비교\n "
+},
+{
 	"uri": "/Cloud/Concepts/edge-computing/",
 	"title": "Edge Computing",
 	"tags": ["Edge Computing"],
@@ -103,18 +131,4 @@
 	"tags": [],
 	"description": "",
 	"content": " 지식 저장소 여러 가지 정보들을 하나의 지식 저장소처럼 꾸미는 꿈을 가지고 진행하고 있습니다.\n"
-},
-{
-	"uri": "/Dev/UI-Framework/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/Dev/UI-Framework/Vue/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
 }]

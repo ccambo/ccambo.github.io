@@ -3,6 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/Dev/Vue/</loc>
+    <lastmod>2019-11-29T15:41:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>/Dev/Vue/intro_key_of_vue/</loc>
+    <lastmod>2019-11-29T15:41:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>/Dev/Web/npm_vs_yarn/</loc>
+    <lastmod>2019-11-29T11:52:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>/Dev/Web/</loc>
+    <lastmod>2019-11-29T11:52:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
     <loc>/Cloud/Concepts/edge-computing/</loc>
     <lastmod>2019-11-27T21:12:09+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -90,16 +114,6 @@
     <loc>/</loc>
     <lastmod>2019-11-26T19:43:36+09:00</lastmod>
     <changefreq>weekly</changefreq>
-  </url>
-  
-  <url>
-    <loc>/Dev/UI-Framework/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/Dev/UI-Framework/Vue/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>
