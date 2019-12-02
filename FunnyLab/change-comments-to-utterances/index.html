@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.58.3" />
-    <meta name="description" content="MSFL 운영 중에 접한 각종 정보들을 정리한 지식 저장소입니다.">
+    <meta name="description" content="기존 Disqus 댓글 시스템의 문제점으로 Github연동형 댓글 시스템인 utternaces로 변경한 내용을 정리합니다.">
 <meta name="author" content="MSFL">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
@@ -19,7 +19,7 @@
   gtag('config', 'UA-83841390-5');
 </script>
 
-    <title>Basics :: [ MSFL-지식 저장소 ]</title>
+    <title>댓글 시스템 utterances로 변경 :: [ MSFL-지식 저장소 ]</title>
 
     
     <link href="/css/nucleus.css?1575257902" rel="stylesheet">
@@ -43,7 +43,7 @@
     </style>
     <script data-ad-client="ca-pub-1122795820579236" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   </head>
-  <body class="" data-url="/Git/Basics/">
+  <body class="" data-url="/FunnyLab/change-comments-to-utterances/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -86,7 +86,7 @@
   
     
     <li data-nav-id="/Git/" title="Git" class="dd-item 
-        parent
+        
         
         
         ">
@@ -115,8 +115,8 @@
   
     
     <li data-nav-id="/Git/Basics/" title="Basics" class="dd-item 
-        parent
-        active
+        
+        
         parent
         ">
       <a href="/Git/Basics/">
@@ -585,7 +585,7 @@
   
     
     <li data-nav-id="/FunnyLab/" title="FunnyLab" class="dd-item 
-        
+        parent
         
         
         ">
@@ -611,7 +611,7 @@
  
   
     
-      <li data-nav-id="/FunnyLab/change-comments-to-utterances/" title="댓글 시스템 utterances로 변경" class="dd-item ">
+      <li data-nav-id="/FunnyLab/change-comments-to-utterances/" title="댓글 시스템 utterances로 변경" class="dd-item active">
         <a href="/FunnyLab/change-comments-to-utterances/">
         댓글 시스템 utterances로 변경
         <i class="fas fa-check read-icon"></i>
@@ -687,6 +687,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -701,7 +703,7 @@
             
           
           
-            <a href='/'>MSFL</a> > <a href='/Git/'>Git</a> > Basics
+            <a href='/'>MSFL</a> > <a href='/FunnyLab/'>FunnyLab</a> > 댓글 시스템 utterances로 변경
           
          
           
@@ -712,16 +714,45 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#댓글-시스템-변경">댓글 시스템 변경</a></li>
+<li><a href="#적용하기">적용하기</a></li>
+<li><a href="#참고자료">참고자료</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
         <div id="head-tags">
         
+<div class="tags">
+
+  <a class="tag-link" href="/tags/Disqus">Disqus</a>
+
+  <a class="tag-link" href="/tags/utterances">utterances</a>
+
+  <a class="tag-link" href="/tags/blog-comments">blog comments</a>
+
+</div>
+
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              댓글 시스템 utterances로 변경
+            </h1>
           
 
         
@@ -729,22 +760,103 @@
 
 
 
-	
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-<h1 id="basics">Basics</h1>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1122795820579236"
+     data-ad-slot="8454132912"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
-<p>이 문서에서는 Git 사용에 필요한 기본적인 정보들을 정리하고 있습니다.</p>
 
 
 
+<h2 id="댓글-시스템-변경">댓글 시스템 변경</h2>
+
+<p>기존에 사용하던 Disqus에 딱히 큰 문제가 있었던 것은 아니다.</p>
+
+<ul>
+<li>Disqus의 댓글 데이터들을 사이트들에 행동패턴등의 Big data 용도로 판매가 이뤄지고 있는 것 같다는 의심들 (차단 또는 정보공유 비활성 설정등으로 가능할 것 같다)</li>
+<li>Basic Plan인 경우는 Disqus 광고가 많은 자리를 차지한다는 것 (Ads 옵션 조정으로 광고갯수 조정 또는 유료 플랜 사용)</li>
+</ul>
+
+<p>그러나 귀차니즘에 다른 댓글 시스템을 찾아보다가 utterances라는 github issus처럼 댓글을 관리할 수 있는 방법을 발견해서 테스트 겸 변경했다.</p>
+
+<ul>
+<li>Github Issue 기반이므로 (Repository 운영) 블로그 플랫폼을 변경해도 기존 Comment를 그대로 사용할 수 있다.</li>
+<li>개발과 관련된 블로그이므로 Github 계정으로 댓글을 작성할 수 있다.</li>
+<li>많은 블로그들이 이미 이 댓글 시스템을 사용하고 있는 것 같다.</li>
+</ul>
+
+<h2 id="적용하기">적용하기</h2>
+
+<p><a href="https://utteranc.es/">Utterances</a> 사이트로 이동하면 간단하게 적용할 수 있도록 문서로 설명되어 있다. 간단히 처리를 정리하면 다음과 같다.</p>
+
+<ul>
+<li>github에 댓글 관리를 위한 Repository 생성 (공개형)</li>
+<li>생성한 <a href="https://github.com/apps/utterances">Repository에 utterances App 설치</a></li>
+<li>utterances 사이트에 repo 정보를 <span style="color:red;font-weight:bold">
+&ldquo;owner/repo&rdquo;
+</span>
+형식으로 입력</li>
+<li>&ldquo;Blog Post ↔️ Issue Mapping&rdquo; 항목을 자신의 블로그 플랫폼에 맞도록 선택 (이슈 제목을 블로그 경로로할지? 페이지 제목으로 할지? 임의로 지정한 값으로 할지? 등)</li>
+<li>utterances에서 생성한 이슈에 대한 라벨 설정</li>
+<li>테마 선택</li>
+</ul>
+
+<p>이렇게 설정하고 스크립트 태그를 블로그의 댓글 처리할 곳에 지정하면 된다.</p>
+
+
+<div class="notices info" ><p>실제로 utterances 사이트에 정보를 입력해서 스크립트 코드를 생성해서 사용해도 되지만 그냥 스크립트만을 복사해서 내용을 원하는 (위에서 설정한 것과 같이) 데로 변경한 다음 사용해도 된다.</br>
+<span style="color:red;font-weight:bold">
+  단, 반드시 github에 utterances.app를 먼저 설치하고 진행해야 한다. 미 설치시 댓글시스템은 동작을 하지만 포스트와 연결되지는 않는다.
+</span></p>
+</div>
+
+
+<p>지금 보고 있는 이 글의 댓글은 utterances를 스트립트만 변경해서 적용한 것이다.</p>
+
+<h2 id="참고자료">참고자료</h2>
+
+<ul>
+<li><a href="https://utteranc.es/">Utterance</a></li>
+</ul>
+
+
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1122795820579236"
+     data-ad-slot="8454132912"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="ccambo/blog-comments"
+        issue-term="title"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
 
 
 <footer class=" footline" >
 	
 </footer>
 
-        
-            </div> 
+
         
         </div> 
         
@@ -776,155 +888,8 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -951,43 +916,6 @@
                     
             
         
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
                     
                         
             
@@ -1066,6 +994,8 @@
 
                     
                     
+                        
+                    
                     
 
                     
@@ -1073,6 +1003,188 @@
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -1097,10 +1209,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/Git/" title="Git"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/FunnyLab/" title="FunnyLab"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/Git/Submdule/" title="Submodule" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/Git/" title="Git" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1130,3 +1242,4 @@
 
   </body>
 </html>
+

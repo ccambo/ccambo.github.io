@@ -1,10 +1,10 @@
 [
 {
-	"uri": "/Dev/Vue/",
-	"title": "Vue",
-	"tags": [],
-	"description": "",
-	"content": " Vue Vue에 대한 소개 및 사용하는데 필요한 정보들을 정리합니다.\n Vue 키 포인트 소개  프로젝트에 Vue를 도입한 결정적인 이유\n "
+	"uri": "/FunnyLab/change-comments-to-utterances/",
+	"title": "댓글 시스템 utterances로 변경",
+	"tags": ["Disqus", "utterances", "blog comments"],
+	"description": "기존 Disqus 댓글 시스템의 문제점으로 Github연동형 댓글 시스템인 utternaces로 변경한 내용을 정리합니다.",
+	"content": " 댓글 시스템 변경 기존에 사용하던 Disqus에 딱히 큰 문제가 있었던 것은 아니다.\n Disqus의 댓글 데이터들을 사이트들에 행동패턴등의 Big data 용도로 판매가 이뤄지고 있는 것 같다는 의심들 (차단 또는 정보공유 비활성 설정등으로 가능할 것 같다) Basic Plan인 경우는 Disqus 광고가 많은 자리를 차지한다는 것 (Ads 옵션 조정으로 광고갯수 조정 또는 유료 플랜 사용)  그러나 귀차니즘에 다른 댓글 시스템을 찾아보다가 utterances라는 github issus처럼 댓글을 관리할 수 있는 방법을 발견해서 테스트 겸 변경했다.\n Github Issue 기반이므로 (Repository 운영) 블로그 플랫폼을 변경해도 기존 Comment를 그대로 사용할 수 있다. 개발과 관련된 블로그이므로 Github 계정으로 댓글을 작성할 수 있다. 많은 블로그들이 이미 이 댓글 시스템을 사용하고 있는 것 같다.  적용하기 Utterances 사이트로 이동하면 간단하게 적용할 수 있도록 문서로 설명되어 있다. 간단히 처리를 정리하면 다음과 같다.\n github에 댓글 관리를 위한 Repository 생성 (공개형) 생성한 Repository에 utterances App 설치 utterances 사이트에 repo 정보를 \u0026ldquo;owner/repo\u0026rdquo;  형식으로 입력 \u0026ldquo;Blog Post ↔️ Issue Mapping\u0026rdquo; 항목을 자신의 블로그 플랫폼에 맞도록 선택 (이슈 제목을 블로그 경로로할지? 페이지 제목으로 할지? 임의로 지정한 값으로 할지? 등) utterances에서 생성한 이슈에 대한 라벨 설정 테마 선택  이렇게 설정하고 스크립트 태그를 블로그의 댓글 처리할 곳에 지정하면 된다.\n실제로 utterances 사이트에 정보를 입력해서 스크립트 코드를 생성해서 사용해도 되지만 그냥 스크립트만을 복사해서 내용을 원하는 (위에서 설정한 것과 같이) 데로 변경한 다음 사용해도 된다. 단, 반드시 github에 utterances.app를 먼저 설치하고 진행해야 한다. 미 설치시 댓글시스템은 동작을 하지만 포스트와 연결되지는 않는다. \n 지금 보고 있는 이 글의 댓글은 utterances를 스트립트만 변경해서 적용한 것이다.\n참고자료  Utterance  "
 },
 {
 	"uri": "/Dev/Vue/intro_key_of_vue/",
@@ -19,13 +19,6 @@
 	"tags": ["npm", "yarn"],
 	"description": "npm과 yarn에 대한 비교",
 	"content": " node + npm이 기본이었는데, 몇 가지 npm의 문제점을 해결하기 위해 yarn이 발표되었다.\n기존 NPM은 배포가 쉽고, 종속성을 쉽게 해결할 수 있지만 패키지가 중복으로 설치될 수 있고, 파일이 많은 경우에 문제가 될 수 있다. 페이스북에서는 이런 문제점들을 해결하기 위해서 yarn을 발표했다.\n npm3 보다 패키지 설치 속도가 빠르다. json 포맷을 사용하지 않는다. offline 모드가 가능하다.  YARN 설치  설치페이지를 통해서 직접 설치가 가능하다. 맥북이라면 brew를 이용해서 설치가 가능하다. npm을 통해서도 설치가 가능하다.  터미널에서의 설치는 다음의 명령으로 처리하면 된다.\n$ npm install -g yarn # npm 사용 $ brew install yarn # 맥북 명령 비교    npm 명령 yarn 명령 설명     npm init yarn init 프로젝트 초기화   npm install yarn or yarn install package.json 의 패키지 설치   npm install \u0026ndash;save [package name] yarn add [package name ] 패키지를 프로젝트 의존성 수준으로 추가 (dependencies)   npm install \u0026ndash;save-dev [package name] yarn add \u0026ndash;dev [package name] 패키지를 프로젝트 개발 의존성 수준으로 추가 (Devdependencies)   npm install \u0026ndash;global [package name] yarn global add [package name] 패키지를 전역 수준으로 추가   npm update \u0026ndash;save yarn upgrade 프로젝트의 패키지 업데이트   npm run [script name] yarn [script name] package.json의 scripts에 지정된 명령 실행   npm uninstall \u0026ndash;save [package name] yarn remove [package name] 패키지 삭제   npm cache clean yarn cache clean 캐시 삭제    참고자료  yarn 특징과 성능  "
-},
-{
-	"uri": "/Dev/Web/",
-	"title": "Web",
-	"tags": [],
-	"description": "",
-	"content": " Web 이 문서에서는 웹 구성에 필요한 정보들을 정리하고 있습니다.\n NPM vs YARN  npm과 yarn에 대한 비교\n "
 },
 {
 	"uri": "/Cloud/Concepts/edge-computing/",
@@ -68,6 +61,20 @@
 	"tags": [],
 	"description": "",
 	"content": " Git 관련 정보들 정리 이 문서에서는 Git 사용에 필요한 정보들을 정리하고 있습니다.\n"
+},
+{
+	"uri": "/Dev/Vue/",
+	"title": "Vue",
+	"tags": [],
+	"description": "",
+	"content": " Vue Vue에 대한 소개 및 사용하는데 필요한 정보들을 정리합니다.\n Vue 키 포인트 소개  프로젝트에 Vue를 도입한 결정적인 이유\n "
+},
+{
+	"uri": "/Dev/Web/",
+	"title": "Web",
+	"tags": [],
+	"description": "",
+	"content": " Web 이 문서에서는 웹 구성에 필요한 정보들을 정리하고 있습니다.\n NPM vs YARN  npm과 yarn에 대한 비교\n "
 },
 {
 	"uri": "/Cloud/",

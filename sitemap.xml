@@ -3,26 +3,20 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/Dev/Vue/</loc>
-    <lastmod>2019-11-29T15:41:00+09:00</lastmod>
+    <loc>/FunnyLab/change-comments-to-utterances/</loc>
+    <lastmod>2019-12-02T10:25:06+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>/Dev/Vue/intro_key_of_vue/</loc>
-    <lastmod>2019-11-29T15:41:00+09:00</lastmod>
+    <lastmod>2019-11-29T21:03:12+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>/Dev/Web/npm_vs_yarn/</loc>
-    <lastmod>2019-11-29T11:52:00+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  
-  <url>
-    <loc>/Dev/Web/</loc>
-    <lastmod>2019-11-29T11:52:00+09:00</lastmod>
+    <lastmod>2019-11-29T21:03:12+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
@@ -59,6 +53,18 @@
   <url>
     <loc>/Git/</loc>
     <lastmod>2019-11-27T21:12:09+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>/Dev/Vue/</loc>
+    <lastmod>2019-11-29T21:03:12+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>/Dev/Web/</loc>
+    <lastmod>2019-11-29T21:03:12+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
