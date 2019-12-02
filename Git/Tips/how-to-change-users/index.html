@@ -22,18 +22,18 @@
     <title>How to Change Users :: [ MSFL-지식 저장소 ]</title>
 
     
-    <link href="/css/nucleus.css?1575257902" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1575257902" rel="stylesheet">
-    <link href="/css/hybrid.css?1575257902" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1575257902" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1575257902" rel="stylesheet">
-    <link href="/css/auto-complete.css?1575257902" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1575257902" rel="stylesheet">
-    <link href="/css/theme.css?1575257902" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1575257902" rel="stylesheet">
+    <link href="/css/nucleus.css?1575289490" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1575289490" rel="stylesheet">
+    <link href="/css/hybrid.css?1575289490" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1575289490" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1575289490" rel="stylesheet">
+    <link href="/css/auto-complete.css?1575289490" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1575289490" rel="stylesheet">
+    <link href="/css/theme.css?1575289490" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1575289490" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1575257902"></script>
+    <script src="/js/jquery-3.3.1.min.js?1575289490"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -62,14 +62,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1575257902"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1575257902"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1575289490"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1575289490"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1575257902"></script>
+<script type="text/javascript" src="/js/search.js?1575289490"></script>
 
     
   </div>
@@ -786,18 +786,24 @@
 <h2 id="발생-상황">발생 상황</h2>
 
 <p>git 설치 후에 기본 환경 설정을 했을 것이다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 전역 설정인 경우</span>
-$ git config --global user.name <span style="color:#e6db74">&#34;user name&#34;</span>
-$ git config --global user.email <span style="color:#e6db74">&#34;user email&#34;</span>
 
-<span style="color:#75715e"># git 단위 설정인 경우</span>
-$ git config user.name <span style="color:#e6db74">&#34;user name&#34;</span>
-$ git config user.email <span style="color:#e6db74">&#34;user email&#34;</span></code></pre></div>
+<pre><code class="language-shell"># 전역 설정인 경우
+$ git config --global user.name &quot;user name&quot;
+$ git config --global user.email &quot;user email&quot;
+
+# git 단위 설정인 경우
+$ git config user.name &quot;user name&quot;
+$ git config user.email &quot;user email&quot;
+</code></pre>
+
 <p>이런 상황에서 지정한 사용자로 Git에 로그인 한 후에 다른 사용자를 사용해서 push를 하면 다음과 같은 오류가 발생하게 된다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git push origin master    <span style="color:#75715e"># terminal에서 실행한 것과 VSCode와 같은 IDE에 연동한 경우도 동일한 상황이 발생한다.</span>
-remote: Permission <span style="color:#f92672">[</span>git_url.git<span style="color:#f92672">]</span> denied to <span style="color:#f92672">[</span>user_id<span style="color:#f92672">]</span>
-fatal: unable to acess <span style="color:#e6db74">`</span><span style="color:#f92672">[</span>git_url<span style="color:#f92672">]</span><span style="color:#e6db74">`</span>: The requested URL returned error: <span style="color:#ae81ff">403</span>
-...</code></pre></div>
+
+<pre><code class="language-shell">$ git push origin master    # terminal에서 실행한 것과 VSCode와 같은 IDE에 연동한 경우도 동일한 상황이 발생한다.
+remote: Permission [git_url.git] denied to [user_id]
+fatal: unable to acess `[git_url]`: The requested URL returned error: 403
+...
+</code></pre>
+
 <p>오류 메시지 내용은 해당 사용자로 remote repository에 push할 권한이 없다는 것이다.</p>
 
 <h2 id="해결-방법">해결 방법</h2>
@@ -806,8 +812,11 @@ fatal: unable to acess <span style="color:#e6db74">`</span><span style="color:#f
 
 <ul>
 <li><p>사용할 git 프로젝트에서 config 설정을 사용자에 맞도록 변경하면 된다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git config user.name <span style="color:#e6db74">&#34;new user name&#34;</span>
-$ git config user.email <span style="color:#e6db74">&#34;new user email&#34;</span></code></pre></div>
+
+<pre><code class="language-shell">$ git config user.name &quot;new user name&quot;
+$ git config user.email &quot;new user email&quot;
+</code></pre>
+
 <p>권장하는 방식으로 해 봐도 동일한 오류가 발생한다. (당연히 이미 로그인 사용자 정보를 기준으로 하므로 설정을 바꾼다고 해서 로그인 정보가 변경되지는 않는다)</p></li>
 
 <li><p>ssh 키 관련해서 여러 가지 처리를 제시하는 것도 있지만, 제대로 안되는 상황이 발생한다.</p></li>
@@ -1242,19 +1251,19 @@ $ git config user.email <span style="color:#e6db74">&#34;new user email&#34;</sp
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1575257902"></script>
-    <script src="/js/perfect-scrollbar.min.js?1575257902"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1575257902"></script>
-    <script src="/js/jquery.sticky.js?1575257902"></script>
-    <script src="/js/featherlight.min.js?1575257902"></script>
-    <script src="/js/highlight.pack.js?1575257902"></script>
+    <script src="/js/clipboard.min.js?1575289490"></script>
+    <script src="/js/perfect-scrollbar.min.js?1575289490"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1575289490"></script>
+    <script src="/js/jquery.sticky.js?1575289490"></script>
+    <script src="/js/featherlight.min.js?1575289490"></script>
+    <script src="/js/highlight.pack.js?1575289490"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1575257902"></script>
-    <script src="/js/learn.js?1575257902"></script>
-    <script src="/js/hugo-learn.js?1575257902"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1575289490"></script>
+    <script src="/js/learn.js?1575289490"></script>
+    <script src="/js/hugo-learn.js?1575289490"></script>
 
-    <link href="/mermaid/mermaid.css?1575257902" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1575257902"></script>
+    <link href="/mermaid/mermaid.css?1575289490" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1575289490"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

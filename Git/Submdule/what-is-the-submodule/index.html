@@ -22,18 +22,18 @@
     <title>What is the submodule :: [ MSFL-지식 저장소 ]</title>
 
     
-    <link href="/css/nucleus.css?1575257902" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1575257902" rel="stylesheet">
-    <link href="/css/hybrid.css?1575257902" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1575257902" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1575257902" rel="stylesheet">
-    <link href="/css/auto-complete.css?1575257902" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1575257902" rel="stylesheet">
-    <link href="/css/theme.css?1575257902" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1575257902" rel="stylesheet">
+    <link href="/css/nucleus.css?1575289490" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1575289490" rel="stylesheet">
+    <link href="/css/hybrid.css?1575289490" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1575289490" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1575289490" rel="stylesheet">
+    <link href="/css/auto-complete.css?1575289490" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1575289490" rel="stylesheet">
+    <link href="/css/theme.css?1575289490" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1575289490" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1575257902"></script>
+    <script src="/js/jquery-3.3.1.min.js?1575289490"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -62,14 +62,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1575257902"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1575257902"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1575289490"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1575289490"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1575257902"></script>
+<script type="text/javascript" src="/js/search.js?1575289490"></script>
 
     
   </div>
@@ -819,7 +819,10 @@ Node 환경이라면 이미 npm을 이용해서 package를 관리하며 사용�
 <h3 id="기본-옵션들">기본 옵션들</h3>
 
 <p>git submodule에 대한 공식 옵션은 다음의 명령으로 확인 가능하다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git submodule --help</code></pre></div>
+
+<pre><code class="language-shell">$ git submodule --help
+</code></pre>
+
 <h3 id="main-project와-submodule-project-관계">main project와 submodule project 관계</h3>
 
 <p>main project에 submodule을 추가하면 submodule들을 관리하기 위한 <font color="darkred"><strong>.gitmodules</strong></font>파일이 생성되고 여기에 submoudle에 대한 폴더와 repository 정보가 관리되며 main project는 추가된 submodule에 대한 commit point를 바라보고 있게 된다.</p>
@@ -837,40 +840,55 @@ Node 환경이라면 이미 npm을 이용해서 package를 관리하며 사용�
 
 
 <h3 id="submodule-추가"><strong>submodule 추가</strong></h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># main project의 root 폴더에서 실행</span>
-$ git submodule add <span style="color:#f92672">[</span>-b branch_name<span style="color:#f92672">]</span> &lt;repository address&gt; <span style="color:#f92672">[</span>path<span style="color:#f92672">]</span>
-<span style="color:#75715e"># path를 생략하면 현재 경로 밑으로 repository 이름으로 생성된다.</span></code></pre></div>
+
+<pre><code class="language-shell"># main project의 root 폴더에서 실행
+$ git submodule add [-b branch_name] &lt;repository address&gt; [path]
+# path를 생략하면 현재 경로 밑으로 repository 이름으로 생성된다.
+</code></pre>
+
 <p>정상적으로 추가되면 main project 경로에 <code>.gitmodules</code> 파일이 생성되며, 내용은 아래와 같이 구성된다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[<span style="color:#a6e22e">submodule</span> <span style="color:#e6db74">&#34;themes/hugo-theme-docdock&#34;</span>]
-<span style="color:#a6e22e">path</span> = <span style="color:#a6e22e">themes</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">hugo</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">theme</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">docdock</span>
-<span style="color:#a6e22e">url</span> = <span style="color:#a6e22e">https</span><span style="color:#960050;background-color:#1e0010">://</span><span style="color:#a6e22e">github</span>.<span style="color:#a6e22e">com</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">vjeantet</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">hugo</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">theme</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">docdock</span>.<span style="color:#a6e22e">git</span></code></pre></div>
+
+<pre><code class="language-toml">[submodule &quot;themes/hugo-theme-docdock&quot;]
+path = themes/hugo-theme-docdock
+url = https://github.com/vjeantet/hugo-theme-docdock.git
+</code></pre>
+
 <p>위와 같이 Root Repository (여기서는 Hugo로 만든 사이트) 를 기준으로 경로와 git repository url이 관리되고 있는 것을 확인할 수 있다.</p>
 
 <p>submodule이 추가된 것은 main project가 변경된 것을 의미하기 때문에 commit을 수행해 줘야 한다. 특정 branch로 지정할 경우는 <code>-b &lt;branch name&gt;</code>을 사용하면 된다. 또한 나중에 submodule에 대한 branch를 설정할 경우는 아래와 같이 처리할 수도 있다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># main project root 폴더에서 실행</span>
-$ git config -f .gitmodules submodule.&lt;submodule path&gt;.branch &lt;branch name&gt;</code></pre></div>
+
+<pre><code class="language-shell"># main project root 폴더에서 실행
+$ git config -f .gitmodules submodule.&lt;submodule path&gt;.branch &lt;branch name&gt;
+</code></pre>
+
 <h3 id="submodule-상태-확인"><strong>submodule 상태 확인</strong></h3>
 
 <p>기본적인 git 상태 확인은 아래의 명령을 사용하며 submodule과 연동해서 사용할 수 있다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># main project root 폴더에서 실행</span>
 
-<span style="color:#75715e"># main project 상태 확인</span>
+<pre><code class="language-shell"># main project root 폴더에서 실행
+
+# main project 상태 확인
 $ git status
 
-<span style="color:#75715e"># submodule 상태 확인</span>
+# submodule 상태 확인
 $ git submodule status
 
-<span style="color:#75715e"># main project 상태확인에 submodule 정보 추가해서 보기 설정</span>
-$ git config status.submodulesummary <span style="color:#ae81ff">1</span></code></pre></div>
+# main project 상태확인에 submodule 정보 추가해서 보기 설정
+$ git config status.submodulesummary 1
+</code></pre>
+
 <h3 id="main-project에서-바라보는-submodule-상태">main project에서 바라보는 submodule 상태</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># main project root 폴더에서 실행</span>
+
+<pre><code class="language-shell"># main project root 폴더에서 실행
 $ git diff --cached &lt;submodule path&gt;
-new file mode <span style="color:#ae81ff">160000</span>
-index <span style="color:#ae81ff">0000000</span>..51dbdcf
+new file mode 160000
+index 0000000..51dbdcf
 --- /dev/null
 +++ b/themes/hugo-theme-learn
 @@ -0,0 +1 @@
-+Subproject commit 51dbdcf4aaef01d02e78a6ea76b2a6fde5842b55</code></pre></div>
++Subproject commit 51dbdcf4aaef01d02e78a6ea76b2a6fde5842b55
+</code></pre>
+
 <p>위의 내용을 검토해 보면 다음과 같은 특징이 존재한다.</p>
 
 <ul>
@@ -881,19 +899,22 @@ index <span style="color:#ae81ff">0000000</span>..51dbdcf
 <h3 id="detached-head-문제"><code>Detached HEAD</code> 문제</h3>
 
 <p>Detached HEAD 문제란 <code>submodule update</code> 명령이 수행되면 해당 submodule이 어떤 branch에도 속하지 않는 분리된 HEAD 정보를 가지는 상태를 말하는 것으로 branch를 지정해 줘야 한다. 따라서 아래와 같이 각 단계별 명령을 수행할 때 지정해 주는 것이 좋다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># main project root 폴더에서 실행</span>
 
-<span style="color:#75715e"># 처음 clone할 때</span>
+<pre><code class="language-shell"># main project root 폴더에서 실행
+
+# 처음 clone할 때
 $ git submodule init
 $ git submodule udpate
 $ git submodule foreach git checkout &lt;branch name&gt;
 
-<span style="color:#75715e"># pull/update할 때</span>
+# pull/update할 때
 $ git pull
 $ git submodule update --remote --merge
 
-<span style="color:#75715e"># push할 때</span>
-$ git push --recurse-submodules<span style="color:#f92672">=</span>check</code></pre></div>
+# push할 때
+$ git push --recurse-submodules=check
+</code></pre>
+
 
 <div class="notices info" ><p>git detached HEAD에 대한 내용은 <a href="http://sunphiz.me/wp/archives/2266">정보</a>를 참고하고, submodule과 detached HEAD에 대한 내용은 <a href="https://stackoverflow.com/questions/18770545/why-is-my-git-submodule-head-detached-from-master">정보</a>를 참고하면 된다.</p>
 </div>
@@ -902,32 +923,42 @@ $ git push --recurse-submodules<span style="color:#f92672">=</span>check</code><
 <h3 id="단축-명령-및-config-설정">단축 명령 및 Config 설정</h3>
 
 <p>위에서 알아본 명령들을 별칭(Alias) 등록을 통해서 단축 명령으로 수행할 수도 있다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># git sdiff 단축 정의</span>
-$ git config alias.sdiff <span style="color:#e6db74">&#39;!&#39;</span><span style="color:#e6db74">&#34;git diff &amp;&amp; submodule foreach &#39;git diff&#39;&#34;</span>
-<span style="color:#75715e"># git spush 단축 정의</span>
-$ git config alias.spush <span style="color:#e6db74">&#39;push --recurse-submodules=check&#39;</span>
-<span style="color:#75715e"># git supdate 단축 정의</span>
-$ git config alias.supdate <span style="color:#e6db74">&#39;submodule update --remote --merge&#39;</span></code></pre></div>
+
+<pre><code class="language-shell"># git sdiff 단축 정의
+$ git config alias.sdiff '!'&quot;git diff &amp;&amp; submodule foreach 'git diff'&quot;
+# git spush 단축 정의
+$ git config alias.spush 'push --recurse-submodules=check'
+# git supdate 단축 정의
+$ git config alias.supdate 'submodule update --remote --merge'
+</code></pre>
+
 <p>main project에 아래와 같이 정보를 설정해 두면 활용하기 쉽다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># login</span>
+
+<pre><code class="language-shell"># login
 $ git config credential.helper cache
-<span style="color:#75715e"># status</span>
-$ git config status.submodulesummary <span style="color:#ae81ff">1</span>
-<span style="color:#75715e"># diff</span>
-$ git config diff.submodule log</code></pre></div>
+# status
+$ git config status.submodulesummary 1
+# diff
+$ git config diff.submodule log
+</code></pre>
+
 <h3 id="이미-submodule을-포함하고-있는-repository-활용하기">이미 submodule을 포함하고 있는 Repository 활용하기</h3>
 
 <h4 id="clone-and-update-submodules">clone and update submodules</h4>
 
 <ul>
 <li><p><strong>Parent git project clone</strong> : <code>.gitmodules</code> 파일이 존재하며, 파일내에 어떤 폴더에 어떤 git repository를 사용하는지에 대한 정보를 알 수 있다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git clone &lt;main project repository&gt;</code></pre></div></li>
+
+<pre><code class="language-shell">$ git clone &lt;main project repository&gt;
+</code></pre></li>
 
 <li><p><strong>submodule clone</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># clone된 main project root 폴더에서 실행</span>
-$ git submodule init      <span style="color:#75715e"># submodule 초기화</span>
-$ git submodule update    <span style="color:#75715e"># submodule 갱신(다운로드 - Detached HEAD 상태로 어떤 branch에도 속하지 않는 상태)</span>
-$ git submodule foreach git checkout &lt;branch name&gt;   <span style="color:#75715e"># 지정한 branch로 설정</span></code></pre></div></li>
+
+<pre><code class="language-shell"># clone된 main project root 폴더에서 실행
+$ git submodule init      # submodule 초기화
+$ git submodule update    # submodule 갱신(다운로드 - Detached HEAD 상태로 어떤 branch에도 속하지 않는 상태)
+$ git submodule foreach git checkout &lt;branch name&gt;   # 지정한 branch로 설정
+</code></pre></li>
 </ul>
 
 
@@ -938,69 +969,100 @@ $ git submodule foreach git checkout <branch name></br></br></p>
 
 
 <h4 id="이미-로컬에-submodule이-존재하는-경우-갱신">이미 로컬에 submodule이 존재하는 경우 갱신</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git submodule update --remote --merge</code></pre></div>
+
+<pre><code class="language-shell">$ git submodule update --remote --merge
+</code></pre>
+
 <h4 id="commit-and-push-submodules">commit and push submodules</h4>
 
 <ul>
 <li><p>만일 새로운 branch로 작업하는 경우</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git submodule foreach git checkout -b &lt;feature name&gt;</code></pre></div></li>
+
+<pre><code class="language-shell">$ git submodule foreach git checkout -b &lt;feature name&gt;
+</code></pre></li>
 
 <li><p>변경된 코드들 commit</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git submodule foreach git add -A .
-$ git submodule foreach git commit -am <span style="color:#e6db74">&#34;commit message&#34;</span>
+
+<pre><code class="language-shell">$ git submodule foreach git add -A .
+$ git submodule foreach git commit -am &quot;commit message&quot;
 $ git submodule foreach git checkout &lt;branch name&gt;
-$ git submodule foreach git merge &lt;feature name&gt;</code></pre></div></li>
+$ git submodule foreach git merge &lt;feature name&gt;
+</code></pre></li>
 
 <li><p>push submodules</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git submodule foreach git push</code></pre></div></li>
+
+<pre><code class="language-shell">$ git submodule foreach git push
+</code></pre></li>
 
 <li><p>commit and push main project</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git commit -am <span style="color:#e6db74">&#34;commit message&#34;</span>
-$ git push --recurse-submodules<span style="color:#f92672">=</span>check</code></pre></div></li>
+
+<pre><code class="language-shell">$ git commit -am &quot;commit message&quot;
+$ git push --recurse-submodules=check
+</code></pre></li>
 </ul>
 
 <p>위에서 언급한 것과 같이 push를 할 때는 반드시 submodule들을 먼저 처리하고 main project를 처리해야 한다. 따라서 submodule들이 모두 push되었는지를 확인해야 한다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># main project push 전에 root 폴더에서</span>
-$ git push --recurse-submodules<span style="color:#f92672">=</span>check     <span style="color:#75715e"># submodule들이 모두 push된 상태인지를 검사하고 확인되면 push 처리</span>
-$ git push --recurse-submodules<span style="color:#f92672">=</span>on-demand <span style="color:#75715e"># submodule들을 모두 push하고 성공하면 push 처리</span></code></pre></div>
+
+<pre><code class="language-shell"># main project push 전에 root 폴더에서
+$ git push --recurse-submodules=check     # submodule들이 모두 push된 상태인지를 검사하고 확인되면 push 처리
+$ git push --recurse-submodules=on-demand # submodule들을 모두 push하고 성공하면 push 처리
+</code></pre>
+
 <p>매번 명령어를 지정해서 처리하는 것을 항상 처리할 수 있도록 하는 것은 설정으로 처리해 두면 된다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git config push.recurseSubmodules check
-$ git config push.recurseSubmodules on-demand</code></pre></div>
+
+<pre><code class="language-shell">$ git config push.recurseSubmodules check
+$ git config push.recurseSubmodules on-demand
+</code></pre>
+
 <h3 id="submodule-제거"><strong>submodule 제거</strong></h3>
 
 <ol>
 <li><code>.gitmodules</code> 파일에서 대상 submodule 정보를 삭제한다.</li>
 
 <li><p>변경된 내용을 stage 처리 한다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git add .gitmodules</code></pre></div></li>
+
+<pre><code class="language-shell">$ git add .gitmodules
+</code></pre></li>
 
 <li><p><code>.git/config</code> 파일에서 대상 submodule 정보를 삭제한다.</p></li>
 
 <li><p>git 에서 cached 인덱스 정보를 제거한다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git rm --cached &lt;path to submodule&gt;   <span style="color:#75715e"># 맨 뒤의 &#39;/&#39;는 사용하지 않는다.</span></code></pre></div></li>
+
+<pre><code class="language-shell">$ git rm --cached &lt;path to submodule&gt;   # 맨 뒤의 '/'는 사용하지 않는다.
+</code></pre></li>
 
 <li><p><code>./git/modules</code> 폴더에서 대상 submodule 폴더 정보를 삭제한다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ rm .git/modules/&lt;path to submodule&gt;   <span style="color:#75715e"># 맨 뒤의 &#39;/&#39;는 사용하지 않는다.</span></code></pre></div></li>
+
+<pre><code class="language-shell">$ rm .git/modules/&lt;path to submodule&gt;   # 맨 뒤의 '/'는 사용하지 않는다.
+</code></pre></li>
 
 <li><p>변경된 내용을 commit 한다.</p></li>
 
 <li><p>제거된 submodule 폴더를 삭제한다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ rm -rf &lt;path to submodule&gt;</code></pre></div></li>
+
+<pre><code class="language-shell">$ rm -rf &lt;path to submodule&gt;
+</code></pre></li>
 </ol>
 
 <p>위의 내용은 기본적인 git 명령을 사용한 것이고 submodule 명령을 통하면 다음과 같이 더 간단하게 처리가 가능할 수 있다.</p>
 
 <ol>
 <li><p>git에서 submodule 관련 정보 삭제</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git submodule deinit &lt;path to submodule&gt;</code></pre></div></li>
+
+<pre><code class="language-shell">$ git submodule deinit &lt;path to submodule&gt;
+</code></pre></li>
 
 <li><p>git에서 submodule 삭제</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git rm &lt;path to submodule&gt;</code></pre></div></li>
+
+<pre><code class="language-shell">$ git rm &lt;path to submodule&gt;
+</code></pre></li>
 
 <li><p>변경 내용 commit</p></li>
 
 <li><p>submodule 폴더 삭제</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ rm -rf ./git/modules/&lt;path to submodule&gt;</code></pre></div></li>
+
+<pre><code class="language-shell">$ rm -rf ./git/modules/&lt;path to submodule&gt;
+</code></pre></li>
 </ol>
 
 <h2 id="참고자료">참고자료</h2>
@@ -1410,19 +1472,19 @@ $ git config push.recurseSubmodules on-demand</code></pre></div>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1575257902"></script>
-    <script src="/js/perfect-scrollbar.min.js?1575257902"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1575257902"></script>
-    <script src="/js/jquery.sticky.js?1575257902"></script>
-    <script src="/js/featherlight.min.js?1575257902"></script>
-    <script src="/js/highlight.pack.js?1575257902"></script>
+    <script src="/js/clipboard.min.js?1575289490"></script>
+    <script src="/js/perfect-scrollbar.min.js?1575289490"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1575289490"></script>
+    <script src="/js/jquery.sticky.js?1575289490"></script>
+    <script src="/js/featherlight.min.js?1575289490"></script>
+    <script src="/js/highlight.pack.js?1575289490"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1575257902"></script>
-    <script src="/js/learn.js?1575257902"></script>
-    <script src="/js/hugo-learn.js?1575257902"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1575289490"></script>
+    <script src="/js/learn.js?1575289490"></script>
+    <script src="/js/hugo-learn.js?1575289490"></script>
 
-    <link href="/mermaid/mermaid.css?1575257902" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1575257902"></script>
+    <link href="/mermaid/mermaid.css?1575289490" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1575289490"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
