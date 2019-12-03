@@ -4,7 +4,7 @@
   
   <url>
     <loc>/FunnyLab/change-comments-to-utterances/</loc>
-    <lastmod>2019-12-02T10:25:06+09:00</lastmod>
+    <lastmod>2019-12-02T21:25:51+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
@@ -23,6 +23,12 @@
   <url>
     <loc>/Cloud/Concepts/edge-computing/</loc>
     <lastmod>2019-11-27T21:12:09+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>/Dev/Vue/vue/</loc>
+    <lastmod>2019-12-02T21:25:51+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
