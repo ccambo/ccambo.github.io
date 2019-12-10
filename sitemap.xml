@@ -3,139 +3,139 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/FunnyLab/Blogging/</loc>
-    <lastmod>2019-12-09T17:56:48+09:00</lastmod>
+    <loc>http://ccambo.github.io/FunnyLab/Blogging/change-comments-to-utterances/</loc>
+    <lastmod>2019-12-10T14:18:19+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
   <url>
-    <loc>/FunnyLab/Blogging/change-comments-to-utterances/</loc>
-    <lastmod>2019-12-02T10:25:06+09:00</lastmod>
+    <loc>http://ccambo.github.io/Dev/Vue/intro_key_of_vue/</loc>
+    <lastmod>2019-12-10T14:18:19+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
   <url>
-    <loc>/Dev/Vue/intro_key_of_vue/</loc>
+    <loc>http://ccambo.github.io/Dev/Web/npm_vs_yarn/</loc>
+    <lastmod>2019-12-10T14:18:19+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>http://ccambo.github.io/Cloud/Concepts/edge-computing/</loc>
+    <lastmod>2019-12-10T14:18:19+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>http://ccambo.github.io/Dev/Vue/vue/</loc>
+    <lastmod>2019-12-10T14:18:19+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>http://ccambo.github.io/Git/Tips/how-to-change-users/</loc>
+    <lastmod>2019-12-10T14:18:19+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>http://ccambo.github.io/Git/Submdule/what-is-the-submodule/</loc>
+    <lastmod>2019-12-10T14:18:19+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>http://ccambo.github.io/Git/Basics/</loc>
+    <lastmod>2019-11-26T18:18:01+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>http://ccambo.github.io/FunnyLab/Blogging/</loc>
+    <lastmod>2019-12-10T14:18:19+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>http://ccambo.github.io/Cloud/Concepts/</loc>
+    <lastmod>2019-11-27T21:12:09+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>http://ccambo.github.io/Git/</loc>
+    <lastmod>2019-11-27T21:12:09+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>http://ccambo.github.io/Dev/Vue/</loc>
     <lastmod>2019-11-29T21:03:12+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
   <url>
-    <loc>/Dev/Web/npm_vs_yarn/</loc>
+    <loc>http://ccambo.github.io/Dev/Web/</loc>
     <lastmod>2019-11-29T21:03:12+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
   <url>
-    <loc>/Cloud/Concepts/edge-computing/</loc>
+    <loc>http://ccambo.github.io/FunnyLab/Blogging/how-to-deploy-api-server-to-heroku/</loc>
+    <lastmod>2019-12-10T14:18:19+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>http://ccambo.github.io/Cloud/</loc>
     <lastmod>2019-11-27T21:12:09+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
   <url>
-    <loc>/Dev/Vue/vue/</loc>
-    <lastmod>2019-12-03T21:21:34+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  
-  <url>
-    <loc>/Git/Tips/how-to-change-users/</loc>
-    <lastmod>2019-11-26T19:43:36+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  
-  <url>
-    <loc>/Git/Submdule/what-is-the-submodule/</loc>
-    <lastmod>2019-11-26T19:43:36+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  
-  <url>
-    <loc>/Git/Basics/</loc>
+    <loc>http://ccambo.github.io/Git/Submdule/</loc>
     <lastmod>2019-11-26T18:18:01+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
   <url>
-    <loc>/Cloud/Concepts/</loc>
+    <loc>http://ccambo.github.io/Dev/</loc>
     <lastmod>2019-11-27T21:12:09+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
   <url>
-    <loc>/Git/</loc>
+    <loc>http://ccambo.github.io/FunnyLab/</loc>
     <lastmod>2019-11-27T21:12:09+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
   <url>
-    <loc>/Dev/Vue/</loc>
-    <lastmod>2019-11-29T21:03:12+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  
-  <url>
-    <loc>/Dev/Web/</loc>
-    <lastmod>2019-11-29T21:03:12+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  
-  <url>
-    <loc>/FunnyLab/Blogging/how-to-deploy-api-server-to-heroku/</loc>
-    <lastmod>2019-12-09T17:56:48+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  
-  <url>
-    <loc>/Cloud/</loc>
-    <lastmod>2019-11-27T21:12:09+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  
-  <url>
-    <loc>/Git/Submdule/</loc>
+    <loc>http://ccambo.github.io/Cloud/Docker/</loc>
     <lastmod>2019-11-26T18:18:01+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
   <url>
-    <loc>/Dev/</loc>
-    <lastmod>2019-11-27T21:12:09+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  
-  <url>
-    <loc>/FunnyLab/</loc>
-    <lastmod>2019-11-27T21:12:09+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  
-  <url>
-    <loc>/Cloud/Docker/</loc>
+    <loc>http://ccambo.github.io/Cloud/Kubernetes/</loc>
     <lastmod>2019-11-26T18:18:01+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
   <url>
-    <loc>/Cloud/Kubernetes/</loc>
+    <loc>http://ccambo.github.io/Cloud/Docker/Tips/</loc>
     <lastmod>2019-11-26T18:18:01+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
   <url>
-    <loc>/Cloud/Docker/Tips/</loc>
+    <loc>http://ccambo.github.io/Git/Tips/</loc>
     <lastmod>2019-11-26T18:18:01+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
   <url>
-    <loc>/Git/Tips/</loc>
-    <lastmod>2019-11-26T18:18:01+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  
-  <url>
-    <loc>/</loc>
+    <loc>http://ccambo.github.io/</loc>
     <lastmod>2019-11-26T19:43:36+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>

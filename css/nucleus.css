@@ -701,3 +701,51 @@ figure.image figcaption {
   -webkit-border-bottom-left-radius: 5px;
   -webkit-border-bottom-right-radius: 5px;
 }
+
+/* for link preview */
+
+div.ogpcard {
+  height: 400px;
+  position: relative;
+}
+
+div.ogpcard div.container {
+  height: 100%;
+  width: 70%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 30px auto;
+}
+
+div.ogpcard div.header {
+  height:60%;
+}
+
+div.ogpcard div.header img {
+  width:100%;
+  height:100%;
+  margin:0 !important;
+}
+
+div.ogpcard div.footer {
+  height: 10%;
+}
+
+div.ogpcard div.body {
+  padding: 5px;
+  line-height: 1.5em;
+  height: 30%;
+}
+
+div.ogpcard div.body a.highlight:after {
+  display:none !important;
+}
+
+div.ogpcard div.body div.site {
+  color: darkgray;
+}
+
+div.ogpcard div.footer {
+  padding-left: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+}

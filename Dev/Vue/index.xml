@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vue on [ MSFL-지식 저장소 ]</title>
-    <link>/Dev/Vue/</link>
+    <link>http://ccambo.github.io/Dev/Vue/</link>
     <description>Recent content in Vue on [ MSFL-지식 저장소 ]</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
     
-	<atom:link href="/Dev/Vue/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://ccambo.github.io/Dev/Vue/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Vue 키 포인트 소개</title>
-      <link>/Dev/Vue/intro_key_of_vue/</link>
+      <link>http://ccambo.github.io/Dev/Vue/intro_key_of_vue/</link>
       <pubDate>Fri, 29 Nov 2019 15:41:00 +0900</pubDate>
       
-      <guid>/Dev/Vue/intro_key_of_vue/</guid>
+      <guid>http://ccambo.github.io/Dev/Vue/intro_key_of_vue/</guid>
       <description>프로젝트에서 사용할 Front-End Framework을 고심하던 중에 Gregg이 Vue.js를 소개하는 공식 자료를 보고 Vue를 선택했다. 아래의 내용은 참고자료에 언급한 원문을 번역하면서 나름대로 정리한 것으로 왜 Vue가 43%의 개발자들이 vue.js를 배우려고 하는지를 알 수 있다.
 현재 TOP 3 (Angular, React, Vue)의 자바스크립트들에 대한 비교는 vue.js 공식문서를 참고하면 된다.
  점진적인 프레임워크 Vue는 진입장벽이 낮고, 유연하고, 성능이 우수하고, 유지보수와 테스트가 편한 자바스크립트 프레임워크로 점진적인 프레임워크를 지향  하고 있다. 점진적인 프레임워크라는 것은 웹 어플리케이션 전체를 한꺼번에 하나의 프레임워크 구조로 구조화하지 않아도 일정 부분만 적용 가능  해서 사용자에게 더 좋은 사용자 경험을 제공할 수 있다는 것을 의미한다.</description>
@@ -23,10 +23,10 @@
     
     <item>
       <title>Vue 기본 개념</title>
-      <link>/Dev/Vue/vue/</link>
+      <link>http://ccambo.github.io/Dev/Vue/vue/</link>
       <pubDate>Wed, 27 Nov 2019 14:27:00 +0900</pubDate>
       
-      <guid>/Dev/Vue/vue/</guid>
+      <guid>http://ccambo.github.io/Dev/Vue/vue/</guid>
       <description>이 문서는 vue에 대한 빠르고 개략적인 이해를 위해서 간략한 개념만을 정리하고 있다. 따라서 실제 프로젝트에 적용하기 위해서는 참고문서에 지정된 공식문서와 다른 분들이 정리해 놓은 자료들을 참고하도록 한다. 현재 진행 중인 프로젝트에 무사히(?) 적용을 끝내고 나면 그 과정을 기준으로 새로운 정리 문서들을 추가할 예정이다.
  Vue? Vue 가 무엇인가에 대한 것은 Vue 키 포인트 소개 (Gregg 소개 자료)를 참고하면 쉽게 이해할 수 있다.
  현재 Top 3(Angular, React, Vue)에 해당하는 Javascript Framework으로 MVVM(Model-View-ViewModel) 패턴 기반의 UI 라이브러리</description>
