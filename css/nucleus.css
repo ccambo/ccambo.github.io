@@ -173,8 +173,10 @@
   th, td {
     padding: 0.425rem 0; }
 
+/* Testing for caption with table
   th {
     text-align: left; }
+*/
 
   .container {
     width: 75em;
@@ -628,4 +630,74 @@ figure {
 /* for utterances */
 .utterances {
   max-width: 100%;
+}
+
+/* for table caption */
+
+table caption {
+  background-color: rgba(0, 60, 255, 0.247);
+  font-weight: bold;
+  padding: 0.5rem;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+}
+
+caption.top {
+  caption-side: top;
+}
+caption.bottom {
+  caption-side: bottom;
+}
+
+/* for code caption */
+
+figure.code {
+  text-align: left;
+  display: block;
+  max-width: 100%;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+figure.code figcaption {
+  color: black;
+  text-align: center;
+  background-color: rgb(208, 209, 240);
+  display: block;
+  line-height: 2em;
+  font-weight: bold;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+}
+
+figure.code pre {
+  margin: 0;
+}
+
+/* for image caption */
+
+figure.image {
+  display: table;
+  background-color: rgb(208, 209, 240);
+}
+
+figure.image img {
+  margin: 0 !important;
+  border: 1px solid rgb(208, 209, 240);
+  padding: 5px;
+  margin-bottom: 0px !important;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+}
+
+figure.image figcaption {
+  color: black;
+  text-align: center;
+  background-color: rgb(208, 209, 240);
+  display: block;
+  line-height: 2em;
+  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
 }

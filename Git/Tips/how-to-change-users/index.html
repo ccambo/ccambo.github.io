@@ -22,18 +22,18 @@
     <title>How to Change Users :: [ MSFL-지식 저장소 ]</title>
 
     
-    <link href="/css/nucleus.css?1575375615" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1575375615" rel="stylesheet">
-    <link href="/css/hybrid.css?1575375615" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1575375615" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1575375615" rel="stylesheet">
-    <link href="/css/auto-complete.css?1575375615" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1575375615" rel="stylesheet">
-    <link href="/css/theme.css?1575375615" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1575375615" rel="stylesheet">
+    <link href="/css/nucleus.css?1575955048" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1575955048" rel="stylesheet">
+    <link href="/css/hybrid.css?1575955048" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1575955048" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1575955048" rel="stylesheet">
+    <link href="/css/auto-complete.css?1575955048" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1575955048" rel="stylesheet">
+    <link href="/css/theme.css?1575955048" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1575955048" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1575375615"></script>
+    <script src="/js/jquery-3.3.1.min.js?1575955048"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -62,14 +62,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1575375615"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1575375615"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1575955048"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1575955048"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1575375615"></script>
+<script type="text/javascript" src="/js/search.js?1575955048"></script>
 
     
   </div>
@@ -619,6 +619,8 @@
         <ul>
           
           
+            
+          
           
           
         
@@ -630,13 +632,68 @@
  
   
     
-      <li data-nav-id="/FunnyLab/change-comments-to-utterances/" title="댓글 시스템 utterances로 변경" class="dd-item ">
-        <a href="/FunnyLab/change-comments-to-utterances/">
+    <li data-nav-id="/FunnyLab/Blogging/" title="Blogging" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/FunnyLab/Blogging/">
+          Blogging
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/FunnyLab/Blogging/change-comments-to-utterances/" title="댓글 시스템 utterances로 변경" class="dd-item ">
+        <a href="/FunnyLab/Blogging/change-comments-to-utterances/">
         댓글 시스템 utterances로 변경
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
      
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/FunnyLab/Blogging/how-to-deploy-api-server-to-heroku/" title="OGP API 서버 Heroku에 배포하기" class="dd-item ">
+        <a href="/FunnyLab/Blogging/how-to-deploy-api-server-to-heroku/">
+        OGP API 서버 Heroku에 배포하기
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
   
  
 
@@ -806,22 +863,34 @@
 
 <p>git 설치 후에 기본 환경 설정을 했을 것이다.</p>
 
-<pre><code class="language-shell"># 전역 설정인 경우
-$ git config --global user.name &quot;user name&quot;
-$ git config --global user.email &quot;user email&quot;
+<figure class="code">
+  <figcaption>
+    <span>git 환경 설정</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 전역 설정인 경우</span>
+$ git config --global user.name <span style="color:#e6db74">&#34;user name&#34;</span>
+$ git config --global user.email <span style="color:#e6db74">&#34;user email&#34;</span>
 
-# git 단위 설정인 경우
-$ git config user.name &quot;user name&quot;
-$ git config user.email &quot;user email&quot;
-</code></pre>
+<span style="color:#75715e"># git 단위 설정인 경우</span>
+$ git config user.name <span style="color:#e6db74">&#34;user name&#34;</span>
+$ git config user.email <span style="color:#e6db74">&#34;user email&#34;</span></code></pre></div>
+  </div>
+</figure>
 
 <p>이런 상황에서 지정한 사용자로 Git에 로그인 한 후에 다른 사용자를 사용해서 push를 하면 다음과 같은 오류가 발생하게 된다.</p>
 
-<pre><code class="language-shell">$ git push origin master    # terminal에서 실행한 것과 VSCode와 같은 IDE에 연동한 경우도 동일한 상황이 발생한다.
-remote: Permission [git_url.git] denied to [user_id]
-fatal: unable to acess `[git_url]`: The requested URL returned error: 403
-...
-</code></pre>
+<figure class="code">
+  <figcaption>
+    <span>다른 사용자로 로그인된 상태에서 git push 오류 발생</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git push origin master    <span style="color:#75715e"># terminal에서 실행한 것과 VSCode와 같은 IDE에 연동한 경우도 동일한 상황이 발생한다.</span>
+remote: Permission <span style="color:#f92672">[</span>git_url.git<span style="color:#f92672">]</span> denied to <span style="color:#f92672">[</span>user_id<span style="color:#f92672">]</span>
+fatal: unable to acess <span style="color:#e6db74">`</span><span style="color:#f92672">[</span>git_url<span style="color:#f92672">]</span><span style="color:#e6db74">`</span>: The requested URL returned error: <span style="color:#ae81ff">403</span>
+...</code></pre></div>
+  </div>
+</figure>
 
 <p>오류 메시지 내용은 해당 사용자로 remote repository에 push할 권한이 없다는 것이다.</p>
 
@@ -830,15 +899,20 @@ fatal: unable to acess `[git_url]`: The requested URL returned error: 403
 <p>구글을 검색해 보면 대부분 아래와 같은 해법을 제시한다.</p>
 
 <ul>
-<li><p>사용할 git 프로젝트에서 config 설정을 사용자에 맞도록 변경하면 된다.</p>
-
-<pre><code class="language-shell">$ git config user.name &quot;new user name&quot;
-$ git config user.email &quot;new user email&quot;
-</code></pre>
-
-<p>권장하는 방식으로 해 봐도 동일한 오류가 발생한다. (당연히 이미 로그인 사용자 정보를 기준으로 하므로 설정을 바꾼다고 해서 로그인 정보가 변경되지는 않는다)</p></li>
-
-<li><p>ssh 키 관련해서 여러 가지 처리를 제시하는 것도 있지만, 제대로 안되는 상황이 발생한다.</p></li>
+<li>사용할 git 프로젝트에서 config 설정을 사용자에 맞도록 변경하면 된다.
+<figure class="code">
+<figcaption>
+<span>git 환경 프로젝트 단위 설정</span>
+</figcaption>
+<div class="codewrapper">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  $ git config user.name <span style="color:#e6db74">&#34;new user name&#34;</span>
+$ git config user.email <span style="color:#e6db74">&#34;new user email&#34;</span>
+</code></pre></div>
+</div>
+</figure>
+</br>
+권장하는 방식으로 해 봐도 동일한 오류가 발생한다. (당연히 이미 로그인 사용자 정보를 기준으로 하므로 설정을 바꾼다고 해서 로그인 정보가 변경되지는 않는다)</li>
+<li>ssh 키 관련해서 여러 가지 처리를 제시하는 것도 있지만, 제대로 안되는 상황이 발생한다.</li>
 </ul>
 
 <p>환경 설정을 바꿨기 때문에 지금 push 하려는 사용자와 로그인 사용자가 달라졌으므로 로그인을 다시 물어봐야 할 것 같은데, 실제로는 로그인을 다시 물어보지 않는다.</p>
@@ -846,17 +920,29 @@ $ git config user.email &quot;new user email&quot;
 <p>의외로 쉽게 해결하는 방법은 다음과 같다.</p>
 
 <ul>
-<li>Mac 환경
+<li><p>Mac 환경</p>
 
 <ul>
-<li>Spotlight 검색 등으로 <code>키 체인 접근</code> 앱을 실행한다.
-<img src="/images/content/spotlight_key_chain_access.png" alt="spotlight search" /></li>
-<li>키 체인 접근 앱에서 <code>로그인</code>을 선택하고 <code>github.com</code>을 찾아서 더블클릭한다.
-<img src="/images/content/key_chain_access.png" alt="key chaing access" /></li>
-<li>로그인 정보 창에서 <code>계정</code>과 <code>암호</code>를 변경하고 저장한다.
-<img src="/images/content/github_login_change.png" alt="github login change" /></li>
+<li><p>Spotlight 검색 등으로 <code>키 체인 접근</code> 앱을 실행한다.
+<figure class="image">
+<img src="/images/content/spotlight_key_chain_access.png?featherlight=false" alt="Spotlight 검색">
+<figcaption><b>[ Spotlight 검색 ]</b></figcaption>
+</figure></p></li>
+
+<li><p>키 체인 접근 앱에서 <code>로그인</code>을 선택하고 <code>github.com</code>을 찾아서 더블클릭한다.
+<figure class="image">
+<img src="/images/content/key_chain_access.png?featherlight=false" alt="Key chain access">
+<figcaption><b>[ Key chain access ]</b></figcaption>
+</figure></p></li>
+
+<li><p>로그인 정보 창에서 <code>계정</code>과 <code>암호</code>를 변경하고 저장한다.
+<figure class="image">
+<img src="/images/content/github_login_change.png?featherlight=false" alt="Github 로그인 변경">
+<figcaption><b>[ Github 로그인 변경 ]</b></figcaption>
+</figure></p></li>
 </ul></li>
-<li>Windows 환경
+
+<li><p>Windows 환경</p>
 
 <ul>
 <li>제어판 &gt; 사용자 계정 &gt; 자격 증명 관리자를 실행한다.</li>
@@ -1242,6 +1328,8 @@ $ git config user.email &quot;new user email&quot;
 
                     
                     
+                        
+                    
                     
 
                     
@@ -1257,6 +1345,38 @@ $ git config user.email &quot;new user email&quot;
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -1286,19 +1406,19 @@ $ git config user.email &quot;new user email&quot;
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1575375615"></script>
-    <script src="/js/perfect-scrollbar.min.js?1575375615"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1575375615"></script>
-    <script src="/js/jquery.sticky.js?1575375615"></script>
-    <script src="/js/featherlight.min.js?1575375615"></script>
-    <script src="/js/highlight.pack.js?1575375615"></script>
+    <script src="/js/clipboard.min.js?1575955048"></script>
+    <script src="/js/perfect-scrollbar.min.js?1575955048"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1575955048"></script>
+    <script src="/js/jquery.sticky.js?1575955048"></script>
+    <script src="/js/featherlight.min.js?1575955048"></script>
+    <script src="/js/highlight.pack.js?1575955048"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1575375615"></script>
-    <script src="/js/learn.js?1575375615"></script>
-    <script src="/js/hugo-learn.js?1575375615"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1575955048"></script>
+    <script src="/js/learn.js?1575955048"></script>
+    <script src="/js/hugo-learn.js?1575955048"></script>
 
-    <link href="/mermaid/mermaid.css?1575375615" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1575375615"></script>
+    <link href="/mermaid/mermaid.css?1575955048" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1575955048"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

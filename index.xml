@@ -13,10 +13,10 @@
     
     <item>
       <title>댓글 시스템 utterances로 변경</title>
-      <link>/FunnyLab/change-comments-to-utterances/</link>
+      <link>/FunnyLab/Blogging/change-comments-to-utterances/</link>
       <pubDate>Mon, 02 Dec 2019 10:25:06 +0900</pubDate>
       
-      <guid>/FunnyLab/change-comments-to-utterances/</guid>
+      <guid>/FunnyLab/Blogging/change-comments-to-utterances/</guid>
       <description>댓글 시스템 변경 기존에 사용하던 Disqus에 딱히 큰 문제가 있었던 것은 아니다.
  Disqus의 댓글 데이터들을 사이트들에 행동패턴등의 Big data 용도로 판매가 이뤄지고 있는 것 같다는 의심들 (차단 또는 정보공유 비활성 설정등으로 가능할 것 같다) Basic Plan인 경우는 Disqus 광고가 많은 자리를 차지한다는 것 (Ads 옵션 조정으로 광고갯수 조정 또는 유료 플랜 사용)  그러나 귀차니즘에 다른 댓글 시스템을 찾아보다가 utterances라는 github issus처럼 댓글을 관리할 수 있는 방법을 발견해서 테스트 겸 변경했다.</description>
     </item>
@@ -50,7 +50,7 @@
       
       <guid>/Cloud/Concepts/edge-computing/</guid>
       <description>엣지 컴퓨팅이란? 클라우드 컴퓨팅이란 인터넷을 통해 서버, 저장소, 소프트웨어, 분석 등의 컴퓨팅 서비스를 제공하는 것을 말한다. 이미 많은 기업들이 클라우드 환경으로 전환했으며, 이 과정에서 여러 가지 문제점들이 발생하게 된다.
- 사용자의 폭발적인 증가로 인해 서버 및 데이터 센터에서 처리할 수 있는 데이터 양을 넘어서기 시작하면서 데이터 처리 속도 문제 데이터의 송/수신 과정의 지연 현상 발생 (Latency) 통신 과정 상의 보안 문제  이런 문제점들을 해결하기 위해서 &amp;ldquo;사용자의 단말 또는 가까운 위치에서 컴퓨팅을 수행&amp;rdquo;하는 방식의 엣지 컴퓨팅 개념이 탄생했다.</description>
+ 사용자의 폭발적인 증가로 인해 서버 및 데이터 센터에서 처리할 수 있는 데이터 양을 넘어서기 시작하면서 데이터 처리 속도 문제 데이터의 송/수신 과정의 지연 현상 발생 (Latency) 통신 과정 상의 보안 문제  이런 문제점들을 해결하기 위해서 &amp;ldquo;사용자의 단말 또는 가까운 위치에서 컴퓨팅을 수행&amp;rdquo;  하는 방식의 엣지 컴퓨팅 개념이 탄생했다.</description>
     </item>
     
     <item>
@@ -73,7 +73,7 @@
       <description>대부분의 경우는 단일 사용자로 Git를 운영하겠지만 다양한 이유에 의해서 Git 사용자를 변경해야 하는 상황이 존재한다.
 여기서는 이런 문제를 해결하는 방법에 대해서 알아본다.
 발생 상황 git 설치 후에 기본 환경 설정을 했을 것이다.
-# 전역 설정인 경우 $ git config --global user.name &amp;quot;user name&amp;quot; $ git config --global user.email &amp;quot;user email&amp;quot; # git 단위 설정인 경우 $ git config user.name &amp;quot;user name&amp;quot; $ git config user.email &amp;quot;user email&amp;quot;  이런 상황에서 지정한 사용자로 Git에 로그인 한 후에 다른 사용자를 사용해서 push를 하면 다음과 같은 오류가 발생하게 된다.</description>
+ git 환경 설정  # 전역 설정인 경우 $ git config --global user.name &amp;#34;user name&amp;#34; $ git config --global user.email &amp;#34;user email&amp;#34; # git 단위 설정인 경우 $ git config user.name &amp;#34;user name&amp;#34; $ git config user.</description>
     </item>
     
     <item>
@@ -85,6 +85,16 @@
       <description>아래의 내용은 정리하면서 검증한 부분도 있지만, 검증이 되지 않고 정리된 내용도 있을 수 있으므로, 반드시 관련된 정보를 추가로 검색하여 검증해야 한다.
  Submodule? Git 프로젝트는 하나의 독립된 라이브러리라고 생각할 수 있다. 따라서 특정 프로젝트를 진행할 때 또 다른 프로젝트를 내부적으로 사용해야하는 경우가 빈번하게 발생할 수 있다. 일반적으로 이런 상황에서는 필요한 라이브러리의 특정 버전을 설치하거나 소스를 복사해서 사용하는 방법을 사용하는데 이에 따른 버전관리나 소스의 변경등에 대한 대처가 만만치 않다.
 Git와 Submodule을 사용하면 Git Repository 내에 또 다른 독립적인 Repository를 운영하는 구조를 만들 수 있다.</description>
+    </item>
+    
+    <item>
+      <title>OGP API 서버 Heroku에 배포하기</title>
+      <link>/FunnyLab/Blogging/how-to-deploy-api-server-to-heroku/</link>
+      <pubDate>Mon, 09 Dec 2019 17:56:48 +0900</pubDate>
+      
+      <guid>/FunnyLab/Blogging/how-to-deploy-api-server-to-heroku/</guid>
+      <description>이 문서는 블로그에서 외부 게시글에 대한 미리보기를 작성하면서 Open Graph를 적용하는 방법을 정리한 것입니다. Hugo나 Hexo를 기준으로 적용하는데 필요한 OGP 처리용 API Server를 구성하는 내용이므로 OGP에 대한 상세한 내용은 아래의 참고 자료를 활용하시기 바랍니다. 기본적인 개발 환경은 이미 활용하는 것으로 가정하고 git / vscode / macbook을 기준으로 설명합니다
+ OGP란? 오픈그래프 (Open Graph)는 HTML 메타 태그의 종류 중의 하나로 사용성에 약간의 차이를 가진다. SNS에서 그 개념이 시작되었는데, SNS에 링크를 걸어 놓으면 이 링크가 어떤 데이터를 가지고 있는지를 알 수 있는 방법이 없기 때문에 링크에 대한 미리보기로써 이미지, 설명, 제목등을 나타내기 위한 태그들이다.</description>
     </item>
     
   </channel>

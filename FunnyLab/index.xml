@@ -10,15 +10,5 @@
 	<atom:link href="/FunnyLab/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>댓글 시스템 utterances로 변경</title>
-      <link>/FunnyLab/change-comments-to-utterances/</link>
-      <pubDate>Mon, 02 Dec 2019 10:25:06 +0900</pubDate>
-      
-      <guid>/FunnyLab/change-comments-to-utterances/</guid>
-      <description>댓글 시스템 변경 기존에 사용하던 Disqus에 딱히 큰 문제가 있었던 것은 아니다.
- Disqus의 댓글 데이터들을 사이트들에 행동패턴등의 Big data 용도로 판매가 이뤄지고 있는 것 같다는 의심들 (차단 또는 정보공유 비활성 설정등으로 가능할 것 같다) Basic Plan인 경우는 Disqus 광고가 많은 자리를 차지한다는 것 (Ads 옵션 조정으로 광고갯수 조정 또는 유료 플랜 사용)  그러나 귀차니즘에 다른 댓글 시스템을 찾아보다가 utterances라는 github issus처럼 댓글을 관리할 수 있는 방법을 발견해서 테스트 겸 변경했다.</description>
-    </item>
-    
   </channel>
 </rss>
