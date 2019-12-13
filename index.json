@@ -18,7 +18,7 @@
 	"title": "NPM vs YARN",
 	"tags": ["npm", "yarn"],
 	"description": "npm과 yarn에 대한 비교",
-	"content": " node + npm이 기본이었는데, 몇 가지 npm의 문제점을 해결하기 위해 yarn이 발표되었다.\n기존 NPM은 배포가 쉽고, 종속성을 쉽게 해결할 수 있지만 패키지가 중복으로 설치될 수 있고, 파일이 많은 경우에 문제가 될 수 있다. 페이스북에서는 이런 문제점들을 해결하기 위해서 yarn을 발표했다.\n npm3 보다 패키지 설치 속도가 빠르다. json 포맷을 사용하지 않는다. offline 모드가 가능하다.  YARN 설치  설치페이지를 통해서 직접 설치가 가능하다. 맥북이라면 brew를 이용해서 설치가 가능하다. npm을 통해서도 설치가 가능하다.  터미널에서의 설치는 다음의 명령으로 처리하면 된다.\n Yarn 설치 명령  $ npm install -g yarn # npm 사용 $ brew install yarn # 맥북   명령 비교 NPM과 YARN 기본 명령들 비교   npm 명령 yarn 명령 설명     npm init yarn init 프로젝트 초기화   npm install yarn or yarn install package.json 의 패키지 설치   npm install \u0026ndash;save [package name] yarn add [package name ] 패키지를 프로젝트 의존성 수준으로 추가 (dependencies)   npm install \u0026ndash;save-dev [package name] yarn add \u0026ndash;dev [package name] 패키지를 프로젝트 개발 의존성 수준으로 추가 (Devdependencies)   npm install \u0026ndash;global [package name] yarn global add [package name] 패키지를 전역 수준으로 추가   npm update \u0026ndash;save yarn upgrade 프로젝트의 패키지 업데이트   npm run [script name] yarn [script name] package.json의 scripts에 지정된 명령 실행   npm uninstall \u0026ndash;save [package name] yarn remove [package name] 패키지 삭제   npm cache clean yarn cache clean 캐시 삭제    참고자료  yarn 특징과 성능  "
+	"content": " node + npm이 기본이었는데, 몇 가지 npm의 문제점을 해결하기 위해 yarn이 발표되었다.\n기존 NPM은 배포가 쉽고, 종속성을 쉽게 해결할 수 있지만 패키지가 중복으로 설치될 수 있고, 파일이 많은 경우에 문제가 될 수 있다. 페이스북에서는 이런 문제점들을 해결하기 위해서 yarn을 발표했다.\n npm3 보다 패키지 설치 속도가 빠르다. json 포맷을 사용하지 않는다. offline 모드가 가능하다.  YARN 설치  설치페이지를 통해서 직접 설치가 가능하다. 맥북이라면 brew를 이용해서 설치가 가능하다. npm을 통해서도 설치가 가능하다.  터미널에서의 설치는 다음의 명령으로 처리하면 된다.\n Yarn 설치 명령  $ npm install -g yarn # npm 사용 $ brew install yarn # 맥북   명령 비교 NPM과 YARN 기본 명령들 비교   npm 명령 yarn 명령 설명     npm init yarn init 프로젝트 초기화   npm install yarn or yarn install package.json 의 패키지 설치   npm install \u0026ndash;save [package name] yarn add [package name ] 패키지를 프로젝트 의존성 수준으로 추가 (dependencies)   npm install \u0026ndash;save-dev [package name] yarn add -D[or \u0026ndash;dev] [package name] 패키지를 프로젝트 개발 의존성 수준으로 추가 (Devdependencies)   npm install \u0026ndash;global [package name] yarn global add [package name] 패키지를 전역 수준으로 추가   npm update \u0026ndash;save yarn upgrade 프로젝트의 패키지 업데이트   npm run [script name] yarn [script name] package.json의 scripts에 지정된 명령 실행   npm uninstall \u0026ndash;save [package name] yarn remove [package name] 패키지 삭제   npm cache clean yarn cache clean 캐시 삭제    참고자료  yarn 특징과 성능  "
 },
 {
 	"uri": "http://ccambo.github.io/Cloud/Concepts/edge-computing/",
@@ -53,7 +53,7 @@
 	"title": "Basics",
 	"tags": [],
 	"description": "",
-	"content": " Basics 이 문서에서는 Git 사용에 필요한 기본적인 정보들을 정리하고 있습니다.\n"
+	"content": " Basics 이 문서에서는 Git 사용에 필요한 기본적인 정보들을 정리하고 있습니다.\n "
 },
 {
 	"uri": "http://ccambo.github.io/FunnyLab/Blogging/",
@@ -67,21 +67,21 @@
 	"title": "Concepts",
 	"tags": [],
 	"description": "",
-	"content": " Concepts Cloud와 연계되는 개념들을 정리합니다.\n"
+	"content": " Concepts Cloud와 연계되는 개념들을 정리합니다.\n Edge Computing  Edge Computing에 대한 내용을 정리합니다.\n "
 },
 {
 	"uri": "http://ccambo.github.io/Git/",
 	"title": "Git",
 	"tags": [],
 	"description": "",
-	"content": " Git 관련 정보들 정리 이 문서에서는 Git 사용에 필요한 정보들을 정리하고 있습니다.\n"
+	"content": " Git 관련 정보들 정리 이 문서에서는 Git 사용에 필요한 정보들을 정리하고 있습니다.\n Basics   Basics 이 문서에서는 Git 사용에 필요한 기본적인 정보들을 정리하고 있습니다.  Submodule   Submodule 이 문서에서는 Git의 Submodule에 관련된 정보들을 정리하고 있습니다. What is the submodule Git의 Submodule에 관련된 내용을 정리합니다.  Tips   Tips 이 문서에서는 Git 사용 중에 발생한 오류들의 해결 방법이나 유용한 정보들을 정리하고 있습니다. How to Change Users Git 사용 중에 사용자 변경 관련 오류를 해결하는 방법을 정리합니다.  "
 },
 {
 	"uri": "http://ccambo.github.io/Dev/Vue/",
 	"title": "Vue",
 	"tags": [],
 	"description": "",
-	"content": " Vue Vue에 대한 소개 및 사용하는데 필요한 정보들을 정리합니다.\n Vue 키 포인트 소개  프로젝트에 Vue를 도입한 결정적인 이유\n Vue 기본 개념  Vue.js에 대한 간략한 기본 개념 소개\n "
+	"content": " Vue Vue에 대한 소개 및 사용하는데 필요한 정보들을 정리합니다.\n Vue 키 포인트 소개  프로젝트에 Vue를 도입한 결정적인 이유\n Vue 기본 개념  Vue.js에 대한 간략한 기본 개념 소개\n Vuetify v2.x 업그레이드  Vue 및 Vuetify와 관련된 프로젝트를 v2.x 버전으로 업그레이드해서 작업할 때 발생하는 문제점들을 정리한다.\n "
 },
 {
 	"uri": "http://ccambo.github.io/Dev/Web/",
@@ -102,42 +102,56 @@
 	"title": "Cloud",
 	"tags": [],
 	"description": "",
-	"content": " Cloud 이 문서에서는 Cloud에 필요한 정보들을 정리하고 있습니다.\n"
+	"content": " Cloud 이 문서에서는 Cloud에 필요한 정보들을 정리하고 있습니다.\n Concepts   Concepts Cloud와 연계되는 개념들을 정리합니다. Edge Computing Edge Computing에 대한 내용을 정리합니다.  Docker  이 페이지는 Docker에 대한 관련된 정보들을 정리합니다.\n Kubernetes  이 페이지는 Kubernetes에 관련된 정보를 정리합니다.\n "
 },
 {
 	"uri": "http://ccambo.github.io/Git/Submdule/",
 	"title": "Submodule",
 	"tags": [],
 	"description": "",
-	"content": " Submodule 이 문서에서는 Git의 Submodule에 관련된 정보들을 정리하고 있습니다.\n"
+	"content": " Submodule 이 문서에서는 Git의 Submodule에 관련된 정보들을 정리하고 있습니다.\n What is the submodule  Git의 Submodule에 관련된 내용을 정리합니다.\n "
 },
 {
 	"uri": "http://ccambo.github.io/Dev/",
 	"title": "Dev",
 	"tags": [],
 	"description": "",
-	"content": " Developments 이 문서에서는 개발에 필요한 정보들을 정리하고 있습니다.\n"
+	"content": " Developments 이 문서에서는 개발에 필요한 정보들을 정리하고 있습니다.\n Vue   Vue Vue에 대한 소개 및 사용하는데 필요한 정보들을 정리합니다. Vue 키 포인트 소개 프로젝트에 Vue를 도입한 결정적인 이유 Vue 기본 개념 Vue.js에 대한 간략한 기본 개념 소개 Vuetify v2.x 업그레이드 Vue 및 Vuetify와 관련된 프로젝트를 v2.x 버전으로 업그레이드해서 작업할 때 발생하는 문제점들을 정리한다.  Web   Web 이 문서에서는 웹 구성에 필요한 정보들을 정리하고 있습니다. NPM vs YARN npm과 yarn에 대한 비교  Go   Golang Golang에 대한 소개 및 사용하는데 필요한 정보들을 정리합니다.  "
+},
+{
+	"uri": "http://ccambo.github.io/Dev/Go/",
+	"title": "Go",
+	"tags": [],
+	"description": "",
+	"content": " Golang Golang에 대한 소개 및 사용하는데 필요한 정보들을 정리합니다.\n "
 },
 {
 	"uri": "http://ccambo.github.io/FunnyLab/",
 	"title": "FunnyLab",
 	"tags": [],
 	"description": "",
-	"content": " Funny Lab 엉뚱하고 재미있는 상상들을 정리하고 있습니다.\n"
+	"content": " Funny Lab 엉뚱하고 재미있는 상상들을 정리하고 있습니다.\n Blogging  Blogging 이 문서에서는 Hugo 및 Hexo 블로그 구성에 필요한 정보들을 정리하고 있습니다. 댓글 시스템 utterances로 변경 기존 Disqus 댓글 시스템의 문제점으로 Github연동형 댓글 시스템인 utternaces로 변경한 내용을 정리합니다. OGP API 서버 Heroku에 배포하기 이 문서는 블로그에서 외부 게시글에 대한 미리보기를 작성하면서 Open Graph를 적용하는 방법을 정리한 것입니다. Hugo나 Hexo를 기준으로 적용하는데 필요한 OGP 처리용 API Server를 구성하는 내용이므로 OGP에 대한 상세한 내용은 아래의 참고 자료를 활용하시기 바랍니다.\n "
+},
+{
+	"uri": "http://ccambo.github.io/Dev/Vue/How-to-solving-the-problems-in-vuetify-upgrade-to-v2.x/",
+	"title": "Vuetify v2.x 업그레이드",
+	"tags": ["Vue", "Vuetify", "Stylus", "sass", "v2.x", "Migration", "오류"],
+	"description": "Vue 및 Vuetify와 관련된 프로젝트를 v2.x 버전으로 업그레이드해서 작업할 때 발생하는 문제점들을 정리한다.",
+	"content": " Vuetify v1.x에서 v2.x로 Upgrade에서 발생하는 문제점들 Vuetify가 v2.x로 버전이 변경되면서 기존 버전을 사용하던 소스들에서 여러 가지 문제가 발생한다. 그 중에 실제로 작업을 진행한 것들을 정리하고 있다. 만일 이 정리외의 사항들까지 처리해야 하는 경우라면 Release and Migration guide 문서를 참고하면 된다.\nStylus to Sass 이 문제는 Vutify v1.x 버전에서는 Stylus를 사용했지만 v2.x 버전 부터는 sass를 사용하기 때문에 소스 상에서 참고하던 stylus 파일이 존재하지 않고 sass-loader 들을 webpack이 필요로 하면서 발생하게 된다.\nimport해서 사용하는 소스 경로 변경\n Vue v1.x 사용 예 (src/plugins/vuetify.ts)  1... 2 import \u0026#39;vuetify/src/stylus/app.styl\u0026#39;; 3...   위의 2번째 라인에서 사용한 stylus/* 소스들이 제거되었기 때문이므로 이를 아래와 같이 신규 제공되는 것으로 변경하면 된다.\n Vue v2.x 사용 예 (src/plugins/vuetify.ts)  1... 2 import \u0026#39;vuetify/dist/vuetify.min.css\u0026#39;; 3...   Webpack에서 사용할 sass, sass-loader 설치\n yarn 처리  # stylus 제거 $ yarn remove stylus stylus-loader # sass 설치 $ yarn add sass sass-loader   [Vue warn]: Error in beforeCreate hook: \u0026ldquo;Error: Vuetify is not properly initialized 이 문제는 Vuetify v1.x 버전의 vuetify 초기화 방식이 v2.x 버전에서는 제대로 초기화되지 않기 때문에 발생한다.\nv1.x 버전에서는 아래와 같이 main.ts 파일과 /plugins/vuetify.ts 파일을 사용해서 초기화하고 Vue에 등록해서 사용한다.\n Vue v1.x 사용 예   1// ./plugins/vuetify.ts 2import Vue from \u0026#39;vue\u0026#39;; 3import Vuetify from \u0026#39;vuetify/lib\u0026#39;; // vuetify import 4import \u0026#39;vuetify/src/stylus/app.styl\u0026#39;; 5 6Vue.use(Vuetify, { // Vue에 등록 (with options) 7 iconfont: \u0026#39;md\u0026#39;, 8}); 9 10// main.ts 11import Vue from \u0026#39;vue\u0026#39;; 12 13import App from \u0026#39;./App.vue\u0026#39;; 14import \u0026#39;./plugins/vuetify\u0026#39;; // Vuetify plugin import (이미 등록됨) 15import router from \u0026#39;./router\u0026#39;; 16import store from \u0026#39;./store/index\u0026#39;; 17 18Vue.config.productionTip = false; 19 20new Vue({ 21 router, 22 store, 23 render: (h) =\u0026gt; h(App), 24}).$mount(\u0026#39;#app\u0026#39;);   v2.x 버전에서는 위와 같이 처리하면 컴파일등의 문제는 없지만 실행 시점에 초기화되지 않는 문제가 발생하므로 아래와 같이 초기화 방법을 변경해 주어야 한다.\n Vue v2.x 사용 예   1// ./plugins/vuetify.ts 2import Vue from \u0026#39;vue\u0026#39;; 3import \u0026#39;vuetify/dist/vuetify.min.css\u0026#39;; 4import Vuetify from \u0026#39;vuetify/lib\u0026#39;; // Vuetify import 5 6import colors from \u0026#39;vuetify/lib/util/colors\u0026#39;; 7 8Vue.use(Vuetify); // Vue에 등록 (without options) 9 10export default new Vuetify({ // option을 지정한 Vuetify instance 생성해서 export 11 icons: { 12 iconfont: \u0026#39;md\u0026#39;, // \u0026#39;mdi\u0026#39; || \u0026#39;mdiSvg\u0026#39; || \u0026#39;md\u0026#39; || \u0026#39;fa\u0026#39; || \u0026#39;fa4\u0026#39; 13 }, 14 theme: { 15 dark: false, 16 }, 17 themes: { 18 light: { 19 primary: \u0026#39;#4682b4\u0026#39;, 20 secondary: \u0026#39;#b0bec5\u0026#39;, 21 accent: \u0026#39;#8c9eff\u0026#39;, 22 error: \u0026#39;#b71c1c\u0026#39;, 23 }, 24 dark: { 25 primary: colors.blue.lighten3, 26 }, 27 }, 28}); 29 30// main.ts 31import Vue from \u0026#39;vue\u0026#39;; 32 33import App from \u0026#39;./App.vue\u0026#39;; 34import vuetify from \u0026#39;./plugins/vuetify\u0026#39;; // vuetify plugin import 35import router from \u0026#39;./router\u0026#39;; 36import store from \u0026#39;./store/index\u0026#39;; 37 38Vue.config.productionTip = false; 39 40new Vue({ 41 vuetify, // Vue Instance에 등록 42 router, 43 store, 44 render: (h) =\u0026gt; h(App), 45}).$mount(\u0026#39;#app\u0026#39;);   [Vuetify] [BREAKING] \u0026lsquo;app\u0026rsquo; has been removed, use \u0026lsquo;\u0026lt;v-app-bar app\u0026gt;\u0026rsquo; instead. 이 문제는 Vuetify v2.x 버전에서 기존의 app가 제거되고 \u0026lt;v-app-bar app\u0026gt;로 변경되었기 떄문에 발생한다.\n Vue v1.x 사용 예  1... 2 \u0026lt;v-toolbar app ...\u0026gt; 3 ... 4 \u0026lt;/v-toolbar\u0026gt; 5...   위의 2번째 라인에서 사용한 \u0026lt;v-toolbar app ...\u0026gt; 태그가 제거되었기 때문이므로 이를 아래와 같이 신규 제공되는 것으로 변경하면 된다.\n Vue v2.x 사용 예  1... 2 \u0026lt;v-app-bar app ...\u0026gt; 3 ... 4 \u0026lt;/v-app-bar\u0026gt; 5...   [Vuetify] [BREAKING] \u0026lsquo;clipped-left\u0026rsquo; has been removed, use \u0026lsquo;\u0026lt;v-app-bar clipped-left\u0026gt;\u0026rsquo; instead 이 문제는 Vuetify v2.x 버전에서 기존의 \u0026lt;v-toolbar\u0026gt;가 제거되고 \u0026lt;v-app-bar app\u0026gt;로 변경되었기 떄문에 발생한다.\n Vue v1.x 사용 예  1... 2 \u0026lt;v-toolbar :clipped-left= ...\u0026gt; 3 ... 4 \u0026lt;/v-toolbar\u0026gt; 5...   위의 2번째 라인에서 사용한 \u0026lt;v-toolbar\u0026gt; 태그가 제거되었기 때문이므로 이를 아래와 같이 신규 제공되는 것으로 변경하면 된다.\n Vue v2.x 사용 예  1... 2 \u0026lt;v-app-bar :clipped-left= ...\u0026gt; 3 ... 4 \u0026lt;/v-app-bar\u0026gt; 5...   [Vuetify] [BREAKING] \u0026lsquo;flat\u0026rsquo; has been removed, use \u0026lsquo;text\u0026rsquo; instead. 이 문제는 Vuetify v2.x 버전에서 \u0026lt;v-btn\u0026gt; 태그에 사용했던 flat 속성이 제거되고 text 속성을 사용하는 것으로 변경되었기 떄문에 발생한다.\n Vue v1.x 사용 예  1... 2\u0026lt;v-btn v-if=\u0026#34;isAuthenticated === false\u0026#34; class=\u0026#34;hidden-xs-only\u0026#34; to=\u0026#34;/login\u0026#34; flat\u0026gt;Login\u0026lt;/v-btn\u0026gt; 3...   위의 2번째 라인에서 사용한 flat 속성이 제거되었기 때문이므로 이를 아래와 같이 신규 제공되는 것으로 변경하면 된다.\n Vue v2.x 사용 예  1... 2\u0026lt;v-btn v-if=\u0026#34;isAuthenticated === false\u0026#34; class=\u0026#34;hidden-xs-only\u0026#34; to=\u0026#34;/login\u0026#34; text\u0026gt;Login\u0026lt;/v-btn\u0026gt; 3...   \u0026lt;v-btn\u0026gt; 태그에서 변경된 내용은 다음과 같다.\n flat -\u0026gt; text round -\u0026gt; rounded explicit margin removed  [Vuetify] [BREAKING] \u0026lsquo;outline\u0026rsquo; has been removed, use \u0026lsquo;outlined\u0026rsquo; instead 이 문제는 Vuetify v2.x 버전에서 \u0026lt;v-btn\u0026gt;, \u0026lt;v-autocomplete\u0026gt;, \u0026lt;v-alert\u0026gt;, ... 태그에 사용했던 outline 속성이 제거되고 outlined 속성을 사용하는 것으로 변경되었기 떄문에 발생한다.\n Vue v1.x 사용 예  1... 2\u0026lt;v-btn outline\u0026gt;Login\u0026lt;/v-btn\u0026gt; 3...   위의 2번째 라인에서 사용한 \u0026lt;v-btn outline\u0026gt; 속성의 이름이 변경되었기 때문이므로 이를 아래와 같이 신규 제공되는 것으로 변경하면 된다.\n Vue v2.x 사용 예  1... 2\u0026lt;v-btn outlined\u0026gt;Login\u0026lt;/v-btn\u0026gt; 3...   이 변경에 영향을 받는 태그들은 다음과 같다.\n v-text-field v-select v-textarea v-autocomplete v-combobox v-btn v-alert  참고 자료  Vuetify v2.x Releases and Migrations Vuetify Upgrade 1.x to 2.x Vue-Vuetify is not properly initialized Vuetify - theme Customization Vuetify v2.x Upgrade guide  "
 },
 {
 	"uri": "http://ccambo.github.io/Cloud/Docker/",
 	"title": "Docker",
 	"tags": [],
 	"description": "이 페이지는 Docker에 대한 관련된 정보들을 정리합니다.",
-	"content": " Docker 관련 정보들 정리!!! "
+	"content": " Docker 관련 정보들 정리!!!  Tips  Docker 사용 중에 발생한 오류들의 해결방법이나 유용한 정보들을 정리합니다.\n "
 },
 {
 	"uri": "http://ccambo.github.io/Cloud/Kubernetes/",
 	"title": "Kubernetes",
 	"tags": [],
 	"description": "이 페이지는 Kubernetes에 관련된 정보를 정리합니다.",
-	"content": " Kubernetes 관련 정보 정리!!! "
+	"content": " Kubernetes 관련 정보 정리!!!  "
 },
 {
 	"uri": "http://ccambo.github.io/Cloud/Docker/Tips/",
@@ -151,12 +165,12 @@
 	"title": "Tips",
 	"tags": [],
 	"description": "",
-	"content": " Tips 이 문서에서는 Git 사용 중에 발생한 오류들의 해결 방법이나 유용한 정보들을 정리하고 있습니다.\n"
+	"content": " Tips 이 문서에서는 Git 사용 중에 발생한 오류들의 해결 방법이나 유용한 정보들을 정리하고 있습니다.\n How to Change Users  Git 사용 중에 사용자 변경 관련 오류를 해결하는 방법을 정리합니다.\n "
 },
 {
 	"uri": "http://ccambo.github.io/",
 	"title": "MSFL",
 	"tags": [],
 	"description": "",
-	"content": " 지식 저장소 여러 가지 정보들을 하나의 지식 저장소처럼 꾸미는 꿈을 가지고 진행하고 있습니다.\n"
+	"content": " 지식 저장소 여러 가지 정보들을 하나의 지식 저장소처럼 꾸미는 꿈을 가지고 진행하고 있습니다.\n Git  Git 관련 정보들 정리 이 문서에서는 Git 사용에 필요한 정보들을 정리하고 있습니다. Basics Basics 이 문서에서는 Git 사용에 필요한 기본적인 정보들을 정리하고 있습니다. Submodule Submodule 이 문서에서는 Git의 Submodule에 관련된 정보들을 정리하고 있습니다. What is the submodule Git의 Submodule에 관련된 내용을 정리합니다. Tips Tips 이 문서에서는 Git 사용 중에 발생한 오류들의 해결 방법이나 유용한 정보들을 정리하고 있습니다. How to Change Users Git 사용 중에 사용자 변경 관련 오류를 해결하는 방법을 정리합니다.\n Cloud   Cloud 이 문서에서는 Cloud에 필요한 정보들을 정리하고 있습니다. Concepts Concepts Cloud와 연계되는 개념들을 정리합니다. Edge Computing Edge Computing에 대한 내용을 정리합니다. Docker 이 페이지는 Docker에 대한 관련된 정보들을 정리합니다. Kubernetes 이 페이지는 Kubernetes에 관련된 정보를 정리합니다.  Dev  Developments 이 문서에서는 개발에 필요한 정보들을 정리하고 있습니다. Vue Vue Vue에 대한 소개 및 사용하는데 필요한 정보들을 정리합니다. Vue 키 포인트 소개 프로젝트에 Vue를 도입한 결정적인 이유 Vue 기본 개념 Vue.js에 대한 간략한 기본 개념 소개 Vuetify v2.x 업그레이드 Vue 및 Vuetify와 관련된 프로젝트를 v2.x 버전으로 업그레이드해서 작업할 때 발생하는 문제점들을 정리한다. Web Web 이 문서에서는 웹 구성에 필요한 정보들을 정리하고 있습니다. NPM vs YARN npm과 yarn에 대한 비교 Go Golang Golang에 대한 소개 및 사용하는데 필요한 정보들을 정리합니다.\n FunnyLab  Funny Lab 엉뚱하고 재미있는 상상들을 정리하고 있습니다. Blogging Blogging 이 문서에서는 Hugo 및 Hexo 블로그 구성에 필요한 정보들을 정리하고 있습니다. 댓글 시스템 utterances로 변경 기존 Disqus 댓글 시스템의 문제점으로 Github연동형 댓글 시스템인 utternaces로 변경한 내용을 정리합니다. OGP API 서버 Heroku에 배포하기 이 문서는 블로그에서 외부 게시글에 대한 미리보기를 작성하면서 Open Graph를 적용하는 방법을 정리한 것입니다. Hugo나 Hexo를 기준으로 적용하는데 필요한 OGP 처리용 API Server를 구성하는 내용이므로 OGP에 대한 상세한 내용은 아래의 참고 자료를 활용하시기 바랍니다.\n "
 }]

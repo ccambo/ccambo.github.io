@@ -34,7 +34,7 @@
   
   <url>
     <loc>http://ccambo.github.io/Git/Tips/how-to-change-users/</loc>
-    <lastmod>2019-12-10T20:09:05+09:00</lastmod>
+    <lastmod>2019-12-10T20:11:04+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
@@ -105,8 +105,19 @@
   </url>
   
   <url>
+    <loc>http://ccambo.github.io/Dev/Go/</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
     <loc>http://ccambo.github.io/FunnyLab/</loc>
     <lastmod>2019-11-27T21:12:09+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>http://ccambo.github.io/Dev/Vue/How-to-solving-the-problems-in-vuetify-upgrade-to-v2.x/</loc>
+    <lastmod>2019-12-12T20:47:16+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
