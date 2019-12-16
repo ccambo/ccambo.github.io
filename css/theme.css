@@ -20,6 +20,12 @@
     margin: 2px 0 -2px 0;
 }
 @font-face {
+  font-family: 'NanumSquareRound';
+  src: url('../fonts/NanumSquareRoundR.eot');
+  src: url('../fonts/NanumSquareRoundR.eot?#iefix') format('embedded-opentype'), url("../fonts/NanumSquareRoundR.woff2") format("woff2"), url("../fonts/NanumSquareRoundR.woff") format("woff"), url("../fonts/NanumSquareRoundR.ttf") format("truetype");
+  font-sytle: normal;
+}
+@font-face {
     font-family: 'Novacento Sans Wide';
     src: url("../fonts/Novecentosanswide-UltraLight-webfont.eot");
     src: url("../fonts/Novecentosanswide-UltraLight-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Novecentosanswide-UltraLight-webfont.woff2") format("woff2"), url("../fonts/Novecentosanswide-UltraLight-webfont.woff") format("woff"), url("../fonts/Novecentosanswide-UltraLight-webfont.ttf") format("truetype"), url("../fonts/Novecentosanswide-UltraLight-webfont.svg#novecento_sans_wideultralight") format("svg");
@@ -427,7 +433,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     max-width: 80%;
 }
 #chapter h3 {
-    font-family: "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-family: "NanumSquareRound", "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     font-weight: 300;
     text-align: center;
 }
@@ -448,20 +454,20 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     margin: 0;
 }
 body {
-    font-family: "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-family: "NanumSquareRound", "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     font-weight: 300;
     line-height: 1.6;
     font-size: 18px !important;
 }
 h2, h3, h4, h5, h6 {
-    font-family: "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-family: "NanumSquareRound", "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     text-rendering: optimizeLegibility;
     color: #5e5e5e;
     font-weight: 400;
     letter-spacing: -1px;
 }
 h1 {
-    font-family: "Novacento Sans Wide", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-family: "NanumSquareRound", "Novacento Sans Wide", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     text-align: center;
     text-transform: uppercase;
     color: #222;
@@ -1121,7 +1127,7 @@ pre .copy-to-clipboard:hover {
 }
 
 #sidebar #shortcuts h3 {
-    font-family: "Novacento Sans Wide", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-family: "NanumSquareRound", "Novacento Sans Wide", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     color: white ;
     margin-top:1rem;
     padding-left: 1rem;

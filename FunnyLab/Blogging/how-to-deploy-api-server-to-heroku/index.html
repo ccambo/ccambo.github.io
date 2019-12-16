@@ -46,18 +46,18 @@ if (!doNotTrack) {
     <title>OGP API 서버 Heroku에 배포하기 :: [ MSFL-지식 저장소 ]</title>
 
     
-    <link href="/css/nucleus.css?1576229598" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1576229598" rel="stylesheet">
-    <link href="/css/hybrid.css?1576229598" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1576229598" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1576229598" rel="stylesheet">
-    <link href="/css/auto-complete.css?1576229598" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1576229598" rel="stylesheet">
-    <link href="/css/theme.css?1576229598" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1576229598" rel="stylesheet">
+    <link href="/css/nucleus.css?1576498449" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1576498449" rel="stylesheet">
+    <link href="/css/hybrid.css?1576498449" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1576498449" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1576498449" rel="stylesheet">
+    <link href="/css/auto-complete.css?1576498449" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1576498449" rel="stylesheet">
+    <link href="/css/theme.css?1576498449" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1576498449" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1576229598"></script>
+    <script src="/js/jquery-3.3.1.min.js?1576498449"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -86,14 +86,14 @@ if (!doNotTrack) {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1576229598"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1576229598"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1576498449"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1576498449"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/ccambo.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1576229598"></script>
+<script type="text/javascript" src="/js/search.js?1576498449"></script>
 
     
   </div>
@@ -507,6 +507,8 @@ if (!doNotTrack) {
         <ul>
           
           
+            
+          
           
           
         
@@ -544,6 +546,32 @@ if (!doNotTrack) {
         </a>
     </li>
      
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Dev/Vue/Nuxt/" title="Nuxt" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Dev/Vue/Nuxt/">
+          Nuxt
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
   
  
 
@@ -1227,9 +1255,9 @@ Hugo나 Hexo를 기준으로 적용하는데 필요한 OGP 처리용 API Server�
 
 <h2 id="ogp-처리를-위한-api-구성-로컬-pc">OGP 처리를 위한 API 구성 (로컬 PC)</h2>
 
-<p>아주 간단한 OGP API Server를 구성할 것이기 때문에 <span style="color:red;font-weight:bold">
+<p>아주 간단한 OGP API Server를 구성할 것이기 때문에 <font style="color:red;font-weight:bold">
   node + express + ogp_parser 조합
-</span>
+</font>
 으로 아래와 같이 소스를 구성한다.</p>
 
 <figure class="code">
@@ -1419,9 +1447,9 @@ $ heroku open                   <span style="color:#75715e"># 저장소에 올�
   </div>
 </figure>
 
-<p>별다른 오류가 없었다면 <span style="color:red;font-weight:bold">
+<p>별다른 오류가 없었다면 <font style="color:red;font-weight:bold">
   heroku open
-</span>
+</font>
 로 실행된 브라우저는 당연히 <strong>Cannot GET /</strong> 라는 오류가 발생하는 것이 정상이다.</p>
 
 <p>위에서 구동한 소스가 <strong>/ogp</strong> 패스에 대해서만 동작하도록 구성했기 때문으로 정상적으로 구동된 것을 확인할 수 있다.</p>
@@ -1750,6 +1778,23 @@ $ heroku open                   <span style="color:#75715e"># 저장소에 올�
 
                     
                     
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
                     
 
                     
@@ -1765,6 +1810,43 @@ $ heroku open                   <span style="color:#75715e"># 저장소에 올�
                     
                     
 
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -1795,8 +1877,26 @@ $ heroku open                   <span style="color:#75715e"># 저장소에 올�
 
                     
                     
+                        
+                    
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -1949,19 +2049,19 @@ $ heroku open                   <span style="color:#75715e"># 저장소에 올�
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1576229598"></script>
-    <script src="/js/perfect-scrollbar.min.js?1576229598"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1576229598"></script>
-    <script src="/js/jquery.sticky.js?1576229598"></script>
-    <script src="/js/featherlight.min.js?1576229598"></script>
-    <script src="/js/highlight.pack.js?1576229598"></script>
+    <script src="/js/clipboard.min.js?1576498449"></script>
+    <script src="/js/perfect-scrollbar.min.js?1576498449"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1576498449"></script>
+    <script src="/js/jquery.sticky.js?1576498449"></script>
+    <script src="/js/featherlight.min.js?1576498449"></script>
+    <script src="/js/highlight.pack.js?1576498449"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1576229598"></script>
-    <script src="/js/learn.js?1576229598"></script>
-    <script src="/js/hugo-learn.js?1576229598"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1576498449"></script>
+    <script src="/js/learn.js?1576498449"></script>
+    <script src="/js/hugo-learn.js?1576498449"></script>
 
-    <link href="/mermaid/mermaid.css?1576229598" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1576229598"></script>
+    <link href="/mermaid/mermaid.css?1576498449" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1576498449"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

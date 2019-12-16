@@ -42,18 +42,18 @@ if (!doNotTrack) {
     <title>What is the submodule :: [ MSFL-지식 저장소 ]</title>
 
     
-    <link href="/css/nucleus.css?1576229598" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1576229598" rel="stylesheet">
-    <link href="/css/hybrid.css?1576229598" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1576229598" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1576229598" rel="stylesheet">
-    <link href="/css/auto-complete.css?1576229598" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1576229598" rel="stylesheet">
-    <link href="/css/theme.css?1576229598" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1576229598" rel="stylesheet">
+    <link href="/css/nucleus.css?1576498449" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1576498449" rel="stylesheet">
+    <link href="/css/hybrid.css?1576498449" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1576498449" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1576498449" rel="stylesheet">
+    <link href="/css/auto-complete.css?1576498449" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1576498449" rel="stylesheet">
+    <link href="/css/theme.css?1576498449" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1576498449" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1576229598"></script>
+    <script src="/js/jquery-3.3.1.min.js?1576498449"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -82,14 +82,14 @@ if (!doNotTrack) {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1576229598"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1576229598"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1576498449"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1576498449"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/ccambo.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1576229598"></script>
+<script type="text/javascript" src="/js/search.js?1576498449"></script>
 
     
   </div>
@@ -503,6 +503,8 @@ if (!doNotTrack) {
         <ul>
           
           
+            
+          
           
           
         
@@ -540,6 +542,32 @@ if (!doNotTrack) {
         </a>
     </li>
      
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Dev/Vue/Nuxt/" title="Nuxt" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Dev/Vue/Nuxt/">
+          Nuxt
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
   
  
 
@@ -950,9 +978,9 @@ if (!doNotTrack) {
 
 <div class="notices note" ><p>이런 상황이 새로운 것일까?</br>
 Node 환경이라면 이미 npm을 이용해서 package를 관리하며 사용하고 있다. 그런데 가져다 쓸 패키지가 git에 repository로만 존재하는 경우라면 어떻게 해야할 까?</br>
-이런 상황에 대체하기 위한 것이 submodule이고 정리하면 <span style="color:darkred;font-weight:bold">
+이런 상황에 대체하기 위한 것이 submodule이고 정리하면 <font style="color:darkred;font-weight:bold">
   &ldquo;submodule은 git repository 하위에 다른 git repository를 관리하기 위한 도구&rdquo;
-</span>
+</font>
 라고 생각하면 된다.</br></br>
 자세한 내용은 <a href="https://git-scm.com/book/ko/v1/Git-%EB%8F%84%EA%B5%AC-%EC%84%9C%EB%B8%8C%EB%AA%A8%EB%93%88">Pro Git</a>의 내용을 참고!</p>
 </div>
@@ -975,21 +1003,21 @@ Node 환경이라면 이미 npm을 이용해서 package를 관리하며 사용�
 
 <h3 id="main-project와-submodule-project-관계">main project와 submodule project 관계</h3>
 
-<p>main project에 submodule을 추가하면 submodule들을 관리하기 위한 <span style="color:darkred;font-weight:bold">
+<p>main project에 submodule을 추가하면 submodule들을 관리하기 위한 <font style="color:darkred;font-weight:bold">
   .gitmodules
-</span>
+</font>
  파일이 생성되고 여기에 submoudle에 대한 폴더와 repository 정보가 관리되며 main project는 추가된 submodule에 대한 commit point를 바라보고 있게 된다.</p>
 
 <p>따라서 main project와 submodule 간의 처리는 아래와 같은 순서에 주의해야 한다.</p>
 
 <ul>
-<li><strong>clone / pull / update</strong> : 리모트에서 로컬로 데이터를 가져올 경우는 <span style="color:darkred;font-weight:bold">
+<li><strong>clone / pull / update</strong> : 리모트에서 로컬로 데이터를 가져올 경우는 <font style="color:darkred;font-weight:bold">
 Parent 먼저
-</span>
+</font>
 처리 후 submodule을 처리해야 한다.</li>
-<li><strong>commit / push</strong> : 로컬 commit과 리모트로 데이터를 전송하는 경우는 <span style="color:darkred;font-weight:bold">
+<li><strong>commit / push</strong> : 로컬 commit과 리모트로 데이터를 전송하는 경우는 <font style="color:darkred;font-weight:bold">
 submodule 먼저
-</span>
+</font>
 처리 후 Parent를 처리해야 한다.</li>
 </ul>
 
@@ -1242,9 +1270,9 @@ $ git push &ndash;recurse-submodules<span style="color:#f92672">=</span>check
 </figure></p></li>
 </ul>
 
-<p>위에서 언급한 것과 같이 push를 할 때는 반드시 <span style="color:darkred;font-weight:bold">
+<p>위에서 언급한 것과 같이 push를 할 때는 반드시 <font style="color:darkred;font-weight:bold">
   submodule들을 먼저 처리하고 main project를 처리
-</span>
+</font>
 해야 한다. 따라서 submodule들이 모두 push되었는지를 확인해야 한다.</p>
 
 <figure class="code">
@@ -1658,6 +1686,23 @@ $ git config push.recurseSubmodules on-demand</code></pre></div>
 
                     
                     
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
                     
 
                     
@@ -1673,6 +1718,43 @@ $ git config push.recurseSubmodules on-demand</code></pre></div>
                     
                     
 
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -1703,8 +1785,26 @@ $ git config push.recurseSubmodules on-demand</code></pre></div>
 
                     
                     
+                        
+                    
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -1851,19 +1951,19 @@ $ git config push.recurseSubmodules on-demand</code></pre></div>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1576229598"></script>
-    <script src="/js/perfect-scrollbar.min.js?1576229598"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1576229598"></script>
-    <script src="/js/jquery.sticky.js?1576229598"></script>
-    <script src="/js/featherlight.min.js?1576229598"></script>
-    <script src="/js/highlight.pack.js?1576229598"></script>
+    <script src="/js/clipboard.min.js?1576498449"></script>
+    <script src="/js/perfect-scrollbar.min.js?1576498449"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1576498449"></script>
+    <script src="/js/jquery.sticky.js?1576498449"></script>
+    <script src="/js/featherlight.min.js?1576498449"></script>
+    <script src="/js/highlight.pack.js?1576498449"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1576229598"></script>
-    <script src="/js/learn.js?1576229598"></script>
-    <script src="/js/hugo-learn.js?1576229598"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1576498449"></script>
+    <script src="/js/learn.js?1576498449"></script>
+    <script src="/js/hugo-learn.js?1576498449"></script>
 
-    <link href="/mermaid/mermaid.css?1576229598" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1576229598"></script>
+    <link href="/mermaid/mermaid.css?1576498449" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1576498449"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
