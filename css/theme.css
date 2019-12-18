@@ -1136,3 +1136,69 @@ pre .copy-to-clipboard:hover {
 #searchResults {
     text-align: left;
 }
+
+/* notebox */
+figure.notices {
+  border: 1px solid black;
+  display: block;
+  text-align:left;
+  margin: 2rem 0;
+  position: relative;
+  max-width: 100%;
+}
+figure.notices figcaption {
+  /*padding: 15px;*/
+  display: block;
+  font-size: 1rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  color: #666;
+}
+figure.notices figcaption:first-child:before {
+  position: absolute;
+  top: 2px;
+  color: #fff;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f06a";
+  left: 10px;
+}
+figure.notices figcaption:first-child:after {
+  position: absolute;
+  top: 2px;
+  color: #fff;
+  left: 2rem;
+}
+
+/*
+figure.notices.warning figcaption {
+  border-top: 30px solid rgba(217, 83, 79, 0.8);
+  background: #FAE2E2;
+}
+
+figure.notices.info figcaption {
+  border-top: 30px solid #F0B37E;
+  background: #FFF2DB;
+}
+figure.notices.info p:first-child:after {
+  content: 'Info';
+}
+
+figure.notices.warning figcaption:first-child:after {
+  content: 'Warning';
+}
+figure.notices.note figcaption {
+  border-top: 30px solid #6AB0DE;
+  background: #E7F2FA;
+}
+figure.notices.note figcaption:first-child:after {
+  content: 'Note';
+}
+figure.notices.tip figcaption {
+  border-top: 30px solid rgba(92, 184, 92, 0.8);
+  background: #E6F9E6;
+}
+figure.notices.tip figcaption:first-child:after {
+  content: 'Tip';
+}
+*/
