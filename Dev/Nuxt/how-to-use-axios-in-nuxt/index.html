@@ -4,23 +4,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.58.3" />
-    <meta name="description" content="Git의 Submodule에 관련된 내용을 정리합니다.">
+    <meta name="description" content="Axios는 Nuxt 커뮤니티에서 공식으로 지원하는 모듈로 이에 대한 기본적인 사용법과 적용 방법을 정리하고 있습니다.">
 <meta name="author" content="MSFL">
 
 
-<meta property="og:title" content="What is the submodule">
+<meta property="og:title" content="Nuxt에 AXIOS 적용하기">
 
     <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2019-11-21">
+    <meta property="article:published_time" content="2019-12-20">
 
-    <meta property="og:description" content="Git의 Submodule에 관련된 내용을 정리합니다.">
-    <meta property="og:url" content="http://ccambo.github.io/Git/Submdule/what-is-the-submodule/">
+    <meta property="og:description" content="Axios는 Nuxt 커뮤니티에서 공식으로 지원하는 모듈로 이에 대한 기본적인 사용법과 적용 방법을 정리하고 있습니다.">
+    <meta property="og:url" content="http://ccambo.github.io/Dev/Nuxt/how-to-use-axios-in-nuxt/">
     <meta property="og:site_name" content="[ MSFL-지식 저장소 ]">
 
+    <meta property="og:image" content="http://ccambo.github.io//images/nuxt_axios_image.png">
 
-    <meta property="og:tags" content="Git">
 
-    <meta property="og:tags" content="Submodule">
+    <meta property="og:tags" content="Nuxt">
+
+    <meta property="og:tags" content="Axios">
 
 
 
@@ -39,7 +41,7 @@ if (!doNotTrack) {
 }
 </script>
 
-    <title>What is the submodule :: [ MSFL-지식 저장소 ]</title>
+    <title>Nuxt에 AXIOS 적용하기 :: [ MSFL-지식 저장소 ]</title>
 
     
     <link href="/css/nucleus.css?1576845493" rel="stylesheet">
@@ -63,7 +65,7 @@ if (!doNotTrack) {
     </style>
     <script data-ad-client="ca-pub-1122795820579236" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   </head>
-  <body class="" data-url="/Git/Submdule/what-is-the-submodule/">
+  <body class="" data-url="/Dev/Nuxt/how-to-use-axios-in-nuxt/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -106,7 +108,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/Git/" title="Git" class="dd-item 
-        parent
+        
         
         
         ">
@@ -161,7 +163,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/Git/Submdule/" title="Submodule" class="dd-item 
-        parent
+        
         
         
         ">
@@ -187,7 +189,7 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/Git/Submdule/what-is-the-submodule/" title="What is the submodule" class="dd-item active">
+      <li data-nav-id="/Git/Submdule/what-is-the-submodule/" title="What is the submodule" class="dd-item ">
         <a href="/Git/Submdule/what-is-the-submodule/">
         What is the submodule
         <i class="fas fa-check read-icon"></i>
@@ -459,7 +461,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/Dev/" title="Dev" class="dd-item 
-        
+        parent
         
         
         ">
@@ -581,7 +583,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/Dev/Nuxt/" title="Nuxt" class="dd-item 
-        
+        parent
         
         
         ">
@@ -626,7 +628,7 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/Dev/Nuxt/how-to-use-axios-in-nuxt/" title="Nuxt에 AXIOS 적용하기" class="dd-item ">
+      <li data-nav-id="/Dev/Nuxt/how-to-use-axios-in-nuxt/" title="Nuxt에 AXIOS 적용하기" class="dd-item active">
         <a href="/Dev/Nuxt/how-to-use-axios-in-nuxt/">
         Nuxt에 AXIOS 적용하기
         <i class="fas fa-check read-icon"></i>
@@ -922,7 +924,7 @@ if (!doNotTrack) {
             
           
           
-            <a href='/'>MSFL</a> > <a href='/Git/'>Git</a> > <a href='/Git/Submdule/'>Submodule</a> > What is the submodule
+            <a href='/'>MSFL</a> > <a href='/Dev/'>Dev</a> > <a href='/Dev/Nuxt/'>Nuxt</a> > Nuxt에 AXIOS 적용하기
           
         
           
@@ -941,25 +943,23 @@ if (!doNotTrack) {
 <ul>
 <li>
 <ul>
-<li><a href="#submodule">Submodule?</a></li>
-<li><a href="#사용법-정리">사용법 정리</a>
+<li><a href="#axios란">Axios란?</a>
 <ul>
-<li><a href="#기본-옵션들">기본 옵션들</a></li>
-<li><a href="#main-project와-submodule-project-관계">main project와 submodule project 관계</a></li>
-<li><a href="#submodule-추가"><strong>submodule 추가</strong></a></li>
-<li><a href="#submodule-상태-확인"><strong>submodule 상태 확인</strong></a></li>
-<li><a href="#main-project에서-바라보는-submodule-상태">main project에서 바라보는 submodule 상태</a></li>
-<li><a href="#detached-head-문제"><code>Detached HEAD</code> 문제</a></li>
-<li><a href="#단축-명령-및-config-설정">단축 명령 및 Config 설정</a></li>
-<li><a href="#이미-submodule을-포함하고-있는-repository-활용하기">이미 submodule을 포함하고 있는 Repository 활용하기</a>
+<li><a href="#axios-사용하기">AXIOS 사용하기</a>
 <ul>
-<li><a href="#clone-and-update-submodules">clone and update submodules</a></li>
-<li><a href="#이미-로컬에-submodule이-존재하는-경우-갱신">이미 로컬에 submodule이 존재하는 경우 갱신</a></li>
-<li><a href="#commit-and-push-submodules">commit and push submodules</a></li>
+<li><a href="#get-처리하기">GET 처리하기</a></li>
+<li><a href="#post-처리하기">POST 처리하기</a></li>
+<li><a href="#patch-처리하기">PATCH 처리하기</a></li>
+<li><a href="#delete-처리하기">DELETE 처리하기</a></li>
+<li><a href="#file-upload-하기">FILE Upload 하기</a></li>
 </ul></li>
-<li><a href="#submodule-제거"><strong>submodule 제거</strong></a></li>
 </ul></li>
-<li><a href="#참고자료">참고자료</a></li>
+<li><a href="#nuxt에-axios-모듈-설정-및-사용하기">Nuxt에 Axios 모듈 설정 및 사용하기</a>
+<ul>
+<li><a href="#모듈-설치-및-설정">모듈 설치 및 설정</a></li>
+<li><a href="#nuxtjs-axios-모듈-사용하기">@nuxtjs/axios 모듈 사용하기</a></li>
+</ul></li>
+<li><a href="#참고-자료">참고 자료</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -974,9 +974,9 @@ if (!doNotTrack) {
         
 <div class="tags">
 
-  <a class="tag-link" href="/tags/Git">Git</a>
+  <a class="tag-link" href="/tags/Nuxt">Nuxt</a>
 
-  <a class="tag-link" href="/tags/Submodule">Submodule</a>
+  <a class="tag-link" href="/tags/Axios">Axios</a>
 
 </div>
 
@@ -986,7 +986,7 @@ if (!doNotTrack) {
           
             <h1>
               
-              What is the submodule
+              Nuxt에 AXIOS 적용하기
             </h1>
           
 
@@ -1010,437 +1010,301 @@ if (!doNotTrack) {
 
 
 
+<h2 id="axios란">Axios란?</h2>
 
-<div class="notices info" ><p>아래의 내용은 정리하면서 검증한 부분도 있지만, 검증이 되지 않고 정리된 내용도 있을 수 있으므로, 반드시 관련된 정보를 추가로 검색하여 검증해야 한다.</p>
-</div>
-
-
-<h2 id="submodule">Submodule?</h2>
-
-<p>Git 프로젝트는 하나의 독립된 라이브러리라고 생각할 수 있다. 따라서 특정 프로젝트를 진행할 때 또 다른 프로젝트를 내부적으로 사용해야하는 경우가 빈번하게 발생할 수 있다. 일반적으로 이런 상황에서는 필요한 라이브러리의 특정 버전을 설치하거나 소스를 복사해서 사용하는 방법을 사용하는데 이에 따른 버전관리나 소스의 변경등에 대한 대처가 만만치 않다.</p>
-
-<p>Git와 Submodule을 사용하면 Git Repository 내에 또 다른 독립적인 Repository를 운영하는 구조를 만들 수 있다. 당연히 각 Repository는 독립적으로 관리된다.</p>
-
-
-<div class="notices note" ><p>이런 상황이 새로운 것일까?</br>
-Node 환경이라면 이미 npm을 이용해서 package를 관리하며 사용하고 있다. 그런데 가져다 쓸 패키지가 git에 repository로만 존재하는 경우라면 어떻게 해야할 까?</br>
-이런 상황에 대체하기 위한 것이 submodule이고 정리하면 <font style="color:darkred;font-weight:bold">
-  &ldquo;submodule은 git repository 하위에 다른 git repository를 관리하기 위한 도구&rdquo;
-</font>
-라고 생각하면 된다.</br></br>
-자세한 내용은 <a href="https://git-scm.com/book/ko/v1/Git-%EB%8F%84%EA%B5%AC-%EC%84%9C%EB%B8%8C%EB%AA%A8%EB%93%88">Pro Git</a>의 내용을 참고!</p>
-</div>
-
-
-<h2 id="사용법-정리">사용법 정리</h2>
-
-<h3 id="기본-옵션들">기본 옵션들</h3>
-
-<p>git submodule에 대한 공식 옵션은 다음의 명령으로 확인 가능하다.</p>
+<p>Axios는 <code>Promise</code> 기반의 자바스크립트 비동기 처리 방식을 사용하고 있기 때문에 아래와 같이 서버를 호출한 후에 반횐되는 콜백함수를 통해서 결과를 처리하는 방식으로 운영된다.</p>
 
 <figure class="code">
   <figcaption>
-    <span>git submodule 도움말</span>
+    <span>axios 기본 사용법</span>
   </figcaption>
   <div class="codewrapper">
-    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git submodule --help</code></pre></div>
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/api/data&#39;</span>)
+  .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span> =&gt; {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">data</span>);
+  });
+</code></pre></div>
   </div>
 </figure>
 
-<h3 id="main-project와-submodule-project-관계">main project와 submodule project 관계</h3>
+<p>설치는 프로젝트에 axios 패키지를 설정하면 된다.</p>
 
-<p>main project에 submodule을 추가하면 submodule들을 관리하기 위한 <font style="color:darkred;font-weight:bold">
-  .gitmodules
-</font>
- 파일이 생성되고 여기에 submoudle에 대한 폴더와 repository 정보가 관리되며 main project는 추가된 submodule에 대한 commit point를 바라보고 있게 된다.</p>
+<figure class="code">
+  <figcaption>
+    <span>axios 패키지 설치</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ npm install -s axios
+<span style="color:#75715e"># 또는</span>
+$ yarn add axios</code></pre></div>
+  </div>
+</figure>
 
-<p>따라서 main project와 submodule 간의 처리는 아래와 같은 순서에 주의해야 한다.</p>
+<p>요즘 그럴일은 없겠지만 단순한 웹구성을 사용하고 있다면 직접 웹페이지에 스크립트를 지정해서 사용할 수도 있다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>axios 스트립트 설정</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">...
+  &lt;<span style="color:#f92672">head</span>&gt;
+    ...
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://unpkg.com/axios/dist/axios.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    ...
+  &lt;/<span style="color:#f92672">head</span>&gt;
+...</code></pre></div>
+  </div>
+</figure>
+
+<h3 id="axios-사용하기">AXIOS 사용하기</h3>
+
+<p>axios는 REST 메서드 이름을 별칭으로 사용하기 때문에 사용하기 쉽다.</p>
 
 <ul>
-<li><strong>clone / pull / update</strong> : 리모트에서 로컬로 데이터를 가져올 경우는 <font style="color:darkred;font-weight:bold">
-Parent 먼저
-</font>
-처리 후 submodule을 처리해야 한다.</li>
-<li><strong>commit / push</strong> : 로컬 commit과 리모트로 데이터를 전송하는 경우는 <font style="color:darkred;font-weight:bold">
-submodule 먼저
-</font>
-처리 후 Parent를 처리해야 한다.</li>
+<li>데이터 가져오기 (GET): <code>axios.get(url[, config])</code></li>
+<li>데이터 등록오기 (POST): <code>axios.post(url[, data[, config]])</code></li>
+<li>데이터 수정하기 (PATCH): <code>axios.patch(url[, data[, config]])</code></li>
+<li>데이터 삭제하기 (DELETE): <code>axios.delete(url[, config])</code></li>
 </ul>
 
+<h4 id="get-처리하기">GET 처리하기</h4>
 
-<div class="notices warning" ><p>main project가 submodule에 대한 commit point를 연계하고 있기 떄문에 위의 순서가 맞지 않으면 잘못된 submodule의 commit point를 바라보게 되므로 문제가 발생할 수 있다.</p>
-</div>
-
-
-<h3 id="submodule-추가"><strong>submodule 추가</strong></h3>
+<p>서버에서 데이터를 가져오는 용도로 가장 많이 사용되는 명령이다.</p>
 
 <figure class="code">
   <figcaption>
-    <span>submodule 추가 (Main Project Root 폴더)</span>
+    <span>axios get 예제</span>
   </figcaption>
   <div class="codewrapper">
-    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git submodule add <span style="color:#f92672">[</span>-b branch_name<span style="color:#f92672">]</span> &lt;repository address&gt; <span style="color:#f92672">[</span>path<span style="color:#f92672">]</span>
-<span style="color:#75715e"># path를 생략하면 현재 경로 밑으로 repository 이름으로 생성된다.</span></code></pre></div>
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 단순 데이터 조회
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/aip/data/1&#39;</span>)
+  .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span> =&gt; {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`status: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);     <span style="color:#75715e">// 응답 Status code
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`headers: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">headers</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);   <span style="color:#75715e">// 응답 Headers
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`data: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">data</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);         <span style="color:#75715e">// 응답 Data
+</span><span style="color:#75715e"></span>  });
+<span style="color:#75715e">// 요청 데이터 포함
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/api/data&#39;</span>, {
+  <span style="color:#a6e22e">params</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;axios test&#39;</span> },        <span style="color:#75715e">// 요청으로 전달할 데이터
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#39;X-Api-Key&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;my-api-key&#39;</span> }, <span style="color:#75715e">// Header로 전달할 데이터
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">timeout</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1000</span>                           <span style="color:#75715e">// Timeout 1초. 지나면 오류 처리
+</span><span style="color:#75715e"></span>}).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span> =&gt; {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">data</span>)
+});
+</code></pre></div>
   </div>
 </figure>
 
-<p>정상적으로 추가되면 main project 경로에 <code>.gitmodules</code> 파일이 생성되며, 내용은 아래와 같이 구성된다.</p>
+<h4 id="post-처리하기">POST 처리하기</h4>
+
+<p>서버로 데이터를 등록(입력)할 떄 사용되는 명령이다.</p>
 
 <figure class="code">
   <figcaption>
-    <span>.gitmodules 파일 내용 (Main Project Root 폴더)</span>
+    <span>axios post 예제</span>
   </figcaption>
   <div class="codewrapper">
-    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[<span style="color:#a6e22e">submodule</span> <span style="color:#e6db74">&#34;themes/hugo-theme-docdock&#34;</span>]
-<span style="color:#a6e22e">path</span> = <span style="color:#a6e22e">themes</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">hugo</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">theme</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">docdock</span>
-<span style="color:#a6e22e">url</span> = <span style="color:#a6e22e">https</span><span style="color:#960050;background-color:#1e0010">://</span><span style="color:#a6e22e">github</span>.<span style="color:#a6e22e">com</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">vjeantet</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">hugo</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">theme</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">docdock</span>.<span style="color:#a6e22e">git</span></code></pre></div>
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#39;/aip/data&#39;</span>, {
+  <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;axios test&#39;</span>
+}).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span> =&gt; {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">data</span>)
+});
+</code></pre></div>
   </div>
 </figure>
 
-<p>위와 같이 Root Repository (여기서는 Hugo로 만든 사이트) 를 기준으로 경로와 git repository url이 관리되고 있는 것을 확인할 수 있다.</p>
+<h4 id="patch-처리하기">PATCH 처리하기</h4>
 
-<p>submodule이 추가된 것은 main project가 변경된 것을 의미하기 때문에 commit을 수행해 줘야 한다. 특정 branch로 지정할 경우는 <code>-b &lt;branch name&gt;</code>을 사용하면 된다. 또한 나중에 submodule에 대한 branch를 설정할 경우는 아래와 같이 처리할 수도 있다.</p>
+<p>서버의 특정한 데이터를 수정할 때 사용되는 명령이다.</p>
 
 <figure class="code">
   <figcaption>
-    <span>submodule에 대한 Branch 설정 (Main Project Root 폴더)</span>
+    <span>axios patch 예제</span>
   </figcaption>
   <div class="codewrapper">
-    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git config -f .gitmodules submodule.&lt;submodule path&gt;.branch &lt;branch name&gt;</code></pre></div>
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#39;/aip/data/3&#39;</span>, {
+  <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;axios test&#39;</span>
+}).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span> =&gt; {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">data</span>)
+});
+</code></pre></div>
   </div>
 </figure>
 
-<h3 id="submodule-상태-확인"><strong>submodule 상태 확인</strong></h3>
+<h4 id="delete-처리하기">DELETE 처리하기</h4>
 
-<p>기본적인 git 상태 확인은 아래의 명령을 사용하며 submodule과 연동해서 사용할 수 있다.</p>
+<p>서버의 특정한 데이터를 삭제할 때 사용되는 명령이다.</p>
 
 <figure class="code">
   <figcaption>
-    <span>submodule 상태 확인 (Main Project Root 폴더)</span>
+    <span>axios delete 예제</span>
   </figcaption>
   <div class="codewrapper">
-    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># main project 상태 확인</span>
-$ git status
-
-<span style="color:#75715e"># submodule 상태 확인</span>
-$ git submodule status
-
-<span style="color:#75715e"># main project 상태확인에 submodule 정보 추가해서 보기 설정</span>
-$ git config status.submodulesummary <span style="color:#ae81ff">1</span></code></pre></div>
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#39;/aip/data/3&#39;</span>)
+  .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span> =&gt; {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">data</span>)
+  });
+</code></pre></div>
   </div>
 </figure>
 
-<h3 id="main-project에서-바라보는-submodule-상태">main project에서 바라보는 submodule 상태</h3>
+<h4 id="file-upload-하기">FILE Upload 하기</h4>
+
+<p>HTML 구문을 Upload로 사용하기 위해서 Form 구성을 아래와 같이 한다.</p>
 
 <figure class="code">
   <figcaption>
-    <span>main project에서 바라보는 submodule 상태 (Main Project Root 폴더)</span>
+    <span>Form 구성 예제</span>
   </figcaption>
   <div class="codewrapper">
-    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git diff --cached &lt;submodule path&gt;
-new file mode <span style="color:#ae81ff">160000</span>
-index <span style="color:#ae81ff">0000000</span>..51dbdcf
---- /dev/null
-+++ b/themes/hugo-theme-learn
-@@ -0,0 +1 @@
-+Subproject commit 51dbdcf4aaef01d02e78a6ea76b2a6fde5842b55</code></pre></div>
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post&#34;</span> <span style="color:#a6e22e">enctype</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;multipart/form-data&#34;</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/content/data&#34;</span>&gt;
+  &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image&#34;</span> <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;photo&#34;</span>&gt;
+  &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span>&gt;
+&lt;/<span style="color:#f92672">form</span>&gt;</code></pre></div>
   </div>
 </figure>
 
-<p>위의 내용을 검토해 보면 다음과 같은 특징이 존재한다.</p>
+<p><code>FormData()</code> 객체를 생성하고 <code>this.$ref.photo</code> 와 같이 ref 옵션을 이용해서 필드를 직접 참조를 해서 이미지 파일을 가져오고 업로드할 수 있다. 처리하는 스크립트는 아래와 같다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>이미지 업로드 예제</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// FormData 생성 및 이미지 파일 가져오기
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FormData</span>();
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">file</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$ref</span>.<span style="color:#a6e22e">photo</span>.<span style="color:#a6e22e">files</span>[<span style="color:#ae81ff">0</span>];
+<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;photo&#39;</span>, <span style="color:#a6e22e">file</span>);
+
+<span style="color:#75715e">// axios로 파일 업로드 처리
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#39;/api/data&#39;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">no</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;photo&#39;</span>, <span style="color:#a6e22e">data</span>)
+  .<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">res</span>) =&gt; {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">data</span>;
+  })
+  .<span style="color:#66d9ef">catch</span>((<span style="color:#a6e22e">ex</span>) =&gt; {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;파일 업로드 실패:&#39;</span>, <span style="color:#a6e22e">ex</span>);
+  });
+</code></pre></div>
+  </div>
+</figure>
+
+<h2 id="nuxt에-axios-모듈-설정-및-사용하기">Nuxt에 Axios 모듈 설정 및 사용하기</h2>
+
+<p><a href="https://github.com/nuxt-community/axios-module">axios-module</a> 은 Nuxt.js에서 공식 지원하는 모듈로 Nuxt 환경에서 Axios를 쉽고 안전하게 사용할 수 있도록 지원하는 것이다. 이 모듈에 대한 것은 <a href="https://axios.nuxtjs.org/">API 사용법</a>을 참고하도록 한다.</p>
+
+<h3 id="모듈-설치-및-설정">모듈 설치 및 설정</h3>
+
+<figure class="code">
+  <figcaption>
+    <span>axios 모듈 설치</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ yarn add @nuxtjs/axios</code></pre></div>
+  </div>
+</figure>
+
+<p><code>nuxt.config.js</code> 파일의 <code>modules</code> 에 모듈을 등록한다. 여기에 등록된 모듈은 인스턴스 속성으로 처리되므로 this.$axios와 같이 사용이 가능하다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>nuxt-config.js - axios 모듈 설정</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">...
+<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
+  ...
+  <span style="color:#a6e22e">modules</span><span style="color:#f92672">:</span> [
+    <span style="color:#e6db74">&#39;@nuxtjs/axios&#39;</span>,
+  ],
+  ...
+
+  <span style="color:#a6e22e">axios</span><span style="color:#f92672">:</span> {
+    <span style="color:#75715e">// 모듈 설정
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">baseURL</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">BASE_URL</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;your api server url&#39;</span>
+  }
+  ...
+}
+</code></pre></div>
+  </div>
+</figure>
+
+<h3 id="nuxtjs-axios-모듈-사용하기">@nuxtjs/axios 모듈 사용하기</h3>
+
+<p><code>nuxtServerInit</code> 메서드와 <code>actions</code> 메서드의 사용법이 조금 다르기 때문에 아래 예제 코드를 잘 확인할 필요가 있다. 컴포넌트의 <code>asyncData</code> 메서드에서의 사용법은 <code>nuxtServerInit</code> 메서드와 동일하다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>@nuxtjs/axios 사용 예 (/store/index.vue)</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vuex</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vuex&#39;</span>
+
+<span style="color:#75715e">// 환경 설정을 통해 모듈 등록을 했으므로 추가로 axios 모듈을 import할 필요는 없다.
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">createStore</span> <span style="color:#f92672">=</span> () =&gt; {
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vuex</span>.<span style="color:#a6e22e">Store</span>({
+    <span style="color:#a6e22e">sate</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">loadedPosts</span><span style="color:#f92672">:</span> [] },
+    <span style="color:#a6e22e">mutations</span><span style="color:#f92672">:</span> {
+      <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>    },
+    <span style="color:#a6e22e">actions</span><span style="color:#f92672">:</span> {
+      <span style="color:#66d9ef">async</span> <span style="color:#a6e22e">nuxtServerInit</span>({ <span style="color:#a6e22e">commit</span> }, { <span style="color:#a6e22e">app</span> }) {
+        <span style="color:#66d9ef">try</span> {
+          <span style="color:#75715e">// nuxtServerInit 에서는 axios.get() -&gt; app.$asxios.$get() 을 사용하고
+</span><span style="color:#75715e"></span>          <span style="color:#75715e">// nuxt.config.js에 BASE_URL을 설정했기 때문에 상대 경로만 설정하면 되고
+</span><span style="color:#75715e"></span>          <span style="color:#75715e">// 결과는 데이터만 추출되기 때문에 Data를 바로 사용할 수 있다.
+</span><span style="color:#75715e"></span>          <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">$axios</span>.<span style="color:#a6e22e">$get</span>(<span style="color:#e6db74">&#39;/posts.json&#39;</span>)
+          <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">postsList</span> <span style="color:#f92672">=</span> []
+          <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">key</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">data</span>) {
+            <span style="color:#a6e22e">postsList</span>.<span style="color:#a6e22e">push</span>({ ...<span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">key</span>], <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">key</span> })
+          }
+        } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+          <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">e</span>)
+        }
+      },
+      <span style="color:#a6e22e">setPosts</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">posts</span>) { <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;setPosts&#39;</span>, <span style="color:#a6e22e">posts</span>) },
+      <span style="color:#a6e22e">createPost</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">createdPost</span>) {
+        <span style="color:#a6e22e">createdPost</span>.<span style="color:#a6e22e">createdDate</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date().<span style="color:#a6e22e">toLocaleString</span>();
+        <span style="color:#a6e22e">createdPost</span>.<span style="color:#a6e22e">updatedDate</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createdPost</span>.<span style="color:#a6e22e">createdDate</span>
+        <span style="color:#75715e">// actions 메서드 내부에서는 this.$axios를 사용하고
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// BASE_URL 설정에 따라서 상대 경로만 설정하고 
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// data 바로 사용
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$axios</span>.<span style="color:#a6e22e">$post</span>(<span style="color:#e6db74">&#39;posts.json&#39;</span>, <span style="color:#a6e22e">createdPost</span>)
+          .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">data</span> =&gt; {
+            <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;createPost&#39;</span>, { ...<span style="color:#a6e22e">createdPost</span>, <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">name</span> })
+          })
+          .<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">e</span> =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">e</span>))
+      },
+      <span style="color:#a6e22e">updatePost</span>({ <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">updatedPost</span>) {
+        <span style="color:#a6e22e">updatePost</span>.<span style="color:#a6e22e">updatedDate</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date().<span style="color:#a6e22e">toLocaleString</span>()
+        <span style="color:#75715e">// actions 메서드 내부에서는 this.$axios를 사용하고
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// BASE_URL 설정에 따라서 상대 경로만 설정하고 
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// data 바로 사용
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$axios</span>.<span style="color:#a6e22e">$put</span>(<span style="color:#e6db74">&#39;/posts/${updatedPost.id}.json&#39;</span>, <span style="color:#a6e22e">updatedPost</span>)
+          .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">data</span> =&gt; {
+            <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;updatePost&#39;</span>, <span style="color:#a6e22e">updatedPost</span>)
+          })
+          .<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">e</span> =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">e</span>))
+      }
+    },
+    <span style="color:#a6e22e">getters</span><span style="color:#f92672">:</span> {
+      <span style="color:#a6e22e">loadedPosts</span>(<span style="color:#a6e22e">state</span>) { <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">loadedPosts</span> }
+    }
+  })
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">createStore</span>
+</code></pre></div>
+  </div>
+</figure>
+
+<h2 id="참고-자료">참고 자료</h2>
 
 <ul>
-<li><strong>mode 160000</strong>은 일반적인 파일이나 디렉토리가 아니라는 의미를 가진다.</li>
-<li><strong>Subproject commit 51dbdcf4aaef01d02e78a6ea76b2a6fde5842b55</strong>는 main project가 submodule repository의 51dbdcf4aaef01d02e78a6ea76b2a6fde5842b55 commit 정보를 바라보고 있다는 의미를 가진다.</li>
-</ul>
-
-<h3 id="detached-head-문제"><code>Detached HEAD</code> 문제</h3>
-
-<p>Detached HEAD 문제란 <code>submodule update</code> 명령이 수행되면 해당 submodule이 어떤 branch에도 속하지 않는 분리된 HEAD 정보를 가지는 상태를 말하는 것으로 branch를 지정해 줘야 한다. 따라서 아래와 같이 각 단계별 명령을 수행할 때 지정해 주는 것이 좋다.</p>
-
-<figure class="code">
-  <figcaption>
-    <span>Detach HEAD 방지 처리 (Main Project Root 폴더)</span>
-  </figcaption>
-  <div class="codewrapper">
-    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 처음 clone할 때</span>
-$ git submodule init
-$ git submodule udpate
-$ git submodule foreach git checkout &lt;branch name&gt;
-
-<span style="color:#75715e"># pull/update할 때</span>
-$ git pull
-$ git submodule update --remote --merge
-
-<span style="color:#75715e"># push할 때</span>
-$ git push --recurse-submodules<span style="color:#f92672">=</span>check</code></pre></div>
-  </div>
-</figure>
-
-
-<div class="notices info" ><p>git detached HEAD에 대한 내용은 <a href="http://sunphiz.me/wp/archives/2266">정보</a>를 참고하고, submodule과 detached HEAD에 대한 내용은 <a href="https://stackoverflow.com/questions/18770545/why-is-my-git-submodule-head-detached-from-master">정보</a>를 참고하면 된다.</p>
-</div>
-
-
-<h3 id="단축-명령-및-config-설정">단축 명령 및 Config 설정</h3>
-
-<p>위에서 알아본 명령들을 별칭(Alias) 등록을 통해서 단축 명령으로 수행할 수도 있다.</p>
-
-<figure class="code">
-  <figcaption>
-    <span>Alias 기준 단축 명령 등록 (Main Project Root 폴더)</span>
-  </figcaption>
-  <div class="codewrapper">
-    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># git sdiff 단축 정의</span>
-$ git config alias.sdiff <span style="color:#e6db74">&#39;!&#39;</span><span style="color:#e6db74">&#34;git diff &amp;&amp; submodule foreach &#39;git diff&#39;&#34;</span>
-<span style="color:#75715e"># git spush 단축 정의</span>
-$ git config alias.spush <span style="color:#e6db74">&#39;push --recurse-submodules=check&#39;</span>
-<span style="color:#75715e"># git supdate 단축 정의</span>
-$ git config alias.supdate <span style="color:#e6db74">&#39;submodule update --remote --merge&#39;</span></code></pre></div>
-  </div>
-</figure>
-
-<p>main project에 아래와 같이 정보를 설정해 두면 활용하기 쉽다.</p>
-
-<figure class="code">
-  <figcaption>
-    <span>main project에 submodule연계 환경 설정 (Main Project Root 폴더)</span>
-  </figcaption>
-  <div class="codewrapper">
-    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># login</span>
-$ git config credential.helper cache
-<span style="color:#75715e"># status</span>
-$ git config status.submodulesummary <span style="color:#ae81ff">1</span>
-<span style="color:#75715e"># diff</span>
-$ git config diff.submodule log</code></pre></div>
-  </div>
-</figure>
-
-<h3 id="이미-submodule을-포함하고-있는-repository-활용하기">이미 submodule을 포함하고 있는 Repository 활용하기</h3>
-
-<h4 id="clone-and-update-submodules">clone and update submodules</h4>
-
-<ul>
-<li><p><strong>Parent git project clone</strong> : <code>.gitmodules</code> 파일이 존재하며, 파일내에 어떤 폴더에 어떤 git repository를 사용하는지에 대한 정보를 알 수 있다.
-<figure class="code">
-<figcaption>
-<span>Parent 프로젝트 Clone</span>
-</figcaption>
-<div class="codewrapper">
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  $ git clone &lt;main project repository&gt;
-</code></pre></div>
-</div>
-</figure></p></li>
-
-<li><p><strong>submodule clone</strong>
-<figure class="code">
-<figcaption>
-<span>submodule 프로젝트들 Clone (Clone된 Main Project Root 폴더)</span>
-</figcaption>
-<div class="codewrapper">
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git submodule init      <span style="color:#75715e"># submodule 초기화</span>
-$ git submodule update    <span style="color:#75715e"># submodule 갱신(다운로드 - Detached HEAD 상태로 어떤 branch에도 속하지 않는 상태)</span>
-$ git submodule foreach git checkout &lt;branch name&gt;   <span style="color:#75715e"># 지정한 branch로 설정</span>
-</code></pre></div>
-</div>
-</figure></p></li>
-</ul>
-
-
-<div class="notices note" ><p>위의 clone 과정을 한번에 처리할 수도 있다.</br>
-<strong>$ git clone &ndash;recurse-submodules &lt;main project repository&gt;</br>
-$ git submodule foreach git checkout <branch name></br></strong></p>
-</div>
-
-
-<h4 id="이미-로컬에-submodule이-존재하는-경우-갱신">이미 로컬에 submodule이 존재하는 경우 갱신</h4>
-
-<figure class="code">
-  <figcaption>
-    <span>이미 존재하는 submodule 갱신 (Main Project Root 폴더)</span>
-  </figcaption>
-  <div class="codewrapper">
-    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git submodule update --remote --merge</code></pre></div>
-  </div>
-</figure>
-
-<h4 id="commit-and-push-submodules">commit and push submodules</h4>
-
-<ul>
-<li><p>만일 새로운 branch로 작업하는 경우
-<figure class="code">
-<figcaption>
-<span>새로운 Branch로 작업 (Main Project Root 폴더)</span>
-</figcaption>
-<div class="codewrapper">
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git submodule foreach git checkout -b &lt;feature name&gt;
-</code></pre></div>
-</div>
-</figure></p></li>
-
-<li><p>변경된 코드들 commit
-<figure class="code">
-<figcaption>
-<span>변경된 코드들 Commit (Main Project Root 폴더)</span>
-</figcaption>
-<div class="codewrapper">
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git submodule foreach git add -A .
-$ git submodule foreach git commit -am <span style="color:#e6db74">&#34;commit message&#34;</span>
-$ git submodule foreach git checkout &lt;branch name&gt;
-$ git submodule foreach git merge &lt;feature name&gt;
-</code></pre></div>
-</div>
-</figure></p></li>
-
-<li><p>push submodules
-<figure class="code">
-<figcaption>
-<span>Submodule Push (Main Project Root 폴더)</span>
-</figcaption>
-<div class="codewrapper">
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git submodule foreach git push
-</code></pre></div>
-</div>
-</figure></p></li>
-
-<li><p>commit and push main project
-<figure class="code">
-<figcaption>
-<span>Main Project Push (Main Project Root 폴더)</span>
-</figcaption>
-<div class="codewrapper">
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git commit -am <span style="color:#e6db74">&#34;commit message&#34;</span>
-$ git push &ndash;recurse-submodules<span style="color:#f92672">=</span>check
-</code></pre></div>
-</div>
-</figure></p></li>
-</ul>
-
-<p>위에서 언급한 것과 같이 push를 할 때는 반드시 <font style="color:darkred;font-weight:bold">
-  submodule들을 먼저 처리하고 main project를 처리
-</font>
-해야 한다. 따라서 submodule들이 모두 push되었는지를 확인해야 한다.</p>
-
-<figure class="code">
-  <figcaption>
-    <span>Main Project Push 전에 모든 Submodule들이 Push된 상태인지 확인 (Main Project Root 폴더)</span>
-  </figcaption>
-  <div class="codewrapper">
-    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git push --recurse-submodules<span style="color:#f92672">=</span>check     <span style="color:#75715e"># submodule들이 모두 push된 상태인지를 검사하고 확인되면 push 처리</span>
-$ git push --recurse-submodules<span style="color:#f92672">=</span>on-demand <span style="color:#75715e"># submodule들을 모두 push하고 성공하면 push 처리</span></code></pre></div>
-  </div>
-</figure>
-
-<p>매번 명령어를 지정해서 처리하는 것을 항상 처리할 수 될 수 있도록 하기 위해서는 아래와 같이 설정으로 처리해 두면 된다.</p>
-
-<figure class="code">
-  <figcaption>
-    <span>항상 처리될 수 있도록 설정 (Main Project Root 폴더)</span>
-  </figcaption>
-  <div class="codewrapper">
-    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git config push.recurseSubmodules check
-$ git config push.recurseSubmodules on-demand</code></pre></div>
-  </div>
-</figure>
-
-<h3 id="submodule-제거"><strong>submodule 제거</strong></h3>
-
-<ol>
-<li><code>.gitmodules</code> 파일에서 대상 submodule 정보를 삭제한다.</li>
-
-<li><p>변경된 내용을 stage 처리 한다.
-<figure class="code">
-<figcaption>
-<span>변경사항 Stage 처리 (Main Project Root 폴더)</span>
-</figcaption>
-<div class="codewrapper">
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git add .gitmodules
-</code></pre></div>
-</div>
-</figure></p></li>
-
-<li><p><code>.git/config</code> 파일에서 대상 submodule 정보를 삭제한다.</p></li>
-
-<li><p>git 에서 cached 인덱스 정보를 제거한다.
-<figure class="code">
-<figcaption>
-<span>Cached Index 삭제 (Main Project Root 폴더)</span>
-</figcaption>
-<div class="codewrapper">
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git rm &ndash;cached &lt;path to submodule&gt;   <span style="color:#75715e"># 경로 맨 뒤의 &#39;/&#39;는 사용하지 않는다.</span>
-</code></pre></div>
-</div>
-</figure></p></li>
-
-<li><p><code>./git/modules</code> 폴더에서 대상 submodule 폴더 정보를 삭제한다.
-<figure class="code">
-<figcaption>
-<span>git modules 에서 Submodule 경로 삭제 (Main Project Root 폴더)</span>
-</figcaption>
-<div class="codewrapper">
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ rm .git/modules/&lt;path to submodule&gt;   <span style="color:#75715e"># 경로 맨 뒤의 &#39;/&#39;는 사용하지 않는다.</span>
-</code></pre></div>
-</div>
-</figure></p></li>
-
-<li><p>변경된 내용을 commit 한다.</p></li>
-
-<li><p>제거된 submodule 폴더를 삭제한다.
-<figure class="code">
-<figcaption>
-<span>제거된 Submodule 폴더 삭제 (Main Project Root 폴더)</span>
-</figcaption>
-<div class="codewrapper">
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ rm -rf &lt;path to submodule&gt;
-</code></pre></div>
-</div>
-</figure></p></li>
-</ol>
-
-<p>위의 내용은 기본적인 git 명령을 사용한 것이고 submodule 명령을 통하면 다음과 같이 더 간단하게 처리가 가능할 수 있다.</p>
-
-<ol>
-<li><p>git에서 submodule 관련 정보 삭제
-<figure class="code">
-<figcaption>
-<span>Git의 Submodule 관련 정보 삭제 (Main Project Root 폴더)</span>
-</figcaption>
-<div class="codewrapper">
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git submodule deinit &lt;path to submodule&gt;
-</code></pre></div>
-</div>
-</figure></p></li>
-
-<li><p>git에서 submodule 삭제
-<figure class="code">
-<figcaption>
-<span>Git의 Submodule 삭제 (Main Project Root 폴더)</span>
-</figcaption>
-<div class="codewrapper">
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git rm &lt;path to submodule&gt;
-</code></pre></div>
-</div>
-</figure></p></li>
-
-<li><p>변경 내용 commit</p></li>
-
-<li><p>submodule 폴더 삭제
-<figure class="code">
-<figcaption>
-<span>git modules 에서 Submodule 경로 삭제 (Main Project Root 폴더)</span>
-</figcaption>
-<div class="codewrapper">
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ rm .git/modules/&lt;path to submodule&gt;   <span style="color:#75715e"># 경로 맨 뒤의 &#39;/&#39;는 사용하지 않는다.</span>
-</code></pre></div>
-</div>
-</figure></p></li>
-</ol>
-
-<h2 id="참고자료">참고자료</h2>
-
-<ul>
-<li><a href="https://git-scm.com/book/ko/v1/Git-%EB%8F%84%EA%B5%AC-%EC%84%9C%EB%B8%8C%EB%AA%A8%EB%93%88">git-scm Book Chapter 6. Git Tools - Submodule</a></li>
-<li><a href="https://gist.github.com/myusuf3/7f645819ded92bda6677">How to effectively delete a git submodule</a></li>
+<li><a href="https://github.com/axios/axios">axios - github</a></li>
+<li><a href="https://vue-nuxt.gitbook.io/nuxt/tutorials/making-blog/nuxtjs-axios">axios 모듈 설정</a></li>
+<li><a href="https://poiemaweb.com/es6-promise">ES6 Promise</a></li>
 </ul>
 
 
@@ -1505,6 +1369,8 @@ $ git config push.recurseSubmodules on-demand</code></pre></div>
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -1520,9 +1386,6 @@ $ git config push.recurseSubmodules on-demand</code></pre></div>
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1540,7 +1403,6 @@ $ git config push.recurseSubmodules on-demand</code></pre></div>
             
                 
                     
-                    
                 
                 
 
@@ -1553,7 +1415,6 @@ $ git config push.recurseSubmodules on-demand</code></pre></div>
             
             
                 
-                    
                     
                 
                 
@@ -1573,9 +1434,6 @@ $ git config push.recurseSubmodules on-demand</code></pre></div>
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1712,6 +1570,7 @@ $ git config push.recurseSubmodules on-demand</code></pre></div>
             
                 
                     
+                    
                 
                 
 
@@ -1727,69 +1586,8 @@ $ git config push.recurseSubmodules on-demand</code></pre></div>
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -1831,6 +1629,22 @@ $ git config push.recurseSubmodules on-demand</code></pre></div>
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1838,6 +1652,62 @@ $ git config push.recurseSubmodules on-demand</code></pre></div>
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1960,10 +1830,10 @@ $ git config push.recurseSubmodules on-demand</code></pre></div>
 	 
 	 
 		
-			<a class="nav nav-prev" href="/Git/Submdule/" title="Submodule"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/Dev/Nuxt/nuxt-tips/" title="Nuxt 활용 팁들 정리"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/Git/Tips/" title="Tips" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/Dev/Go/" title="Go" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

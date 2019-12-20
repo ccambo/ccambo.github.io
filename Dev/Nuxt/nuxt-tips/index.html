@@ -4,18 +4,33 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.58.3" />
-    <meta name="description" content="MSFL 운영 중에 접한 각종 정보들을 정리한 지식 저장소입니다.">
+    <meta name="description" content="Nuxt 기반의 개발에 유용하게 사용할 수 있는 팁들과 문제 해결방법들을 정리합니다.">
 <meta name="author" content="MSFL">
 
 
-<meta property="og:title" content="Concepts">
+<meta property="og:title" content="Nuxt 활용 팁들 정리">
 
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2019-12-20">
 
-    <meta property="og:description" content="">
-    <meta property="og:url" content="http://ccambo.github.io/Cloud/Concepts/">
+    <meta property="og:description" content="Nuxt 기반의 개발에 유용하게 사용할 수 있는 팁들과 문제 해결방법들을 정리합니다.">
+    <meta property="og:url" content="http://ccambo.github.io/Dev/Nuxt/nuxt-tips/">
     <meta property="og:site_name" content="[ MSFL-지식 저장소 ]">
 
+    <meta property="og:image" content="http://ccambo.github.io//images/vue_nuxt_image.png">
+
+
+    <meta property="og:tags" content="Nuxt">
+
+    <meta property="og:tags" content="Vue">
+
+    <meta property="og:tags" content="Vuetify">
+
+    <meta property="og:tags" content="Tips">
+
+    <meta property="og:tags" content="Errors">
+
+    <meta property="og:tags" content="Typescript">
 
 
 
@@ -34,7 +49,7 @@ if (!doNotTrack) {
 }
 </script>
 
-    <title>Concepts :: [ MSFL-지식 저장소 ]</title>
+    <title>Nuxt 활용 팁들 정리 :: [ MSFL-지식 저장소 ]</title>
 
     
     <link href="/css/nucleus.css?1576845493" rel="stylesheet">
@@ -58,7 +73,7 @@ if (!doNotTrack) {
     </style>
     <script data-ad-client="ca-pub-1122795820579236" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   </head>
-  <body class="" data-url="/Cloud/Concepts/">
+  <body class="" data-url="/Dev/Nuxt/nuxt-tips/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -273,7 +288,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/Cloud/" title="Cloud" class="dd-item 
-        parent
+        
         
         
         ">
@@ -302,8 +317,8 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/Cloud/Concepts/" title="Concepts" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/Cloud/Concepts/">
@@ -454,7 +469,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/Dev/" title="Dev" class="dd-item 
-        
+        parent
         
         
         ">
@@ -576,7 +591,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/Dev/Nuxt/" title="Nuxt" class="dd-item 
-        
+        parent
         
         
         ">
@@ -602,7 +617,7 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/Dev/Nuxt/nuxt-tips/" title="Nuxt 활용 팁들 정리" class="dd-item ">
+      <li data-nav-id="/Dev/Nuxt/nuxt-tips/" title="Nuxt 활용 팁들 정리" class="dd-item active">
         <a href="/Dev/Nuxt/nuxt-tips/">
         Nuxt 활용 팁들 정리
         <i class="fas fa-check read-icon"></i>
@@ -897,6 +912,8 @@ if (!doNotTrack) {
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -911,7 +928,13 @@ if (!doNotTrack) {
             
           
           
-            <a href='/'>MSFL</a> > <a href='/Cloud/'>Cloud</a> > Concepts
+            
+            
+          
+          
+            <a href='/'>MSFL</a> > <a href='/Dev/'>Dev</a> > <a href='/Dev/Nuxt/'>Nuxt</a> > Nuxt 활용 팁들 정리
+          
+        
           
         
           
@@ -922,16 +945,58 @@ if (!doNotTrack) {
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#개발할-때-자동으로-브라우저-실행시키기">개발할 때 자동으로 브라우저 실행시키기</a>
+<ul>
+<li><a href="#package-json을-사용하는-방법">package.json을 사용하는 방법</a></li>
+</ul></li>
+<li><a href="#opn-https-github-com-sindresorhus-open-모듈-사용"><a href="https://github.com/sindresorhus/open">opn</a> 모듈 사용</a>
+<ul>
+<li><a href="#nuxt-config-js-javascript-환경인-경우">nuxt.config.js (javascript 환경인 경우)</a></li>
+<li><a href="#nuxt-config-ts-typescript-환경인-경우">nuxt.config.ts (Typescript 환경인 경우)</a></li>
+</ul></li>
+<li><a href="#참고-자료">참고 자료</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
         <div id="head-tags">
         
+<div class="tags">
+
+  <a class="tag-link" href="/tags/Nuxt">Nuxt</a>
+
+  <a class="tag-link" href="/tags/Vue">Vue</a>
+
+  <a class="tag-link" href="/tags/Vuetify">Vuetify</a>
+
+  <a class="tag-link" href="/tags/Tips">Tips</a>
+
+  <a class="tag-link" href="/tags/Errors">Errors</a>
+
+  <a class="tag-link" href="/tags/Typescript">Typescript</a>
+
+</div>
+
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Nuxt 활용 팁들 정리
+            </h1>
           
 
         
@@ -939,70 +1004,165 @@ if (!doNotTrack) {
 
 
 
-	
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-<h1 id="concepts">Concepts</h1>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1122795820579236"
+     data-ad-slot="8454132912"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
-<p>Cloud와 연계되는 개념들을 정리합니다.</p>
 
 
 
 
+<div class="notices info" ><p>- 이 문서에서는 Nuxt 환경에서 활용할 수 있는 팁이나 오류 해결 방법들을 정리하고 있으며 수시로 변경될 수 있습니다.</p>
+</div>
 
 
+<h2 id="개발할-때-자동으로-브라우저-실행시키기">개발할 때 자동으로 브라우저 실행시키기</h2>
 
+<p>딱히 획기적인 팁은 아니지만 터미널에서 개발서버를 구동시키고 브라우저로 확인하는 것이 기본이다 보니 브라우저를 다시 실행하는 것이 귀찮을때가 많다. 물론 한번 실행하고 안 닫으면 되겠지만&hellip;</p>
 
-<ul class="children children-h2">
-	
+<h3 id="package-json을-사용하는-방법">package.json을 사용하는 방법</h3>
 
-	
-		
-	
+<p>package.json에 구성한 스크립트에 <code>--open</code> 옵션을 추가하면 된다.</p>
 
-	
+<figure class="code">
+  <figcaption>
+    <span>package.json - 개발서버 실행할 때 브라우저 실행하기</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">...
+  <span style="color:#a6e22e">scripts</span><span style="color:#f92672">:</span> {
+    <span style="color:#e6db74">&#39;dev&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;nuxt-ts --open&#39;</span>   <span style="color:#75715e">// typescript가 아닌 경우는 &#34;nuxt --open&#34; 사용
+</span><span style="color:#75715e"></span>    ...
+  }
+...
+</code></pre></div>
+  </div>
+</figure>
 
-	
-		
-	
-		
-			
-				
-					
-					
+<ul>
+<li>빌드되는 동안 브라우저에 살짝 진행 과정이 표시된다.</li>
+<li>시스템 기본 브라우저가 실행된다.</li>
+</ul>
 
-<h2>
-<a href="/Cloud/Concepts/edge-computing/" >Edge Computing</a>
-</h2>
+<h2 id="opn-https-github-com-sindresorhus-open-모듈-사용"><a href="https://github.com/sindresorhus/open">opn</a> 모듈 사용</h2>
 
-				
+<p>위의 방식이 편하지만 맥북의 경우는 크롬이 아니라 사파리가 열린다. 물론 기본 브라우저를 바꾸면 되지만 시스템 설정을 바꾸지 않고 처리하는 방법은 opn 모듈을 설치해서 사용하는 것이다.</p>
 
-				
-					
-<p>Edge Computing에 대한 내용을 정리합니다.</p>
-					
-				
-			
-			
-		
-	
+<figure class="code">
+  <figcaption>
+    <span>opn 패키지 설치</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ yarn add -D opn   // 개발 의존성으로 설치</code></pre></div>
+  </div>
+</figure>
 
-	
+<p>기본적인 사용방법은 아래와 같이 <code>URL, 옵션</code> 방식이다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>opn 실행 방법</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 크롬 실행
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">opn</span>(<span style="color:#e6db74">&#39;http://ccambo.github.io&#39;</span>, {<span style="color:#a6e22e">app</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;chrome&#39;</span>});    <span style="color:#75715e">// &#39;google chrome&#39;, &#39;firefox&#39;, ...
+</span></code></pre></div>
+  </div>
+</figure>
+
+<p>추가적인 정보와 옵션들은 위의 opn 링크를 참조하면 된다.</p>
+
+<p>Nuxt에 적용하는 방법은 간단한다. <code>nuxt.config.ts</code> 파일에 opn 패키지를 import하고 nuxt의 <code>hooks</code> 를 이용해서 호스트의 변경이 발생하면 브라우저를 실행해 주는 방식이다.</p>
+
+<h3 id="nuxt-config-js-javascript-환경인-경우">nuxt.config.js (javascript 환경인 경우)</h3>
+
+<figure class="code">
+  <figcaption>
+    <span>nuxt.config.js - opn 패키지 적용</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">opn</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;opn&#39;</span>)
+...
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+  ...
+  <span style="color:#a6e22e">hooks</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">listen</span>(<span style="color:#a6e22e">server</span>, { <span style="color:#a6e22e">host</span>, <span style="color:#a6e22e">port</span> }) {
+      <span style="color:#a6e22e">opn</span>(<span style="color:#e6db74">`http://</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">host</span><span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">port</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, { <span style="color:#a6e22e">app</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;google chrome&#39;</span>, <span style="color:#e6db74">&#39;--incognito&#39;</span>]});
+    }
+  }
+  ...
+}
+</code></pre></div>
+  </div>
+</figure>
+
+<h3 id="nuxt-config-ts-typescript-환경인-경우">nuxt.config.ts (Typescript 환경인 경우)</h3>
+
+<figure class="code">
+  <figcaption>
+    <span>nuxt.config.ts - opn 패키지 적용</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">opn</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;opn&#39;</span>)    <span style="color:#75715e">// 형식 노출이 없어서 import 문에 오류 발생하므로...
+</span><span style="color:#75715e"></span>...
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+  ...
+  <span style="color:#a6e22e">hooks</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">listen</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">_server</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">any</span>, { <span style="color:#a6e22e">host</span>, <span style="color:#a6e22e">port</span> }<span style="color:#f92672">:</span> <span style="color:#a6e22e">any</span>) =&gt; {    <span style="color:#75715e">// _server는 no-unused-var 오류를 피하는 방법
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">opn</span>(<span style="color:#e6db74">`http://</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">host</span><span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">port</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, { <span style="color:#a6e22e">app</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;google chrome&#39;</span>, <span style="color:#e6db74">&#39;--incognito&#39;</span>]})
+    }
+  }
+  ...
+}
+</code></pre></div>
+  </div>
+</figure>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+<li><a href="https://github.com/sindresorhus/open">opn</a></li>
 </ul>
 
 
 
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1122795820579236"
+     data-ad-slot="8454132912"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 
 
 
+<script src="https://utteranc.es/client.js"
+        repo="ccambo/blog-comments"
+        issue-term="title"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
 
 
 <footer class=" footline" >
 	
 </footer>
 
-        
-            </div> 
+
         
         </div> 
         
@@ -1135,7 +1295,6 @@ if (!doNotTrack) {
             
                 
                     
-                    
                 
                 
 
@@ -1151,7 +1310,6 @@ if (!doNotTrack) {
             
                 
                     
-                    
                 
                 
 
@@ -1164,9 +1322,6 @@ if (!doNotTrack) {
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1240,6 +1395,7 @@ if (!doNotTrack) {
             
                 
                     
+                    
                 
                 
 
@@ -1255,18 +1411,8 @@ if (!doNotTrack) {
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
-            
-            
-                
+                        
                     
                 
                 
@@ -1275,9 +1421,6 @@ if (!doNotTrack) {
                     
                     
 
-                    
-            
-        
                     
                         
             
@@ -1311,22 +1454,6 @@ if (!doNotTrack) {
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
             
             
@@ -1343,10 +1470,47 @@ if (!doNotTrack) {
             
         
                     
+            
+        
+                    
                         
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1488,10 +1652,10 @@ if (!doNotTrack) {
 	 
 	 
 		
-			<a class="nav nav-prev" href="/Cloud/" title="Cloud"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/Dev/Nuxt/" title="Nuxt"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/Cloud/Concepts/edge-computing/" title="Edge Computing" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/Dev/Nuxt/how-to-use-axios-in-nuxt/" title="Nuxt에 AXIOS 적용하기" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1521,3 +1685,4 @@ if (!doNotTrack) {
 
   </body>
 </html>
+
