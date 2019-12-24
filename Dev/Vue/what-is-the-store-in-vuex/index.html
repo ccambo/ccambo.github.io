@@ -1,0 +1,2041 @@
+<!DOCTYPE html>
+<html lang="ko" class="js csstransforms3d" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# website: http://ogp.me/ns/website#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.58.3" />
+    <meta name="description" content="MSFL 운영 중에 접한 각종 정보들을 정리한 지식 저장소입니다.">
+<meta name="author" content="MSFL">
+
+
+<meta property="og:title" content="Vuex의 Store란 무엇일까?">
+
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2019-12-20">
+
+    <meta property="og:description" content="">
+    <meta property="og:url" content="http://ccambo.github.io/Dev/Vue/what-is-the-store-in-vuex/">
+    <meta property="og:site_name" content="[ MSFL-지식 저장소 ]">
+
+    <meta property="og:image" content="http://ccambo.github.io/images/vue_cli3_vuetify_image.png">
+
+
+    <meta property="og:tags" content="Vuex">
+
+    <meta property="og:tags" content="Store">
+
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-83841390-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    <title>Vuex의 Store란 무엇일까? :: [ MSFL-지식 저장소 ]</title>
+
+    
+    <link href="/css/nucleus.css?1577175248" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1577175248" rel="stylesheet">
+    <link href="/css/hybrid.css?1577175248" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1577175248" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1577175248" rel="stylesheet">
+    <link href="/css/auto-complete.css?1577175248" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1577175248" rel="stylesheet">
+    <link href="/css/theme.css?1577175248" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1577175248" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1577175248"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    <script data-ad-client="ca-pub-1122795820579236" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  </head>
+  <body class="" data-url="/Dev/Vue/what-is-the-store-in-vuex/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+   <img src="/images/logo.png" alt="[ MSFL-지식 저장소 ]">
+   <span>[ MSFL-지식 저장소 ]</span>
+</a>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1577175248"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1577175248"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/ccambo.github.io\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1577175248"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Git/" title="Git" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Git/">
+          <b>1. </b>Git
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Git/Basics/" title="Basics" class="dd-item 
+        
+        
+        parent
+        ">
+      <a href="/Git/Basics/">
+          Basics
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Git/Submdule/" title="Submodule" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Git/Submdule/">
+          Submodule
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Git/Submdule/what-is-the-submodule/" title="What is the submodule" class="dd-item ">
+        <a href="/Git/Submdule/what-is-the-submodule/">
+        What is the submodule
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Git/Tips/" title="Tips" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Git/Tips/">
+          Tips
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Git/Tips/how-to-change-users/" title="How to Change Users" class="dd-item ">
+        <a href="/Git/Tips/how-to-change-users/">
+        How to Change Users
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Cloud/" title="Cloud" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Cloud/">
+          <b>2. </b>Cloud
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Cloud/Concepts/" title="Concepts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Cloud/Concepts/">
+          Concepts
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Cloud/Concepts/edge-computing/" title="Edge Computing" class="dd-item ">
+        <a href="/Cloud/Concepts/edge-computing/">
+        Edge Computing
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Cloud/Docker/" title="Docker" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Cloud/Docker/">
+          Docker
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Cloud/Docker/Tips/" title="Tips" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Cloud/Docker/Tips/">
+          Tips
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Cloud/Kubernetes/" title="Kubernetes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Cloud/Kubernetes/">
+          Kubernetes
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Dev/" title="Dev" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/Dev/">
+          <b>3. </b>Dev
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Dev/Vue/" title="Vue" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/Dev/Vue/">
+          Vue
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Vue/intro_key_of_vue/" title="Vue 키 포인트 소개" class="dd-item ">
+        <a href="/Dev/Vue/intro_key_of_vue/">
+        Vue 키 포인트 소개
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Vue/vue/" title="Vue 기본 개념" class="dd-item ">
+        <a href="/Dev/Vue/vue/">
+        Vue 기본 개념
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Vue/How-to-solving-the-problems-in-vuetify-upgrade-to-v2.x/" title="Vuetify v2.x 업그레이드" class="dd-item ">
+        <a href="/Dev/Vue/How-to-solving-the-problems-in-vuetify-upgrade-to-v2.x/">
+        Vuetify v2.x 업그레이드
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Vue/what-is-the-store-in-vuex/" title="Vuex의 Store란 무엇일까?" class="dd-item active">
+        <a href="/Dev/Vue/what-is-the-store-in-vuex/">
+        Vuex의 Store란 무엇일까?
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Dev/Nuxt/" title="Nuxt" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Dev/Nuxt/">
+          Nuxt
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Nuxt/nuxt-tips/" title="Nuxt 활용 팁들 정리" class="dd-item ">
+        <a href="/Dev/Nuxt/nuxt-tips/">
+        Nuxt 활용 팁들 정리
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Nuxt/how-to-use-axios-in-nuxt/" title="Nuxt에 AXIOS 적용하기" class="dd-item ">
+        <a href="/Dev/Nuxt/how-to-use-axios-in-nuxt/">
+        Nuxt에 AXIOS 적용하기
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Dev/Go/" title="Go" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Dev/Go/">
+          Go
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Dev/Web/" title="Web" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Dev/Web/">
+          Web
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Web/npm_vs_yarn/" title="NPM vs YARN" class="dd-item ">
+        <a href="/Dev/Web/npm_vs_yarn/">
+        NPM vs YARN
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/FunnyLab/" title="FunnyLab" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/FunnyLab/">
+          <b>4. </b>FunnyLab
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/FunnyLab/Blogging/" title="Blogging" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/FunnyLab/Blogging/">
+          Blogging
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/FunnyLab/Blogging/change-comments-to-utterances/" title="댓글 시스템 utterances로 변경" class="dd-item ">
+        <a href="/FunnyLab/Blogging/change-comments-to-utterances/">
+        댓글 시스템 utterances로 변경
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/FunnyLab/Blogging/how-to-deploy-api-server-to-heroku/" title="OGP API 서버 Heroku에 배포하기" class="dd-item ">
+        <a href="/FunnyLab/Blogging/how-to-deploy-api-server-to-heroku/">
+        OGP API 서버 Heroku에 배포하기
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> </a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p style="position:absolute;right:5%">
+    © 2019 MSFL :: ccambo (Morris Chang)
+  </p>
+  </br>
+  
+  <p style="position:absolute;right:5%">
+    Powered by
+    <a href="//gohugo.io" target="_blank">HUGO</a>
+  </p>
+  </br>
+  <p style="position:absolute;right:5%">
+    Theme by
+    <a href="//themes.gohugo.io/hugo-theme-learn/" target="_blank">LEARN (Mathieu Cornic)</a>
+  </p>
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>MSFL</a> > <a href='/Dev/'>Dev</a> > <a href='/Dev/Vue/'>Vue</a> > Vuex의 Store란 무엇일까?
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#state-mutations-actions-getters">State, Mutations, Actions, Getters</a>
+<ul>
+<li><a href="#state-데이터-객체">State (데이터 객체)</a></li>
+<li><a href="#mutations-동기형-state-변경-처리기">Mutations (동기형 State 변경 처리기)</a></li>
+<li><a href="#actions-mutation-트리거">Actions (Mutation 트리거)</a></li>
+<li><a href="#getters-공통-속성">Getters (공통 속성)</a></li>
+</ul></li>
+<li><a href="#vuex의-데이터-처리-관계">Vuex의 데이터 처리 관계</a>
+<ul>
+<li><a href="#rootstate">RootState</a></li>
+<li><a href="#mutations-와-actions-의-사용-가능-파라미터-규칙">Mutations 와 Actions 의 사용 가능 파라미터 규칙</a></li>
+</ul></li>
+<li><a href="#component에서-store를-사용하는-방법">Component에서 Store를 사용하는 방법</a>
+<ul>
+<li><a href="#state-사용">State 사용</a></li>
+<li><a href="#mutations-사용">Mutations 사용</a></li>
+<li><a href="#actions-사용">Actions 사용</a></li>
+<li><a href="#getters-사용">Getters 사용</a></li>
+</ul></li>
+<li><a href="#모듈로-구성된-vuex에서-상위-모듈에-있는-dispatch-commit-실행-방법">모듈로 구성된 Vuex에서 상위 모듈에 있는 dispatch, commit 실행 방법</a></li>
+<li><a href="#좀-더-잘-활용할-수-있는-방법은">좀 더 잘 활용할 수 있는 방법은?</a>
+<ul>
+<li><a href="#패턴-적용에-대한-검토">패턴 적용에 대한 검토</a></li>
+</ul></li>
+<li><a href="#참고-자료">참고 자료</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+<div class="tags">
+
+  <a class="tag-link" href="/tags/Vuex">Vuex</a>
+
+  <a class="tag-link" href="/tags/Store">Store</a>
+
+</div>
+
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Vuex의 Store란 무엇일까?
+            </h1>
+          
+
+        
+
+
+
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1122795820579236"
+     data-ad-slot="8454132912"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+
+<p>Vue 개발에서 상태를 관리해 주는 기능을 제공해 주는 것이 Vuex이고 <font style="color:red;font-weight:bold">
+  어플리케이션의 모든 컴포넌트들에 대한 중앙 집중식 저장소의 역할 및 관리
+</font>
+를 담당한다.</p>
+
+<blockquote>
+<ul>
+<li>Vuex는 상태관리 패턴 + 라이브러리이며, Vue의 공식 툴이며 ES2015 문법을 기준으로 한다.</li>
+<li>Promise를 지원하지만, 혹시 지원하지 못하는 브라우저를 생각해야 한다면 <code>es6-promise</code>도 설치해 줘야 한다.</li>
+</ul>
+</blockquote>
+
+<p>Vuex가 없다면 컴포넌트간의 데이터(상태)를 주고 받기 위해서 부모는 자식에서 props를 통해서 전달하고, 자식은 부모에게 Emit event 방식을 사용해서 처리해야 한다. (이전 게시글의 <a href="/Dev/Vue/vue/#컴포넌트간의-관계">컴포넌트간의 관계</a>를 참고) 더 큰 문제는 형제 컴포넌트간의 데이터 전달로 EventBus를 사용해야할 정도로 복잡해진다. 이런 문제점들이 간단한 어플리케이션의 경우는 어떻게든 풀어볼 수 있겠지만 대규모 어플리케이션이라면 감당할 수 없을 것이다.</p>
+
+<p>위와 같은 상황들을 해결해 주는 것이 Vuex라고 생각하면 된다. 즉, 데이터를 Store라는 곳을 통해서 관리하고 프로젝트에 존재하는 모든 컴포넌트들이 이 Store를 사용하는 것이다.</p>
+
+<figure class="image">
+    <img src="https://vuex.vuejs.org/vuex.png?featherlight=false" alt="Vuex 위치 및 역할">
+    <figcaption><b>[ 출처 - Vuex공식문서 : Vuex 위치 및 역할 ]</b></figcaption>
+</figure>
+
+<h2 id="state-mutations-actions-getters">State, Mutations, Actions, Getters</h2>
+
+<p>Vuex의 핵심구성 요소들은 <code>State, Mutations, Actions, Getters</code> 들이다.</p>
+
+<h3 id="state-데이터-객체">State (데이터 객체)</h3>
+
+<ul>
+<li>State는 쉽게 생각하면 공통으로 참조하기 위한 변수를 정의한 것이다.</li>
+<li>프로젝트의 모든 곳에서 이를 참조하고 사용할 수 있다.</li>
+<li>모든 컴포넌트들에서 공통된 값을 사용할 수 있다.</li>
+</ul>
+
+<figure class="code">
+  <figcaption>
+    <span>State 예</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> () =&gt; ({
+  <span style="color:#a6e22e">account</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+  <span style="color:#a6e22e">isAdmin</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+  <span style="color:#a6e22e">item</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>
+})
+</code></pre></div>
+  </div>
+</figure>
+
+<h3 id="mutations-동기형-state-변경-처리기">Mutations (동기형 State 변경 처리기)</h3>
+
+<ul>
+<li>State 변경을 담당한다. 반드시 Mutation을 통해서만 State를 변경해야 한다.</li>
+<li><code>동기</code> 처리 기준이다.</li>
+<li><code>commit('함수명</code>, &lsquo;전달인자&rsquo;)` 방식으로 호출한다.</li>
+<li>mutations 내에 함수들을 작성한다.</li>
+</ul>
+
+<figure class="code">
+  <figcaption>
+    <span>Mutations 예</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">mutations</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">currentUser</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">account</span>) {
+    <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">account</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">account</span>
+  }
+}
+</code></pre></div>
+  </div>
+</figure>
+
+<h3 id="actions-mutation-트리거">Actions (Mutation 트리거)</h3>
+
+<ul>
+<li>Mutation을 실행시키는 역할을 담당한다.</li>
+<li><code>비동기</code> 처리 기준이다.</li>
+<li><code>dispatch('함수명', '전달인자')</code> 방식으로 호출한다.</li>
+<li>Actions 내에 함수들을 작성한다.</li>
+<li>비동기 기준이므로 주로 콜백 함수로 작성한다.</li>
+</ul>
+
+<p><strong>일반적인 호출 방식</strong></p>
+
+<figure class="code">
+  <figcaption>
+    <span>일반적인 호출 예</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 호출 예
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#39;setAccount&#39;</span>, <span style="color:#a6e22e">account</span>);
+
+<span style="color:#75715e">// actions 정의 in store
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">actions</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">setAccount</span>({<span style="color:#a6e22e">commit</span>, <span style="color:#a6e22e">dispatch</span>}, <span style="color:#a6e22e">account</span>) {
+    <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;currentUser&#39;</span>, <span style="color:#a6e22e">account</span>);   <span style="color:#75715e">// Mutation 실행
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#39;setIsAdmin&#39;</span>, <span style="color:#a6e22e">account</span>.<span style="color:#a6e22e">uid</span>);
+  }
+}
+</code></pre></div>
+  </div>
+</figure>
+
+<p><strong>컴포넌트에서 콜백 실행 방식</strong></p>
+
+<figure class="code">
+  <figcaption>
+    <span>콜백 호출 예</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 호출 예
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">dispatch</span>(<span style="color:#e6db74">&#39;setAccount&#39;</span>, <span style="color:#a6e22e">account</span>).<span style="color:#a6e22e">then</span>(() =&gt; {});
+
+<span style="color:#75715e">// actions 정의 in store
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">actions</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">setAccount</span>({<span style="color:#a6e22e">commit</span>}, <span style="color:#a6e22e">account</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Promise((<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) =&gt; {
+      <span style="color:#a6e22e">setTimeout</span>(() =&gt; {
+        <span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;currentUser&#39;</span>, <span style="color:#a6e22e">account</span>);   <span style="color:#75715e">// Mutation 실행
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">resolve</span>();  <span style="color:#75715e">// 콜백 처리
+</span><span style="color:#75715e"></span>      }, <span style="color:#ae81ff">1000</span>)
+    })
+  }
+}
+</code></pre></div>
+  </div>
+</figure>
+
+<h3 id="getters-공통-속성">Getters (공통 속성)</h3>
+
+<ul>
+<li>각 컴포넌트의 계산된 속성 (computed) 의 공통 속성으로 정의</li>
+<li>여러 컴포넌트에서 동일한 computed가 사용될 경우 Getters에 정의해서 공통으로 쉽게 사용 가능</li>
+<li>하위 모듈의 Getters를 불러오기 위해서는 <code>this.$store.getters['경로명/함수명'];</code>을 사용 (Store Instance Property 사용)</li>
+</ul>
+
+<figure class="code">
+  <figcaption>
+    <span>Getters 예</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">getters</span> <span style="color:#f92672">=</span> {
+  <span style="color:#75715e">// 현재 로그인 상태 여부 확인 (user 정보 설정 여부로 true/false)
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">isAuthenticated</span>(<span style="color:#a6e22e">state</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#f92672">!!</span><span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">user</span>;
+  },
+  <span style="color:#75715e">// 회원정보 불러오기
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">getAccount</span>(<span style="color:#a6e22e">state</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">account</span>;
+  }
+}
+</code></pre></div>
+  </div>
+</figure>
+
+<h2 id="vuex의-데이터-처리-관계">Vuex의 데이터 처리 관계</h2>
+
+<p>Vuex의 클래스는 state, mutations, actions, getters 로 구성되며 아래와 같이 구현된다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>Vuex 클래스 구현 예 (store/index.js)</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Auth</span>, <span style="color:#a6e22e">DB</span>, ... } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/services/...&#39;</span>
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">strict</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">** States
+</span><span style="color:#75715e">*/</span>
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> () =&gt; ( ... );
+
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">** Mutations
+</span><span style="color:#75715e">*/</span>
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">mutations</span> <span style="color:#f92672">=</span> { ... };
+
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">** Actions
+</span><span style="color:#75715e">*/</span>
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">actions</span> <span style="color:#f92672">=</span> { ... };
+
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">** Getters
+</span><span style="color:#75715e">*/</span>
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">actions</span> <span style="color:#f92672">=</span> { ... };
+</code></pre></div>
+  </div>
+</figure>
+
+<p>위의 형태는 모듈별로 구현하기 위한 구조로 각 용도에 따른 Store 구성을 위한 것이다. 예를 들면 <code>User, Product, ....</code> 과 같은 용도별 클래스 구성을 말한다.</p>
+
+<p>Vuex의 처리 흐름은 일반적으로 아래의 그림과 같다.</p>
+
+<figure class="image">
+    <img src="/images/content/vuex_store_data_flow.png?featherlight=true" alt="Vuex Store 데이터 흐름">
+    <figcaption><b>[ Vuex Store 데이터 흐름 ]</b></figcaption>
+</figure>
+
+<h3 id="rootstate">RootState</h3>
+
+<p>Vuex 모듈 개발방식에서는 State 변수 값들은 동일 모듈에 있는 State만 참조하도록 제한된다. 만일 다른 모듈 또는 최 상위 State에 대한 활용이 필요한 경우는 해당 State에 직접 접근하는 것이 아니라 <strong>rootState를 활용해야 하고 Actions와 Getters의 인자로만 사용</strong> 가능하다. 예를 들어 Mutation쪽에서 사용하고 싶은 경우는 Actions에서 인자로 받아서 Mutation쪽으로 commit을 통해서 활용하는 방식으로 처리하게 된다.</p>
+
+<h3 id="mutations-와-actions-의-사용-가능-파라미터-규칙">Mutations 와 Actions 의 사용 가능 파라미터 규칙</h3>
+
+<p><strong>Mutations 함수 파라미터</strong></p>
+
+<p>Mutations 내의 함수에 사용할 수 있는 파라미터들은 <code>(state, payload)</code> 로 한정된다. 즉, 기본적으로 사용할 수 있는 파라미터는 state만 가능하고, Commit을 통해서 전달된 파라미터는 payload만 가능하기 때문에 전달할 때 여러개의 정보가 필요하다면 객체형식으로 전달하면 된다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>Mutations 파라미터</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Mutations fuction signature
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">funtion_name</span> (<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) { .... }  <span style="color:#75715e">// payload는 commit을 통해서 전달됨
+</span><span style="color:#75715e">// 여러 정보는 객체 형식으로 처리
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">function_name</span> (<span style="color:#a6e22e">state</span>, { ... }) { ... }
+</code></pre></div>
+  </div>
+</figure>
+
+<p><strong>Actions 함수 파라미터</strong></p>
+
+<p>Actions는 기본적으로 비동기 처리를 수행하므로 실행 후 응답이 도착한 순서대로 처리하게 된다. 따라서 파라미터들은 <code>({ rootState, state, dispatch, commit}, payload)</code> 들로 한정된다. 기본 인자는 객체 형식으로 전달된다. payload도 역시 객체 방식으로 여러 정보를 묶어서 전달할 수 있다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>Actions 파라미터</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Actions fuction signature
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">funtion_name</span> ({ <span style="color:#a6e22e">rootState</span>, <span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">dispatch</span>, <span style="color:#a6e22e">commit</span> }, <span style="color:#a6e22e">payload</span>) { .... }
+<span style="color:#75715e">// 여러 정보는 객체 형식으로 처리
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">function_name</span> ({ <span style="color:#a6e22e">rootState</span>, <span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">dispatch</span>, <span style="color:#a6e22e">commit</span> }, { ... }) { ... }
+</code></pre></div>
+  </div>
+</figure>
+
+<h2 id="component에서-store를-사용하는-방법">Component에서 Store를 사용하는 방법</h2>
+
+<h3 id="state-사용">State 사용</h3>
+
+<p>State에 접근하는 것은 Component의 <code>computed</code> 영역내에서 가능하다.</p>
+
+<ul>
+<li>기본 접근 방법: <code>this.$store.state.items</code></li>
+<li>mapState 활용
+<br /></li>
+</ul>
+
+<figure class="code">
+  <figcaption>
+    <span>mapState 활용방법</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+  <span style="color:#a6e22e">mapState</span>({
+    <span style="color:#a6e22e">items</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">state</span> =&gt; <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">items</span>   <span style="color:#75715e">// this.items 속성을 this.$store.state.items 에 매핑
+</span><span style="color:#75715e"></span>  }),
+  ...
+}
+</code></pre></div>
+  </div>
+</figure>
+
+<h3 id="mutations-사용">Mutations 사용</h3>
+
+<p>Mutations에 접근하는 것은 Component의 <code>Methods</code> 영역내에서 가능하다.</p>
+
+<ul>
+<li>기본 접근 방법: <code>this.$store.commit('경로명/함수명')</code></li>
+<li>mapMutations 활용</li>
+</ul>
+
+<figure class="code">
+  <figcaption>
+    <span>mapMutations 활용방법</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+  <span style="color:#a6e22e">mapMutations</span>({
+    <span style="color:#a6e22e">add</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;item/increment&#39;</span>   <span style="color:#75715e">// this.add() 메서드를 this.$store.commit(&#39;item/increment&#39;) 에 매핑
+</span><span style="color:#75715e"></span>  }),
+  ...
+}
+</code></pre></div>
+  </div>
+</figure>
+  
+
+<h3 id="actions-사용">Actions 사용</h3>
+
+<p>Actions에 접근하는 것은 Component의 <code>Methods</code> 영역내에서 가능하다.</p>
+
+<ul>
+<li>기본 접근 방법: <code>this.$store.commit('경로명/함수명')</code></li>
+<li>mapActions 활용</li>
+</ul>
+
+<figure class="code">
+  <figcaption>
+    <span>mapActions 활용방법</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+  <span style="color:#a6e22e">mapActions</span>({
+    <span style="color:#a6e22e">add</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;item/increment&#39;</span>   <span style="color:#75715e">// this.add() 메서드를 this.$store.dispatch(&#39;item/increment&#39;) 에 매핑
+</span><span style="color:#75715e"></span>  }),
+  ...
+}
+</code></pre></div>
+  </div>
+</figure>
+  
+
+<h3 id="getters-사용">Getters 사용</h3>
+
+<p>Getters에 접근하는 것은 Component의 <code>computed</code> 영역내에서 가능하다.</p>
+
+<ul>
+<li>기본 접근 방법: <code>this.$store.getters['경로명/함수명']</code></li>
+<li>mapGetters 활용</li>
+</ul>
+
+<figure class="code">
+  <figcaption>
+    <span>mapGetters 활용방법</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+  <span style="color:#a6e22e">mapGetters</span>({
+    <span style="color:#a6e22e">doneCount</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;item/doneTodosCount&#39;</span>   <span style="color:#75715e">// this.doneCount 속성을 this.$store.getters[&#39;item/doneTodosCount&#39;] 에 매핑
+</span><span style="color:#75715e"></span>  }),
+  ...
+}
+</code></pre></div>
+  </div>
+</figure>
+
+<h2 id="모듈로-구성된-vuex에서-상위-모듈에-있는-dispatch-commit-실행-방법">모듈로 구성된 Vuex에서 상위 모듈에 있는 dispatch, commit 실행 방법</h2>
+
+<p>모듈로 구성한 경우는 하위 모듈에서 형제 또는 부모 모듈의 State에 접근하기 위해서는 rootState를 사용하는 것과 같이 Mutations나 Actions를 실행시킬 경우는 3번쨰 파라미터로 <code>{root: true}</code> 를 지정하면 된다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>형제 또는 부모의 Mutations나 Actions 실행하기 위한 Signature</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">dipatch</span>(<span style="color:#e6db74">&#39;paths/function&#39;</span>, <span style="color:#a6e22e">payload</span>, {<span style="color:#a6e22e">root</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>});
+<span style="color:#a6e22e">commit</span>(<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">paths</span><span style="color:#f92672">/</span><span style="color:#66d9ef">function</span>, <span style="color:#a6e22e">payload</span>, {<span style="color:#a6e22e">root</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>});
+</code></pre></div>
+  </div>
+</figure>
+
+<p>이제 최상위 경로인 root 부터 하위로 경로를 찾아서 처리가 된다.</p>
+
+<h2 id="좀-더-잘-활용할-수-있는-방법은">좀 더 잘 활용할 수 있는 방법은?</h2>
+
+<p>검증하면서 걱정이 되었던 부분은 상태 데이터가 커지게 되면 <code>State, Actions, Getters, Mutations</code> 관리가 제대로 가능할지에 대한 것이다. 이런 문제점들과 관련해서 여러 가지 문서들과 샘플들을 확인해 보면 아래와 같이 몇 가지 패턴들을 제공하고 있는 것 같다.
+실제 코드를 작성하면서 검증한 것이 아니라 지금까지의 경험에 비해서 추론적으로 판단한 것이기 때문에 실제와 다를 수도 있다.</p>
+
+<h3 id="패턴-적용에-대한-검토">패턴 적용에 대한 검토</h3>
+
+<p>vuex도 react+redux 에서처럼 구조적으로 잘 활용할 수 있도록 다양한 방법과 패턴들을 제공하고 있지만, 오히려 다양함이 더 혼란을 주는것 같고, 뭔가 불필요한 중복 요소들이 생기는 것 같아서 아래와 같이 패턴들을 적용하면서 나름대로 문제점들을 정리하는 방식으로 좀 더 간략하게 사용할 수 있는 방법을 검토해 본다.</p>
+
+<p><strong>Namespace를 활용한 모듈 패턴 적용</strong></p>
+
+<p>관련 문서들을 뒤져보면 <font style="color:red;font-weight:bold">
+  namespaced
+</font>
+를 통해서 모듈처리하는 것에 대한 부분이 존재한다.</p>
+
+<ul>
+<li><code>@/store/modules/&lt;module_name&gt;</code> 과 같이 사용할 Store 모듈 경로를 구성한다.</li>
+<li>경로 밑으로 <code>state.js, getters.js, mutations.js, actions.js</code> 로 분리해서 파일을 구성한다.</li>
+<li>경로 밑의 <code>index.js</code> 에서 <code>namespaced: true</code> 옵션으로 export 처리한다.
+<br /></li>
+</ul>
+
+<p>문제는 각 기능별로 소스를 분리해 처리하는 것은 좋은데, 변경(네임스페이스, 메서드 명, &hellip;)이 발생하면 이에 따른 수정 요소들이 꼬리를 물고 발생할 가능성이 높다.</p>
+
+<p><strong>Binding Helper 패턴 적용</strong></p>
+
+<p>관련 문서를 뒤져보면 <font style="color:red;font-weight:bold">
+  mapXXXX
+</font>
+ 방식으로 Binding Helper를 통해서 처리하는 부분이 존재한다.</p>
+
+<ul>
+<li><code>mapActions, mapState, mapGetters, mapMutations</code>의 바인딩 Helper를 자체적으로 제공한다.</li>
+<li>namespace가 필요한 경우에는 binding helper에 첫번쨰 아규먼트로 추가해 주면 된다.</li>
+</ul>
+
+<p>이 방식을 사용하면 하나의 파일에서 좀 더 쉽게 코드를 구성할 수는 있을 것 같은데 Helper의 변경이 발생하거나 확장하는데 제한이 발생할 수 있을 것 같다. 문제는 이 패턴에 대한 접근 방법이 일관적이지 않고 아래와 같이 Namepsace를 먼저 만들고 Binding Helper를 적용하는 방법도 존재한다는 점이다. 그리고 네임스페이스, 메서드 명등의 변경으로 발생하는 문제는 똑같이 존재한다.</p>
+
+<p><strong>Namespace를 적용한 Binding Helper 패턴 적용</strong></p>
+
+<p>Vuex에서 제공하는 <a href="https://github.com/vuejs/vuex/blob/dev/src/helpers.js#L117">createNamespaceHelpers</a>를 사용해서 Namespace를 먼저 구성한 후에 mapState, mapMutations, mapActions, mapGetters를 구성하는 방법이다. 사용법은 BindingHelper를 사용하는 방법 그대로 적용할 수 있다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>createNamespaceHelpers 사용 (Store module)</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">createNamespaceHelpers</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vuex&#39;</span>
+...
+<span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">mapState</span>, <span style="color:#a6e22e">mapGetters</span>, <span style="color:#a6e22e">mapActions</span>, <span style="color:#a6e22e">mapMutations</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">createNamespaceHelpers</span>(<span style="color:#e6db74">&#34;your_namespace&#34;</span>)
+...
+<span style="color:#66d9ef">export</span> { <span style="color:#a6e22e">mapState</span>, <span style="color:#a6e22e">mapGetters</span>, <span style="color:#a6e22e">mapActions</span>, <span style="color:#a6e22e">mapMutations</span> }
+</code></pre></div>
+  </div>
+</figure>
+
+<p>매번 Binding Helper를 사용할때 지정하던 namespace를 한번만 처리하고 사용하기 때문에 namespace 중복 지정의 문제는 해결이 된 셈이다. 그러나 아직도 문제는 남아 있다. 코드를 작성하다 보면 <code>State/Mutation</code> 에서 중복이 많이 발생하고 <code>Actions/Getters</code> 에서도 거의 중복에 가까운 처리하게 된다.</p>
+
+<p><strong>상수 분리 적용</strong></p>
+
+<p>모듈에서 상수만을 따로 정의하는 코드를 작성하고 이 상수를 사용하는 방식을 추가하면 상수 (메서드 명 등&hellip;)를 중복 사용하는 문제를 해결할 수 있다. 물론 수정이 발생해도 한군데서만 적용하면 된다. 나중에는 상수명과 실제 함수명등이 달라지는 것이 문제겠지만&hellip;</p>
+
+<p>##결론##</p>
+
+<p>이 문서는 완성된 샘플을 기준으로 한 것이 아니라 검토하면서 계속 진행되고 있는 것이기 때문에 Vuex에 대한 기준 설명은 변동이 없지만 실제 사용하는데 필요한 샘플 코드들을 명확하게 작성하지는 못하고 있다. 위에서 설명했던 모듈 방식의 활용은 <font style="color:red;font-weight:bold">
+  vuex-module-decorators
+</font>
+ 패키지를 이용해서 좀 더 간단하게 구성할 수 있을 듯 하기 때문에 향후 재 작성을 할 예정이다.</p>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+<li><a href="https://vuex.vuejs.org/kr/">Vuex가 무엇인가요?</a></li>
+</ul>
+
+
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1122795820579236"
+     data-ad-slot="8454132912"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="ccambo/blog-comments"
+        issue-term="title"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/Dev/Vue/How-to-solving-the-problems-in-vuetify-upgrade-to-v2.x/" title="Vuetify v2.x 업그레이드"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/Dev/Nuxt/" title="Nuxt" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1577175249"></script>
+    <script src="/js/perfect-scrollbar.min.js?1577175249"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1577175249"></script>
+    <script src="/js/jquery.sticky.js?1577175249"></script>
+    <script src="/js/featherlight.min.js?1577175249"></script>
+    <script src="/js/highlight.pack.js?1577175249"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1577175249"></script>
+    <script src="/js/learn.js?1577175249"></script>
+    <script src="/js/hugo-learn.js?1577175249"></script>
+
+    <link href="/mermaid/mermaid.css?1577175249" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1577175249"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

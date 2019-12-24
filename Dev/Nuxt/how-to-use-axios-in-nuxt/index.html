@@ -44,18 +44,18 @@ if (!doNotTrack) {
     <title>Nuxt에 AXIOS 적용하기 :: [ MSFL-지식 저장소 ]</title>
 
     
-    <link href="/css/nucleus.css?1576845493" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1576845493" rel="stylesheet">
-    <link href="/css/hybrid.css?1576845493" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1576845493" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1576845493" rel="stylesheet">
-    <link href="/css/auto-complete.css?1576845493" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1576845493" rel="stylesheet">
-    <link href="/css/theme.css?1576845493" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1576845493" rel="stylesheet">
+    <link href="/css/nucleus.css?1577175248" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1577175248" rel="stylesheet">
+    <link href="/css/hybrid.css?1577175248" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1577175248" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1577175248" rel="stylesheet">
+    <link href="/css/auto-complete.css?1577175248" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1577175248" rel="stylesheet">
+    <link href="/css/theme.css?1577175248" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1577175248" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1576845493"></script>
+    <script src="/js/jquery-3.3.1.min.js?1577175248"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -84,14 +84,14 @@ if (!doNotTrack) {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1576845493"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1576845493"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1577175248"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1577175248"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/ccambo.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1576845493"></script>
+<script type="text/javascript" src="/js/search.js?1577175248"></script>
 
     
   </div>
@@ -566,6 +566,25 @@ if (!doNotTrack) {
 
             
           
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Vue/what-is-the-store-in-vuex/" title="Vuex의 Store란 무엇일까?" class="dd-item ">
+        <a href="/Dev/Vue/what-is-the-store-in-vuex/">
+        Vuex의 Store란 무엇일까?
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -959,6 +978,7 @@ if (!doNotTrack) {
 <li><a href="#모듈-설치-및-설정">모듈 설치 및 설정</a></li>
 <li><a href="#nuxtjs-axios-모듈-사용하기">@nuxtjs/axios 모듈 사용하기</a></li>
 </ul></li>
+<li><a href="#multiple-server-활용하기">Multiple Server 활용하기</a></li>
 <li><a href="#참고-자료">참고 자료</a></li>
 </ul></li>
 </ul>
@@ -1298,6 +1318,56 @@ $ yarn add axios</code></pre></div>
 </code></pre></div>
   </div>
 </figure>
+
+<h2 id="multiple-server-활용하기">Multiple Server 활용하기</h2>
+
+<p>Axios는 Proxy 옵션을 제공하고 있다. 옵션에 대한 <a href="https://axios.nuxtjs.org/options">자세한 내용</a>을 참고하로도록 한다.</p>
+
+<p>우선 nuxt.config.ts 파일에 axios를 모듈로 등록해 줘야 옵션을 쉽게 설정하고 사용할 수 있다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>nuxt.config.ts - axios 옵션 설정</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts">...
+  <span style="color:#66d9ef">module</span><span style="color:#a6e22e">s</span><span style="color:#f92672">:</span> [
+    <span style="color:#e6db74">&#34;@nuxtjs/axios&#34;</span>
+  ]
+  ...
+  <span style="color:#a6e22e">axios</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">proxy</span>: <span style="color:#66d9ef">true</span>   <span style="color:#75715e">// default: false, boolean or object 설정 가능
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">baseURL</span>: <span style="color:#66d9ef">....</span>
+    <span style="color:#a6e22e">credenital</span>: <span style="color:#66d9ef">true</span>,
+    <span style="color:#a6e22e">debug</span>: <span style="color:#66d9ef">true</span>,
+    <span style="color:#a6e22e">retry</span><span style="color:#f92672">:</span> {
+      <span style="color:#a6e22e">retries</span>: <span style="color:#66d9ef">3</span>
+    },
+    <span style="color:#a6e22e">requestInterceptor</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">config</span>, {<span style="color:#a6e22e">stroe</span>}) <span style="color:#f92672">=&gt;</span> {
+      <span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">common</span>[<span style="color:#e6db74">&#39;Authentication&#39;</span>] <span style="color:#f92672">=</span> ...
+      <span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">common</span>[<span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">Content</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Type</span><span style="color:#e6db74">&#39;] = ...
+</span><span style="color:#e6db74">      return config
+</span><span style="color:#e6db74">    }
+</span><span style="color:#e6db74">  }
+</span><span style="color:#e6db74">  ...
+</span><span style="color:#e6db74">  proxy: {
+</span><span style="color:#e6db74">    &#39;</span><span style="color:#f92672">/</span><span style="color:#a6e22e">api</span><span style="color:#f92672">/</span><span style="color:#e6db74">&#39;: {
+</span><span style="color:#e6db74">      target: &#39;</span><span style="color:#a6e22e">http</span><span style="color:#f92672">:</span><span style="color:#75715e">//your.apiserver.com&#39;,
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">pathRewrite</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#39;^/api:&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>},
+      <span style="color:#a6e22e">chagneOrigin</span>: <span style="color:#66d9ef">false</span>,
+      <span style="color:#a6e22e">prependPath</span>: <span style="color:#66d9ef">false</span>
+    }
+    <span style="color:#e6db74">&#39;/api2/&#39;</span><span style="color:#f92672">:</span> {
+      <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;http://another.apiserver.com&#39;</span>,
+      ...
+    }
+    ...
+  }
+...</code></pre></div>
+  </div>
+</figure>
+
+<p>기본적인 설정 방법은 위와 같이 처리를 하면 되고 실제로 사용할 때는 proxy로 지정한 서버의 식별자를 이용해서 처리하면 된다.</p>
 
 <h2 id="참고-자료">참고 자료</h2>
 
@@ -1645,6 +1715,22 @@ $ yarn add axios</code></pre></div>
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1843,19 +1929,19 @@ $ yarn add axios</code></pre></div>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1576845493"></script>
-    <script src="/js/perfect-scrollbar.min.js?1576845493"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1576845493"></script>
-    <script src="/js/jquery.sticky.js?1576845493"></script>
-    <script src="/js/featherlight.min.js?1576845493"></script>
-    <script src="/js/highlight.pack.js?1576845493"></script>
+    <script src="/js/clipboard.min.js?1577175249"></script>
+    <script src="/js/perfect-scrollbar.min.js?1577175249"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1577175249"></script>
+    <script src="/js/jquery.sticky.js?1577175249"></script>
+    <script src="/js/featherlight.min.js?1577175249"></script>
+    <script src="/js/highlight.pack.js?1577175249"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1576845493"></script>
-    <script src="/js/learn.js?1576845493"></script>
-    <script src="/js/hugo-learn.js?1576845493"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1577175249"></script>
+    <script src="/js/learn.js?1577175249"></script>
+    <script src="/js/hugo-learn.js?1577175249"></script>
 
-    <link href="/mermaid/mermaid.css?1576845493" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1576845493"></script>
+    <link href="/mermaid/mermaid.css?1577175249" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1577175249"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

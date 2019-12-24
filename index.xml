@@ -120,6 +120,16 @@ package.json을 사용하는 방법 package.json에 구성한 스크립트에 --
     </item>
     
     <item>
+      <title>Vuex의 Store란 무엇일까?</title>
+      <link>http://ccambo.github.io/Dev/Vue/what-is-the-store-in-vuex/</link>
+      <pubDate>Fri, 20 Dec 2019 12:48:01 +0900</pubDate>
+      
+      <guid>http://ccambo.github.io/Dev/Vue/what-is-the-store-in-vuex/</guid>
+      <description>Vue 개발에서 상태를 관리해 주는 기능을 제공해 주는 것이 Vuex이고 어플리케이션의 모든 컴포넌트들에 대한 중앙 집중식 저장소의 역할 및 관리  를 담당한다.
+  Vuex는 상태관리 패턴 + 라이브러리이며, Vue의 공식 툴이며 ES2015 문법을 기준으로 한다. Promise를 지원하지만, 혹시 지원하지 못하는 브라우저를 생각해야 한다면 es6-promise도 설치해 줘야 한다.   Vuex가 없다면 컴포넌트간의 데이터(상태)를 주고 받기 위해서 부모는 자식에서 props를 통해서 전달하고, 자식은 부모에게 Emit event 방식을 사용해서 처리해야 한다.</description>
+    </item>
+    
+    <item>
       <title>Nuxt에 AXIOS 적용하기</title>
       <link>http://ccambo.github.io/Dev/Nuxt/how-to-use-axios-in-nuxt/</link>
       <pubDate>Fri, 20 Dec 2019 19:56:09 +0900</pubDate>
