@@ -88,6 +88,16 @@ Git와 Submodule을 사용하면 Git Repository 내에 또 다른 독립적인 R
     </item>
     
     <item>
+      <title>Golang으로 MongoDB 연결해 보기</title>
+      <link>http://ccambo.github.io/Dev/Go/How-to-use-mongodb-with-go/</link>
+      <pubDate>Tue, 07 Jan 2020 20:14:26 +0900</pubDate>
+      
+      <guid>http://ccambo.github.io/Dev/Go/How-to-use-mongodb-with-go/</guid>
+      <description>이 문서에서는 아주 간단하게 Docker-compose를 이용해서 MongoDB를 구동하고 Golang을 통해서 연결하는 부분에 대해서 정리하고 있습니다. 환경은 맥북, VSCode, Golang, Docker 등이 이미 설치되어 있는 것을 기준으로 합니다.
+ 간단한 MongoDB 정리 RDBMS와의 비교 RDB vs. NoSQL (MongoDB)   RDBMS MongoDB     Database Database   Table Collection   Tuple/Row Document   Column Key/Field   Table Join Embedded Documents   Primary Key Primary Key (_id)    특징과 장/단점 주요 특징들은 다음과 같다.</description>
+    </item>
+    
+    <item>
       <title>OGP API 서버 Heroku에 배포하기</title>
       <link>http://ccambo.github.io/FunnyLab/Blogging/how-to-deploy-api-server-to-heroku/</link>
       <pubDate>Mon, 09 Dec 2019 17:56:48 +0900</pubDate>
@@ -116,7 +126,7 @@ Stylus to Sass 이 문제는 Vutify v1.x 버전에서는 Stylus를 사용했지�
       <description>- 이 문서에서는 Nuxt 환경에서 활용할 수 있는 팁이나 오류 해결 방법들을 정리하고 있으며 수시로 변경될 수 있습니다.
  개발할 때 자동으로 브라우저 실행시키기 딱히 획기적인 팁은 아니지만 터미널에서 개발서버를 구동시키고 브라우저로 확인하는 것이 기본이다 보니 브라우저를 다시 실행하는 것이 귀찮을때가 많다. 물론 한번 실행하고 안 닫으면 되겠지만&amp;hellip;
 package.json을 사용하는 방법 package.json에 구성한 스크립트에 --open 옵션을 추가하면 된다.
- package.json - 개발서버 실행할 때 브라우저 실행하기  ... scripts: { &amp;#39;dev&amp;#39;: &amp;#39;nuxt-ts --open&amp;#39; // typescript가 아닌 경우는 &amp;#34;nuxt --open&amp;#34; 사용  .</description>
+ package.json - 개발서버 실행할 때 브라우저 실행하기  1... 2 scripts: { 3 &amp;#39;dev&amp;#39;: &amp;#39;nuxt-ts --open&amp;#39; // typescript가 아닌 경우는 &amp;#34;nuxt --open&amp;#34; 사용 4 .</description>
     </item>
     
     <item>

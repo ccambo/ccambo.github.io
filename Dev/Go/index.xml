@@ -10,5 +10,15 @@
 	<atom:link href="http://ccambo.github.io/Dev/Go/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Golang으로 MongoDB 연결해 보기</title>
+      <link>http://ccambo.github.io/Dev/Go/How-to-use-mongodb-with-go/</link>
+      <pubDate>Tue, 07 Jan 2020 20:14:26 +0900</pubDate>
+      
+      <guid>http://ccambo.github.io/Dev/Go/How-to-use-mongodb-with-go/</guid>
+      <description>이 문서에서는 아주 간단하게 Docker-compose를 이용해서 MongoDB를 구동하고 Golang을 통해서 연결하는 부분에 대해서 정리하고 있습니다. 환경은 맥북, VSCode, Golang, Docker 등이 이미 설치되어 있는 것을 기준으로 합니다.
+ 간단한 MongoDB 정리 RDBMS와의 비교 RDB vs. NoSQL (MongoDB)   RDBMS MongoDB     Database Database   Table Collection   Tuple/Row Document   Column Key/Field   Table Join Embedded Documents   Primary Key Primary Key (_id)    특징과 장/단점 주요 특징들은 다음과 같다.</description>
+    </item>
+    
   </channel>
 </rss>
