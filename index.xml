@@ -34,10 +34,10 @@
     
     <item>
       <title>NPM vs YARN</title>
-      <link>http://ccambo.github.io/Dev/Web/npm_vs_yarn/</link>
+      <link>http://ccambo.github.io/Dev/ETC/1.npm_vs_yarn/</link>
       <pubDate>Fri, 29 Nov 2019 11:52:00 +0900</pubDate>
       
-      <guid>http://ccambo.github.io/Dev/Web/npm_vs_yarn/</guid>
+      <guid>http://ccambo.github.io/Dev/ETC/1.npm_vs_yarn/</guid>
       <description>node + npm이 기본이었는데, 몇 가지 npm의 문제점을 해결하기 위해 yarn이 발표되었다.
 기존 NPM은 배포가 쉽고, 종속성을 쉽게 해결할 수 있지만 패키지가 중복으로 설치될 수 있고, 파일이 많은 경우에 문제가 될 수 있다. 페이스북에서는 이런 문제점들을 해결하기 위해서 yarn을 발표했다.
  npm3 보다 패키지 설치 속도가 빠르다. json 포맷을 사용하지 않는다. offline 모드가 가능하다.  YARN 설치  설치페이지를 통해서 직접 설치가 가능하다. 맥북이라면 brew를 이용해서 설치가 가능하다. npm을 통해서도 설치가 가능하다.</description>
