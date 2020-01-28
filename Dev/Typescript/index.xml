@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Typescript on [ MSFL-지식 저장소 ]</title>
+    <link>http://ccambo.github.io/Dev/Typescript/</link>
+    <description>Recent content in Typescript on [ MSFL-지식 저장소 ]</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Mon, 20 Jan 2020 12:40:12 +0900</lastBuildDate>
+    
+	<atom:link href="http://ccambo.github.io/Dev/Typescript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Typescript 문제 해결및 팁들 정리</title>
+      <link>http://ccambo.github.io/Dev/Typescript/1.typescript-problem-solving-and-tips/</link>
+      <pubDate>Mon, 20 Jan 2020 12:40:12 +0900</pubDate>
+      
+      <guid>http://ccambo.github.io/Dev/Typescript/1.typescript-problem-solving-and-tips/</guid>
+      <description>The left-hand side of an arithmetic operation must be of type &amp;lsquo;any&amp;rsquo; &amp;lsquo;number&amp;rsquo; or an enum type (TS2363) 이 오류는 주로 new Date()를 연산하는 과정에서 발생하게 된다. js 코드에서는 문제가 없었지만 Typescript에서 사용할 경우는 오류로 처리된다.
+ TS2363 오류 예시  _options.expires = new Date(new Date() * 1 + _options.expires * 864e+5)   위의 코드는 new Date() * 1  처리에서 오류로 발생된다. 이유는 Date() 로 생성한 값을 연산에 사용하기 때문이다.</description>
+    </item>
+    
+  </channel>
+</rss>

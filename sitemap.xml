@@ -3,6 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://ccambo.github.io/Dev/Typescript/1.typescript-problem-solving-and-tips/</loc>
+    <lastmod>2020-01-20T12:40:12+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
     <loc>http://ccambo.github.io/FunnyLab/Blogging/change-comments-to-utterances/</loc>
     <lastmod>2020-01-02T19:16:25+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -117,14 +123,14 @@
   </url>
   
   <url>
-    <loc>http://ccambo.github.io/Dev/Vue/4.How-to-solving-the-problems-in-vuetify-upgrade-to-v2.x/</loc>
-    <lastmod>2020-01-16T19:32:06+09:00</lastmod>
+    <loc>http://ccambo.github.io/Dev/Typescript/</loc>
+    <lastmod>2020-01-20T12:40:12+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
   <url>
-    <loc>http://ccambo.github.io/Dev/ETC/</loc>
-    <lastmod>2020-01-14T19:22:23+09:00</lastmod>
+    <loc>http://ccambo.github.io/Dev/Vue/4.How-to-solving-the-problems-in-vuetify-upgrade-to-v2.x/</loc>
+    <lastmod>2020-01-16T19:32:06+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
@@ -155,6 +161,12 @@
   <url>
     <loc>http://ccambo.github.io/Dev/Nuxt/6.how-to-use-axios-in-nuxt/</loc>
     <lastmod>2020-01-16T19:32:06+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>http://ccambo.github.io/Dev/ETC/</loc>
+    <lastmod>2020-01-14T19:22:23+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   

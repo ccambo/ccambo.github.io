@@ -4,18 +4,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.58.3" />
-    <meta name="description" content="MSFL 운영 중에 접한 각종 정보들을 정리한 지식 저장소입니다.">
+    <meta name="description" content="Typescript를 사용하면서 발생하는 문제점들에 대한 해결 방법과 활용 팁들을 정리하고 있습니다.">
 <meta name="author" content="MSFL">
 
 
-<meta property="og:title" content="Dev">
+<meta property="og:title" content="Typescript 문제 해결및 팁들 정리">
 
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2020-01-20">
 
-    <meta property="og:description" content="">
-    <meta property="og:url" content="http://ccambo.github.io/Dev/">
+    <meta property="og:description" content="Typescript를 사용하면서 발생하는 문제점들에 대한 해결 방법과 활용 팁들을 정리하고 있습니다.">
+    <meta property="og:url" content="http://ccambo.github.io/Dev/Typescript/1.typescript-problem-solving-and-tips/">
     <meta property="og:site_name" content="[ MSFL-지식 저장소 ]">
 
+
+    <meta property="og:tags" content="Typescript">
+
+    <meta property="og:tags" content="Error">
+
+    <meta property="og:tags" content="Tips">
+
+    <meta property="og:tags" content="TS2362">
+
+    <meta property="og:tags" content="the left-hand side of an arithmetic operation must be of type &#39;any&#39; &#39;number&#39; or an enum type">
 
 
 
@@ -34,7 +45,7 @@ if (!doNotTrack) {
 }
 </script>
 
-    <title>Dev :: [ MSFL-지식 저장소 ]</title>
+    <title>Typescript 문제 해결및 팁들 정리 :: [ MSFL-지식 저장소 ]</title>
 
     
     <link href="/css/nucleus.css?1580172301" rel="stylesheet">
@@ -58,7 +69,7 @@ if (!doNotTrack) {
     </style>
     <script data-ad-client="ca-pub-1122795820579236" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   </head>
-  <body class="" data-url="/Dev/">
+  <body class="" data-url="/Dev/Typescript/1.typescript-problem-solving-and-tips/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -455,7 +466,7 @@ if (!doNotTrack) {
     
     <li data-nav-id="/Dev/" title="Dev" class="dd-item 
         parent
-        active
+        
         
         ">
       <a href="/Dev/">
@@ -743,7 +754,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/Dev/Typescript/" title="Typescript" class="dd-item 
-        
+        parent
         
         
         ">
@@ -769,7 +780,7 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/Dev/Typescript/1.typescript-problem-solving-and-tips/" title="Typescript 문제 해결및 팁들 정리" class="dd-item ">
+      <li data-nav-id="/Dev/Typescript/1.typescript-problem-solving-and-tips/" title="Typescript 문제 해결및 팁들 정리" class="dd-item active">
         <a href="/Dev/Typescript/1.typescript-problem-solving-and-tips/">
         Typescript 문제 해결및 팁들 정리
         <i class="fas fa-check read-icon"></i>
@@ -1019,6 +1030,8 @@ if (!doNotTrack) {
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -1029,7 +1042,19 @@ if (!doNotTrack) {
             
           
           
-            <a href='/'>MSFL</a> > Dev
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>MSFL</a> > <a href='/Dev/'>Dev</a> > <a href='/Dev/Typescript/'>Typescript</a> > Typescript 문제 해결및 팁들 정리
+          
+        
+          
+        
           
         
           
@@ -1038,16 +1063,48 @@ if (!doNotTrack) {
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#the-left-hand-side-of-an-arithmetic-operation-must-be-of-type-any-number-or-an-enum-type-ts2363">The left-hand side of an arithmetic operation must be of type &lsquo;any&rsquo; &lsquo;number&rsquo; or an enum type (TS2363)</a></li>
+<li><a href="#참고-자료">참고 자료</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
         <div id="head-tags">
         
+<div class="tags">
+
+  <a class="tag-link" href="/tags/Typescript">Typescript</a>
+
+  <a class="tag-link" href="/tags/Error">Error</a>
+
+  <a class="tag-link" href="/tags/Tips">Tips</a>
+
+  <a class="tag-link" href="/tags/TS2362">TS2362</a>
+
+  <a class="tag-link" href="/tags/the-left-hand-side-of-an-arithmetic-operation-must-be-of-type-any-number-or-an-enum-type">the left-hand side of an arithmetic operation must be of type &#39;any&#39; &#39;number&#39; or an enum type</a>
+
+</div>
+
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Typescript 문제 해결및 팁들 정리
+            </h1>
           
 
         
@@ -1055,169 +1112,92 @@ if (!doNotTrack) {
 
 
 
-	
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-<h1 id="developments">Developments</h1>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1122795820579236"
+     data-ad-slot="8454132912"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
-<p>이 문서에서는 개발에 필요한 정보들을 정리하고 있습니다.</p>
 
 
 
+<h2 id="the-left-hand-side-of-an-arithmetic-operation-must-be-of-type-any-number-or-an-enum-type-ts2363">The left-hand side of an arithmetic operation must be of type &lsquo;any&rsquo; &lsquo;number&rsquo; or an enum type (TS2363)</h2>
 
+<p>이 오류는 주로 <strong>new Date()</strong>를 연산하는 과정에서 발생하게 된다. js 코드에서는 문제가 없었지만 Typescript에서 사용할 경우는 오류로 처리된다.</p>
 
+<figure class="code">
+  <figcaption>
+    <span>TS2363 오류 예시</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#a6e22e">_options</span>.<span style="color:#a6e22e">expires</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#66d9ef">new</span> Date() <span style="color:#f92672">*</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">_options</span>.<span style="color:#a6e22e">expires</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">864</span><span style="color:#a6e22e">e</span><span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>)</code></pre></div>
+  </div>
+</figure>
 
+<p>위의 코드는 <font style="color:red;font-weight:bold">
+  new Date() * 1
+</font>
+ 처리에서 오류로 발생된다. 이유는 Date() 로 생성한 값을 연산에 사용하기 때문이다. 물론 연산이 불가능한 것은 아니지만 Typescript에서는 이를 명시적으로 연산이 가능한 숫자와 같이 처리를 해 줘야 한다.</p>
 
+<p>이를 해결하는 방법은 <font style="color:red;font-weight:bold">
+  단항 연산자 (Unary operator)인 +
+</font>
+를 지정하면 된다.</p>
 
-<ul class="children children-h2">
-	
+<figure class="code">
+  <figcaption>
+    <span>TS2363 오류 해결 예시</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#a6e22e">_options</span>.<span style="color:#a6e22e">expires</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#f92672">+</span><span style="color:#66d9ef">new</span> Date() <span style="color:#f92672">*</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">_options</span>.<span style="color:#a6e22e">expires</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">864</span><span style="color:#a6e22e">e</span><span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>)</code></pre></div>
+  </div>
+</figure>
 
-	
-		
-			
-		
-	
+<p>위와 같이 지정하면 <strong>new Date()</strong>의 결과를 숫자(number)로 취급되기 때문에 연산에 사용할 수 있다.</p>
 
-	
+<h2 id="참고-자료">참고 자료</h2>
 
-	
-		
-	
-		
-			
-				
-					
-					
-
-<h2>
-<a href="/Dev/Vue/" >Vue</a>
-</h2>
-
-				
-
-				
-					
-<p>Vue Vue에 대한 소개 및 사용하는데 필요한 정보들을 정리합니다.
- Vue 키 포인트 소개  프로젝트에 Vue를 도입한 결정적인 이유
- Vue 기본 개념  Vue.js에 대한 간략한 기본 개념 소개
- Vuetify v2.x 업그레이드  Vue 및 Vuetify와 관련된 프로젝트를 v2.x 버전으로 업그레이드해서 작업할 때 발생하는 문제점들을 정리한다.
- Vuex의 Store란 무엇일까?  Vue 개발에서 상태를 관리해 주는 기능을 제공해 주는 것이 Vuex이고 어플리케이션의 모든 컴포넌트들에 대한 중앙 집중식 저장소의 역할 및 관리 를 담당한다.</p>
-					
-				
-			
-			
-		
-	
-		
-			
-				
-					
-					
-
-<h2>
-<a href="/Dev/Nuxt/" >Nuxt</a>
-</h2>
-
-				
-
-				
-					
-<p> Nuxt Nuxt에 대한 소개 및 사용하는데 필요한 정보들을 정리합니다.
- Nuxt 활용 팁들 정리  Nuxt 기반의 개발에 유용하게 사용할 수 있는 팁들과 문제 해결방법들을 정리합니다.
- Nuxt에 AXIOS 적용하기  Axios는 Nuxt 커뮤니티에서 공식으로 지원하는 모듈로 이에 대한 기본적인 사용법과 적용 방법을 정리하고 있습니다.
- </p>
-					
-				
-			
-			
-		
-	
-		
-			
-				
-					
-					
-
-<h2>
-<a href="/Dev/Go/" >Go</a>
-</h2>
-
-				
-
-				
-					
-<p> Golang Golang에 대한 소개 및 사용하는데 필요한 정보들을 정리합니다.
- Golang으로 MongoDB 연결해 보기  MongoDB를 Docker Compose 로 구동한 후에 Go Package를 이용해서 MongoDB에 접속하는 방법을 정리하고 있습니다.
- </p>
-					
-				
-			
-			
-		
-	
-		
-			
-				
-					
-					
-
-<h2>
-<a href="/Dev/Typescript/" >Typescript</a>
-</h2>
-
-				
-
-				
-					
-<p> Typescript Typescipt에 대한 소개 및 사용하는데 필요한 정보들을 정리합니다.
- Typescript 문제 해결및 팁들 정리  Typescript를 사용하면서 발생하는 문제점들에 대한 해결 방법과 활용 팁들을 정리하고 있습니다.
- </p>
-					
-				
-			
-			
-		
-	
-		
-			
-				
-					
-					
-
-<h2>
-<a href="/Dev/ETC/" >ETC</a>
-</h2>
-
-				
-
-				
-					
-<p> ETC 이 문서에서는 개발에 사용되는 각종 Tools 및 OS 등에 대한 내용들을 정리하고 있습니다.
- NPM vs YARN  npm과 yarn에 대한 비교
- </p>
-					
-				
-			
-			
-		
-	
-
-	
+<ul>
+<li></li>
 </ul>
 
 
 
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1122795820579236"
+     data-ad-slot="8454132912"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 
 
 
+<script src="https://utteranc.es/client.js"
+        repo="ccambo/blog-comments"
+        issue-term="title"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
 
 
 <footer class=" footline" >
 	
 </footer>
 
-        
-            </div> 
+
         
         </div> 
         
@@ -1645,6 +1625,7 @@ if (!doNotTrack) {
             
                 
                     
+                    
                 
                 
 
@@ -1657,6 +1638,7 @@ if (!doNotTrack) {
             
             
                 
+                    
                     
                 
                 
@@ -1676,6 +1658,9 @@ if (!doNotTrack) {
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1782,10 +1767,10 @@ if (!doNotTrack) {
 	 
 	 
 		
-			<a class="nav nav-prev" href="/Cloud/Kubernetes/" title="Kubernetes"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/Dev/Typescript/" title="Typescript"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/Dev/Vue/" title="Vue" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/Dev/ETC/" title="ETC" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1815,3 +1800,4 @@ if (!doNotTrack) {
 
   </body>
 </html>
+
