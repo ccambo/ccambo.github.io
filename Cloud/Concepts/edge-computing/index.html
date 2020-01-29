@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html lang="ko" class="js csstransforms3d" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# website: http://ogp.me/ns/website#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.58.3" />
+    <meta name="description" content="Edge Computing에 대한 내용을 정리합니다.">
+<meta name="author" content="MSFL">
+
+
+<meta property="og:title" content="Edge Computing">
+
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2019-11-27">
+
+    <meta property="og:description" content="Edge Computing에 대한 내용을 정리합니다.">
+    <meta property="og:url" content="http://ccambo.github.io/Cloud/Concepts/edge-computing/">
+    <meta property="og:site_name" content="[ MSFL-지식 저장소 ]">
+
+
+    <meta property="og:tags" content="Edge Computing">
+
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-83841390-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    <title>Edge Computing :: [ MSFL-지식 저장소 ]</title>
+
+    
+    <link href="/css/nucleus.css?1580266346" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1580266346" rel="stylesheet">
+    <link href="/css/hybrid.css?1580266346" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1580266346" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1580266346" rel="stylesheet">
+    <link href="/css/auto-complete.css?1580266346" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1580266346" rel="stylesheet">
+    <link href="/css/theme.css?1580266346" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1580266346" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1580266346"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    <script data-ad-client="ca-pub-1122795820579236" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  </head>
+  <body class="" data-url="/Cloud/Concepts/edge-computing/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+   <img src="/images/logo.png" alt="[ MSFL-지식 저장소 ]">
+   <span>[ MSFL-지식 저장소 ]</span>
+</a>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1580266346"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1580266346"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/ccambo.github.io\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1580266346"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Git/" title="Git" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Git/">
+          <b>1. </b>Git
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Git/Basics/" title="Basics" class="dd-item 
+        
+        
+        parent
+        ">
+      <a href="/Git/Basics/">
+          Basics
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Git/Submdule/" title="Submodule" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Git/Submdule/">
+          Submodule
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Git/Submdule/what-is-the-submodule/" title="What is the submodule" class="dd-item ">
+        <a href="/Git/Submdule/what-is-the-submodule/">
+        What is the submodule
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Git/Tips/" title="Tips" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Git/Tips/">
+          Tips
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Git/Tips/how-to-change-users/" title="How to Change Users" class="dd-item ">
+        <a href="/Git/Tips/how-to-change-users/">
+        How to Change Users
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Cloud/" title="Cloud" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/Cloud/">
+          <b>2. </b>Cloud
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Cloud/Concepts/" title="Concepts" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/Cloud/Concepts/">
+          Concepts
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Cloud/Concepts/edge-computing/" title="Edge Computing" class="dd-item active">
+        <a href="/Cloud/Concepts/edge-computing/">
+        Edge Computing
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Cloud/Docker/" title="Docker" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Cloud/Docker/">
+          Docker
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Cloud/Docker/Tips/" title="Tips" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Cloud/Docker/Tips/">
+          Tips
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Cloud/Kubernetes/" title="Kubernetes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Cloud/Kubernetes/">
+          Kubernetes
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Dev/" title="Dev" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Dev/">
+          <b>3. </b>Dev
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Dev/Vue/" title="Vue" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Dev/Vue/">
+          Vue
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Vue/1.intro_key_of_vue/" title="Vue 키 포인트 소개" class="dd-item ">
+        <a href="/Dev/Vue/1.intro_key_of_vue/">
+        Vue 키 포인트 소개
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Vue/1.vue/" title="Vue 기본 개념" class="dd-item ">
+        <a href="/Dev/Vue/1.vue/">
+        Vue 기본 개념
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Vue/4.How-to-solving-the-problems-in-vuetify-upgrade-to-v2.x/" title="Vuetify v2.x 업그레이드" class="dd-item ">
+        <a href="/Dev/Vue/4.How-to-solving-the-problems-in-vuetify-upgrade-to-v2.x/">
+        Vuetify v2.x 업그레이드
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Vue/5.what-is-the-store-in-vuex/" title="Vuex의 Store란 무엇일까?" class="dd-item ">
+        <a href="/Dev/Vue/5.what-is-the-store-in-vuex/">
+        Vuex의 Store란 무엇일까?
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Vue/6.How-to-use-vue-property-decorator/" title="vue-property-decorator 정리" class="dd-item ">
+        <a href="/Dev/Vue/6.How-to-use-vue-property-decorator/">
+        vue-property-decorator 정리
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Dev/Nuxt/" title="Nuxt" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Dev/Nuxt/">
+          Nuxt
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Nuxt/5.nuxt-tips/" title="Nuxt 활용 팁들 정리" class="dd-item ">
+        <a href="/Dev/Nuxt/5.nuxt-tips/">
+        Nuxt 활용 팁들 정리
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Nuxt/6.how-to-use-axios-in-nuxt/" title="Nuxt에 AXIOS 적용하기" class="dd-item ">
+        <a href="/Dev/Nuxt/6.how-to-use-axios-in-nuxt/">
+        Nuxt에 AXIOS 적용하기
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Dev/Go/" title="Go" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Dev/Go/">
+          Go
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Go/2.How-to-use-mongodb-with-go/" title="Golang으로 MongoDB 연결해 보기" class="dd-item ">
+        <a href="/Dev/Go/2.How-to-use-mongodb-with-go/">
+        Golang으로 MongoDB 연결해 보기
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Dev/Typescript/" title="Typescript" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Dev/Typescript/">
+          Typescript
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Typescript/1.typescript-problem-solving-and-tips/" title="Typescript 문제 해결및 팁들 정리" class="dd-item ">
+        <a href="/Dev/Typescript/1.typescript-problem-solving-and-tips/">
+        Typescript 문제 해결및 팁들 정리
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Dev/ETC/" title="ETC" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Dev/ETC/">
+          ETC
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/ETC/1.npm_vs_yarn/" title="NPM vs YARN" class="dd-item ">
+        <a href="/Dev/ETC/1.npm_vs_yarn/">
+        NPM vs YARN
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/FunnyLab/" title="FunnyLab" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/FunnyLab/">
+          <b>4. </b>FunnyLab
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/FunnyLab/Blogging/" title="Blogging" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/FunnyLab/Blogging/">
+          Blogging
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/FunnyLab/Blogging/change-comments-to-utterances/" title="댓글 시스템 utterances로 변경" class="dd-item ">
+        <a href="/FunnyLab/Blogging/change-comments-to-utterances/">
+        댓글 시스템 utterances로 변경
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/FunnyLab/Blogging/how-to-deploy-api-server-to-heroku/" title="OGP API 서버 Heroku에 배포하기" class="dd-item ">
+        <a href="/FunnyLab/Blogging/how-to-deploy-api-server-to-heroku/">
+        OGP API 서버 Heroku에 배포하기
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> </a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p style="position:absolute;right:5%">
+    © 2019 MSFL :: ccambo (Morris Chang)
+  </p>
+  </br>
+  
+  <p style="position:absolute;right:5%">
+    Powered by
+    <a href="//gohugo.io" target="_blank">HUGO</a>
+  </p>
+  </br>
+  <p style="position:absolute;right:5%">
+    Theme by
+    <a href="//themes.gohugo.io/hugo-theme-learn/" target="_blank">LEARN (Mathieu Cornic)</a>
+  </p>
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                  <div id="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                    <span id="sidebar-toggle-span" itemprop="itemListElement" itemscope itemtype="'http://schema.org/ListItem">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu" itemprop="itemListElement" itemscope itemtype="'http://schema.org/ListItem"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links" itemprop="itemListElement" itemscope itemtype="'http://schema.org/ListItem">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/' itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>MSFL</a> > <a href='/Cloud/' itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>Cloud</a> > <a href='/Cloud/Concepts/' itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>Concepts</a> > Edge Computing
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#엣지-컴퓨팅이란">엣지 컴퓨팅이란?</a></li>
+<li><a href="#엣지-컴퓨팅이-필요한-이유">엣지 컴퓨팅이 필요한 이유</a></li>
+<li><a href="#엣지-컴퓨팅-사례">엣지 컴퓨팅 사례</a></li>
+<li><a href="#엣지-컴퓨팅의-이점">엣지 컴퓨팅의 이점</a></li>
+<li><a href="#엣지-컴퓨팅의-과제">엣지 컴퓨팅의 과제</a></li>
+<li><a href="#참고자료">참고자료</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+<div class="tags">
+
+  <a class="tag-link" href="/tags/Edge-Computing">Edge Computing</a>
+
+</div>
+
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Edge Computing
+            </h1>
+          
+
+        
+
+
+
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1122795820579236"
+     data-ad-slot="8454132912"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+
+<h2 id="엣지-컴퓨팅이란">엣지 컴퓨팅이란?</h2>
+
+<p>클라우드 컴퓨팅이란 인터넷을 통해 서버, 저장소, 소프트웨어, 분석 등의 컴퓨팅 서비스를 제공하는 것을 말한다. 이미 많은 기업들이 클라우드 환경으로 전환했으며, 이 과정에서 여러 가지 문제점들이 발생하게 된다.</p>
+
+<ul>
+<li>사용자의 폭발적인 증가로 인해 서버 및 데이터 센터에서 처리할 수 있는 데이터 양을 넘어서기 시작하면서 데이터 처리 속도 문제</li>
+<li>데이터의 송/수신 과정의 지연 현상 발생 (Latency)</li>
+<li>통신 과정 상의 보안 문제</li>
+</ul>
+
+<p>이런 문제점들을 해결하기 위해서 <font style="color:red;font-weight:bold">
+  &ldquo;사용자의 단말 또는 가까운 위치에서 컴퓨팅을 수행&rdquo;
+</font>
+하는 방식의 엣지 컴퓨팅 개념이 탄생했다.</p>
+
+<p>데이터를 데이터 센터로 전송하고 데이터를 처리하는 방식의 클라우드 컴퓨팅과는 달리 엣지 검퓨팅은 스마트폰과 같은 단말(엣지) 기기 또는 가까운 위치에서 데이터를 처리하는 분산 개방형 아키텍처를 말하며 이를 기반으로 모바일 컴퓨팅 및 IoT (Internet of Things) 기술을 활용할 수 있다.</p>
+
+<figure class="image">
+    <img src="/images/content/samsung_news_room-edge_computing.jpeg?featherlight=false" alt="엣지 컴퓨팅">
+    <figcaption><b>[출처 : 삼성 뉴스룸 - 엣지컴퓨팅]</b></figcaption>
+</figure>
+
+<figure class="image">
+    <img src="/images/content/edge_computing_infrastructure.png?featherlight=false" alt="엣지 컴퓨팅">
+    <figcaption><b>[출처 : 위키백과]</b></figcaption>
+</figure>
+
+<h2 id="엣지-컴퓨팅이-필요한-이유">엣지 컴퓨팅이 필요한 이유</h2>
+
+<p>클라우드 컴퓨팅에서는 발생한 데이터를 클라우드로 전송하고 데이터를 가공하고 결과를 받는 형식이지만 엣지 컴퓨팅에서는 사용자 또는 데이터 소스의 물리적인 위치나 그 위치와 가까운 곳에서 컴퓨팅이 수행되기 때문에 사용자는 더욱 빠르고 안정적인 서비스를 제공받을 수 있으며, 기업은 유연한 하이브리드 클라우드 컴퓨팅의 이점을 얻을 수 있다. 따라서 엣지 컴퓨팅을 활용하면 기업이 다수의 위치에서 공통의 리소스 풀을 사용해서 데이터 연산 및 처리를 분산시킬 수 있는 방법으로 구축이 가능하게 된다.</p>
+
+<ul>
+<li>데이터 부하 감소
+클라우드 컴퓨팅에서는 모든 발생 데이터가 취합되고 처리되기 때문에 데이터 양에 따른 부하가 생기지만, 엣지 컴퓨팅은 해당 단말 또는 해당 지역에서 발생하는 데이터로 한정되어 처리하므로 부하를 줄일 수 있다.</li>
+<li>보안
+클라우드 컴퓨팅은 클라우드로 데이터를 전송/전달 단계부터 보안에 대한 요구가 존재하게 되지만, 엣지 컴퓨팅은 데이터 수집과 처리를 해당 단말 또는 가까운 지역에서 처리하므로 상대적으로 보안이 좋다</li>
+<li>장애 대응
+클라우드 컴퓨팅은 클라우드 장애가 발생하면 치명적이지만, 엣지 컴퓨팅은 자체적으로 컴퓨팅을 수행하기 때문에 효과적으로 대응이 가능하다.</li>
+</ul>
+
+<h2 id="엣지-컴퓨팅-사례">엣지 컴퓨팅 사례</h2>
+
+<ul>
+<li><strong>가상/증강 현실</strong> : 종종 대역폭 부족과 긴 지연 시간의 문제가 발생한다. 이로 인해서 몰입이 방해되는 경우가 많기 때문에 엣지 컴퓨팅을 활용해서 렌더링 파이프라인의 컴퓨터 집약적인 부분을 클라우드로 이전하여 이런 문제를 해결할 수 있다.</li>
+<li><strong>스마트 카/스마트팩토리</strong> : 길 안내를 하고 있는 상황에서의 데이터 처리 지연은 악몽이 된다. 따라서 자동차 또는 IoT 기기가 엣지 컴퓨팅을 활용해서 실시간 데이터를 처리하고 결정을 내릴 수 있도록 할 수 있다.</li>
+<li><strong>보안 및 GDPR(규제 정책)</strong> : 엣지 컴퓨팅을 활용해서 컴퓨팅 기능 (데이터 수집과 처리 등)을 로컬 네트워크에서 수행함으로써 민감한 데이터의 유출이 완화되므로 기업들이 정보(영업 비밀 등)의 확산을 효과적으로 통제하고 규제 정책(GDPR 등)을 준수 할 수 있다.</li>
+<li><strong>장애 대응</strong> : 엣지 컴퓨팅을 활용해서 클라우드 컴퓨팅 대비 복구 능력과 비용 절감 효과를 누릴 수 있으며, 주요 기능이 로컬 네트워크에서 수행되기 때문에 클라우드가 어떤 이유로 장애가 발생해도 지역 사이트는 독립적으로 계속 운영이 가능하고, 클라우드와 지역 사이트 간의 데이터를 교류하기 위해 소비되는 대역폭 비용도 크게 절감이 가능하다.</li>
+</ul>
+
+<h2 id="엣지-컴퓨팅의-이점">엣지 컴퓨팅의 이점</h2>
+
+<ul>
+<li>클라우드 컴퓨팅은 몇몇의 대규모 데이터 센터로 서비스를 중앙 집중화하는데 초점에 맞춰져있고 이를 통해서 제어 능력과 기업 보안을 유지하면서도 리소스의 확장성을 높이고 보다 효율적인 공유가 가능하다.</li>
+<li>반면에 엣지 컴퓨팅은 주로 네트워크 요구사항 또는 기타 제약으로 클라우드 컴퓨팅의 중앙집중식 접근방식으로 적절하게 해결할 수 없는 활용 사례를 처리한다.</li>
+<li>여러 소규모의 컴퓨팅 사이트에 중점을 두고 네트워크 비용을 절감하고 대역폭 제한을 피하며, 전송 지연과 서비스 장애를 줄이고, 민감한 데이터의 이동을 더욱 효과적으로 제어할 수 있다.</li>
+<li>어플리케이션의 로드 시간을 단축하고 사용자 가까이에서 배포되는 온라인 서비스를 통해서 동적 및 정적 캐시 기능을 모두 지원할 수 있으므로 최종 사용자에게 더욱 빠르고 일관성있는 사용자 환경을 제공할 수 있다.</li>
+<li>기업과 서비스 제공업체는 실시간 모니터링이 가능하며, 지연 시간이 짧고 가용성이 높은 어플리케이션 구현이 가능하다.</li>
+</ul>
+
+<h2 id="엣지-컴퓨팅의-과제">엣지 컴퓨팅의 과제</h2>
+
+<p>가장 큰 문제점은 고도로 분산된 환경에서 규모를 확장하는 상황에서 발생한다.</p>
+
+<ul>
+<li>클라우드 컴퓨팅의 중앙집중적 시스템에서는 스케일 아웃하는 것이 상대적으로 쉽지만, 많은 소규모 사이트가 연계되는 엣지 컴퓨팅에서는 훨씬 복잡하며, 물리적인 위치에 따른 오버헤드가 증가하여 소규모 기업에서 관리하기에는 부담이 될 수 있다.</li>
+<li>소규모 사이트는 전문 기술자가 없거나 제한적인 원격지일 가능성이 높기 때문에 장애가 발생하는 경우 비기술 현장 인력이 해결하고 다른 지역의 전문 인력이 중앙에서 관리할 수 있도록 인프라를 구축해야 한다.</li>
+<li>각 사이트 관리 작업은 모든 사이트에서 적용 가능하도록 간단해야 하며, 문제 해결을 지원해야 하고, 각 사이트에서 소프트웨어 설정이 다른 방식으로 구현되는 것을 방지할 수 있어야 한다.</li>
+<li>데이터를 지리적으로 제한하여 정보의 흐름을 효과적으로 운영할 수는 있지만, 각 사이트에 대한 물리적인 보안은 취약할 수 밖에는 없기 때문에 악의적인 공격이나 우발적인 손상으로 인한 문제 발생 위험은 오히려 더 높을 수 있다.</li>
+</ul>
+
+<h2 id="참고자료">참고자료</h2>
+
+<ul>
+<li><a href="https://brownbears.tistory.com/431">엣지 컴퓨팅?</a></li>
+<li><a href="https://www.redhat.com/ko/topics/edge-computing/what-is-edge-computing">엣지 컴퓨팅</a></li>
+</ul>
+
+
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1122795820579236"
+     data-ad-slot="8454132912"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="ccambo/blog-comments"
+        issue-term="title"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/Cloud/Concepts/" title="Concepts"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/Cloud/Docker/" title="Docker" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1580266346"></script>
+    <script src="/js/perfect-scrollbar.min.js?1580266346"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1580266346"></script>
+    <script src="/js/jquery.sticky.js?1580266346"></script>
+    <script src="/js/featherlight.min.js?1580266346"></script>
+    <script src="/js/highlight.pack.js?1580266346"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1580266346"></script>
+    <script src="/js/learn.js?1580266346"></script>
+    <script src="/js/hugo-learn.js?1580266346"></script>
+
+    <link href="/mermaid/mermaid.css?1580266346" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1580266346"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+
