@@ -38,6 +38,8 @@
 
     <meta property="og:tags" content="ERR_ACTION_ACCESS_UNDEFINED">
 
+    <meta property="og:tags" content="Host Port change">
+
 
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
@@ -58,18 +60,18 @@ if (!doNotTrack) {
     <title>Nuxt 활용 팁들 정리 :: [ MSFL-지식 저장소 ]</title>
 
     
-    <link href="/css/nucleus.css?1580172898" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1580172898" rel="stylesheet">
-    <link href="/css/hybrid.css?1580172898" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1580172898" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1580172898" rel="stylesheet">
-    <link href="/css/auto-complete.css?1580172898" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1580172898" rel="stylesheet">
-    <link href="/css/theme.css?1580172898" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1580172898" rel="stylesheet">
+    <link href="/css/nucleus.css?1580261239" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1580261239" rel="stylesheet">
+    <link href="/css/hybrid.css?1580261239" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1580261239" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1580261239" rel="stylesheet">
+    <link href="/css/auto-complete.css?1580261239" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1580261239" rel="stylesheet">
+    <link href="/css/theme.css?1580261239" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1580261239" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1580172898"></script>
+    <script src="/js/jquery-3.3.1.min.js?1580261239"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -98,14 +100,14 @@ if (!doNotTrack) {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1580172898"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1580172898"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1580261239"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1580261239"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/ccambo.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1580172898"></script>
+<script type="text/javascript" src="/js/search.js?1580261239"></script>
 
     
   </div>
@@ -1079,6 +1081,13 @@ if (!doNotTrack) {
 <ul>
 <li>
 <ul>
+<li><a href="#host-port-변경하기">Host / Port 변경하기</a>
+<ul>
+<li><a href="#yarn-npm-스트립트-수정-direct-arguments">Yarn (NPM) 스트립트 수정 (Direct Arguments)</a></li>
+<li><a href="#환경설정-nuxt-config-js-ts">환경설정 (nuxt.config.[js|ts])</a></li>
+<li><a href="#환경-변수-활용">환경 변수 활용</a></li>
+<li><a href="#package-json에-설정">package.json에 설정</a></li>
+</ul></li>
 <li><a href="#개발할-때-자동으로-브라우저-실행시키기">개발할 때 자동으로 브라우저 실행시키기</a>
 <ul>
 <li><a href="#package-json을-사용하는-방법">package.json을 사용하는 방법</a></li>
@@ -1124,6 +1133,8 @@ if (!doNotTrack) {
 
   <a class="tag-link" href="/tags/ERR_ACTION_ACCESS_UNDEFINED">ERR_ACTION_ACCESS_UNDEFINED</a>
 
+  <a class="tag-link" href="/tags/Host-Port-change">Host Port change</a>
+
 </div>
 
         </div>
@@ -1160,6 +1171,127 @@ if (!doNotTrack) {
 <div class="notices info" ><p>- 이 문서에서는 Nuxt 환경에서 활용할 수 있는 팁이나 오류 해결 방법들을 정리하고 있으며 수시로 변경될 수 있습니다.</p>
 </div>
 
+
+<h2 id="host-port-변경하기">Host / Port 변경하기</h2>
+
+<p>Nuxt는 기본 값으로 <font style="color:red;font-weight:bold">
+  Host: localhost, Port: 3000
+</font>
+으로 설정되어 있다. 당연히 변경 가능하며 여러가지 방법이 있다.</p>
+
+<h3 id="yarn-npm-스트립트-수정-direct-arguments">Yarn (NPM) 스트립트 수정 (Direct Arguments)</h3>
+
+<p><strong>package.json</strong> 파일의 <font style="color:red;font-weight:bold">
+  scripts
+</font>
+ 부분을 아래와 같이 수정하면 된다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>package.json 파일의 scripts 수정</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    <span style="color:#e6db74">&#34;dev&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;nuxt-ts --hostname &lt;host&gt; --port &lt;port&gt;&#34;</span>,
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>    <span style="color:#e6db74">&#34;build&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;nuxt-ts build&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>  },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>...
+</code></pre></div>
+  </div>
+</figure>
+
+<h3 id="환경설정-nuxt-config-js-ts">환경설정 (nuxt.config.[js|ts])</h3>
+
+<p><strong>nuxt.config.[js|ts]</strong> 내에 서버에 대한 설정을 추가해서 적용할 수 있다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>package.json 파일의 scripts 수정</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  <span style="color:#75715e">/*
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#75715e">  ** Server Configuration
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#75715e">  */</span>
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  <span style="color:#a6e22e">server</span><span style="color:#f92672">:</span> {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#a6e22e">port</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">4444</span>,
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    <span style="color:#a6e22e">host</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;0.0.0.0&#39;</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  },
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>...
+</code></pre></div>
+  </div>
+</figure>
+
+<h3 id="환경-변수-활용">환경 변수 활용</h3>
+
+<p>환경 변수를 직접 <strong>package.json</strong> 파일에 환경 변수를 설정하는 방식</p>
+
+<p><strong>package.json</strong> 파일의 <font style="color:red;font-weight:bold">
+  scripts
+</font>
+ 부분을 아래와 같이 수정하면 된다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>package.json 파일의 scripts 수정</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    <span style="color:#e6db74">&#34;dev&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;NUXT_HOST=0.0.0.0 NUXT_PORT=3333 nuxt-ts&#34;</span>,
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>    <span style="color:#e6db74">&#34;dev&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;HOST=0.0.0.0 PORT=3333 nuxt-ts&#34;</span>,
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>  },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>...
+</code></pre></div>
+  </div>
+</figure>
+
+<p>Cross Platform을 위해서 <a href="https://www.npmjs.com/package/cross-env">cross-env</a> 패키지를 설치해서도 사용할 수 있다.</p>
+
+<blockquote>
+<p>yarn add -D cross-env</p>
+</blockquote>
+
+<figure class="code">
+  <figcaption>
+    <span>package.json 파일의 scripts 수정</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    <span style="color:#e6db74">&#34;dev&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;cross-env NUXT_HOST=0.0.0.0 NUXT_PORT=3333 nuxt-ts&#34;</span>,
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>    <span style="color:#e6db74">&#34;dev&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;HOST=0.0.0.0 PORT=3333 nuxt-ts&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>  },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>...
+</code></pre></div>
+  </div>
+</figure>
+
+<h3 id="package-json에-설정">package.json에 설정</h3>
+
+<p>package.json 파일에 <font style="color:red;font-weight:bold">
+  config
+</font>
+ 설정을 아래와 같이 추가해서 사용할 수 있다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>package.json 파일의 config 설정</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>...
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  <span style="color:#e6db74">&#34;config&#34;</span><span style="color:#f92672">:</span> {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>      <span style="color:#e6db74">&#34;nuxt&#34;</span><span style="color:#f92672">:</span> {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>          <span style="color:#e6db74">&#34;host&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0.0.0.0&#34;</span>,
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>          <span style="color:#e6db74">&#34;port&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;3333&#34;</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>      }
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>  },
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>...
+</code></pre></div>
+  </div>
+</figure>
 
 <h2 id="개발할-때-자동으로-브라우저-실행시키기">개발할 때 자동으로 브라우저 실행시키기</h2>
 
@@ -2064,19 +2196,19 @@ if (!doNotTrack) {
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1580172899"></script>
-    <script src="/js/perfect-scrollbar.min.js?1580172899"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1580172899"></script>
-    <script src="/js/jquery.sticky.js?1580172899"></script>
-    <script src="/js/featherlight.min.js?1580172899"></script>
-    <script src="/js/highlight.pack.js?1580172899"></script>
+    <script src="/js/clipboard.min.js?1580261239"></script>
+    <script src="/js/perfect-scrollbar.min.js?1580261239"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1580261239"></script>
+    <script src="/js/jquery.sticky.js?1580261239"></script>
+    <script src="/js/featherlight.min.js?1580261239"></script>
+    <script src="/js/highlight.pack.js?1580261239"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1580172899"></script>
-    <script src="/js/learn.js?1580172899"></script>
-    <script src="/js/hugo-learn.js?1580172899"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1580261239"></script>
+    <script src="/js/learn.js?1580261239"></script>
+    <script src="/js/hugo-learn.js?1580261239"></script>
 
-    <link href="/mermaid/mermaid.css?1580172899" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1580172899"></script>
+    <link href="/mermaid/mermaid.css?1580261239" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1580261239"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
