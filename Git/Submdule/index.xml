@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Submodule on [ MSFL-지식 저장소 ]</title>
+    <link>http://ccambo.github.io/Git/Submdule/</link>
+    <description>Recent content in Submodule on [ MSFL-지식 저장소 ]</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    
+	<atom:link href="http://ccambo.github.io/Git/Submdule/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>What is the submodule</title>
+      <link>http://ccambo.github.io/Git/Submdule/what-is-the-submodule/</link>
+      <pubDate>Thu, 21 Nov 2019 17:33:13 +0900</pubDate>
+      
+      <guid>http://ccambo.github.io/Git/Submdule/what-is-the-submodule/</guid>
+      <description>아래의 내용은 정리하면서 검증한 부분도 있지만, 검증이 되지 않고 정리된 내용도 있을 수 있으므로, 반드시 관련된 정보를 추가로 검색하여 검증해야 한다.
+ Submodule? Git 프로젝트는 하나의 독립된 라이브러리라고 생각할 수 있다. 따라서 특정 프로젝트를 진행할 때 또 다른 프로젝트를 내부적으로 사용해야하는 경우가 빈번하게 발생할 수 있다. 일반적으로 이런 상황에서는 필요한 라이브러리의 특정 버전을 설치하거나 소스를 복사해서 사용하는 방법을 사용하는데 이에 따른 버전관리나 소스의 변경등에 대한 대처가 만만치 않다.
+Git와 Submodule을 사용하면 Git Repository 내에 또 다른 독립적인 Repository를 운영하는 구조를 만들 수 있다.</description>
+    </item>
+    
+  </channel>
+</rss>
