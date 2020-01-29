@@ -1,0 +1,2219 @@
+<!DOCTYPE html>
+<html lang="ko" class="js csstransforms3d" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# website: http://ogp.me/ns/website#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.58.3" />
+    <meta name="description" content="Nuxt 기반의 개발에 유용하게 사용할 수 있는 팁들과 문제 해결방법들을 정리합니다.">
+<meta name="author" content="MSFL">
+
+
+<meta property="og:title" content="Nuxt 활용 팁들 정리">
+
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2019-12-20">
+
+    <meta property="og:description" content="Nuxt 기반의 개발에 유용하게 사용할 수 있는 팁들과 문제 해결방법들을 정리합니다.">
+    <meta property="og:url" content="http://ccambo.github.io/Dev/Nuxt/5.nuxt-tips/">
+    <meta property="og:site_name" content="[ MSFL-지식 저장소 ]">
+
+    <meta property="og:image" content="http://ccambo.github.io//images/vue_nuxt_image.png">
+
+
+    <meta property="og:tags" content="Nuxt">
+
+    <meta property="og:tags" content="Vue">
+
+    <meta property="og:tags" content="Vuetify">
+
+    <meta property="og:tags" content="Tips">
+
+    <meta property="og:tags" content="Errors">
+
+    <meta property="og:tags" content="Typescript">
+
+    <meta property="og:tags" content="Module parse failed: Identifier &#39;installComponents&#39; has already been declared">
+
+    <meta property="og:tags" content="folder rename / move">
+
+    <meta property="og:tags" content="ERR_ACTION_ACCESS_UNDEFINED">
+
+    <meta property="og:tags" content="Host Port change">
+
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-83841390-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    <title>Nuxt 활용 팁들 정리 :: [ MSFL-지식 저장소 ]</title>
+
+    
+    <link href="/css/nucleus.css?1580265495" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1580265495" rel="stylesheet">
+    <link href="/css/hybrid.css?1580265495" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1580265495" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1580265495" rel="stylesheet">
+    <link href="/css/auto-complete.css?1580265495" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1580265495" rel="stylesheet">
+    <link href="/css/theme.css?1580265495" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1580265495" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1580265495"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    <script data-ad-client="ca-pub-1122795820579236" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  </head>
+  <body class="" data-url="/Dev/Nuxt/5.nuxt-tips/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+   <img src="/images/logo.png" alt="[ MSFL-지식 저장소 ]">
+   <span>[ MSFL-지식 저장소 ]</span>
+</a>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1580265495"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1580265495"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/ccambo.github.io\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1580265495"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Git/" title="Git" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Git/">
+          <b>1. </b>Git
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Git/Basics/" title="Basics" class="dd-item 
+        
+        
+        parent
+        ">
+      <a href="/Git/Basics/">
+          Basics
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Git/Submdule/" title="Submodule" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Git/Submdule/">
+          Submodule
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Git/Submdule/what-is-the-submodule/" title="What is the submodule" class="dd-item ">
+        <a href="/Git/Submdule/what-is-the-submodule/">
+        What is the submodule
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Git/Tips/" title="Tips" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Git/Tips/">
+          Tips
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Git/Tips/how-to-change-users/" title="How to Change Users" class="dd-item ">
+        <a href="/Git/Tips/how-to-change-users/">
+        How to Change Users
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Cloud/" title="Cloud" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Cloud/">
+          <b>2. </b>Cloud
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Cloud/Concepts/" title="Concepts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Cloud/Concepts/">
+          Concepts
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Cloud/Concepts/edge-computing/" title="Edge Computing" class="dd-item ">
+        <a href="/Cloud/Concepts/edge-computing/">
+        Edge Computing
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Cloud/Docker/" title="Docker" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Cloud/Docker/">
+          Docker
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Cloud/Docker/Tips/" title="Tips" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Cloud/Docker/Tips/">
+          Tips
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Cloud/Kubernetes/" title="Kubernetes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Cloud/Kubernetes/">
+          Kubernetes
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Dev/" title="Dev" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/Dev/">
+          <b>3. </b>Dev
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Dev/Vue/" title="Vue" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Dev/Vue/">
+          Vue
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Vue/1.intro_key_of_vue/" title="Vue 키 포인트 소개" class="dd-item ">
+        <a href="/Dev/Vue/1.intro_key_of_vue/">
+        Vue 키 포인트 소개
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Vue/1.vue/" title="Vue 기본 개념" class="dd-item ">
+        <a href="/Dev/Vue/1.vue/">
+        Vue 기본 개념
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Vue/4.How-to-solving-the-problems-in-vuetify-upgrade-to-v2.x/" title="Vuetify v2.x 업그레이드" class="dd-item ">
+        <a href="/Dev/Vue/4.How-to-solving-the-problems-in-vuetify-upgrade-to-v2.x/">
+        Vuetify v2.x 업그레이드
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Vue/5.what-is-the-store-in-vuex/" title="Vuex의 Store란 무엇일까?" class="dd-item ">
+        <a href="/Dev/Vue/5.what-is-the-store-in-vuex/">
+        Vuex의 Store란 무엇일까?
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Vue/6.How-to-use-vue-property-decorator/" title="vue-property-decorator 정리" class="dd-item ">
+        <a href="/Dev/Vue/6.How-to-use-vue-property-decorator/">
+        vue-property-decorator 정리
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Dev/Nuxt/" title="Nuxt" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/Dev/Nuxt/">
+          Nuxt
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Nuxt/5.nuxt-tips/" title="Nuxt 활용 팁들 정리" class="dd-item active">
+        <a href="/Dev/Nuxt/5.nuxt-tips/">
+        Nuxt 활용 팁들 정리
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Nuxt/6.how-to-use-axios-in-nuxt/" title="Nuxt에 AXIOS 적용하기" class="dd-item ">
+        <a href="/Dev/Nuxt/6.how-to-use-axios-in-nuxt/">
+        Nuxt에 AXIOS 적용하기
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Dev/Go/" title="Go" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Dev/Go/">
+          Go
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Go/2.How-to-use-mongodb-with-go/" title="Golang으로 MongoDB 연결해 보기" class="dd-item ">
+        <a href="/Dev/Go/2.How-to-use-mongodb-with-go/">
+        Golang으로 MongoDB 연결해 보기
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Dev/Typescript/" title="Typescript" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Dev/Typescript/">
+          Typescript
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Typescript/1.typescript-problem-solving-and-tips/" title="Typescript 문제 해결및 팁들 정리" class="dd-item ">
+        <a href="/Dev/Typescript/1.typescript-problem-solving-and-tips/">
+        Typescript 문제 해결및 팁들 정리
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Dev/ETC/" title="ETC" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Dev/ETC/">
+          ETC
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/ETC/1.npm_vs_yarn/" title="NPM vs YARN" class="dd-item ">
+        <a href="/Dev/ETC/1.npm_vs_yarn/">
+        NPM vs YARN
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/FunnyLab/" title="FunnyLab" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/FunnyLab/">
+          <b>4. </b>FunnyLab
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/FunnyLab/Blogging/" title="Blogging" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/FunnyLab/Blogging/">
+          Blogging
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/FunnyLab/Blogging/change-comments-to-utterances/" title="댓글 시스템 utterances로 변경" class="dd-item ">
+        <a href="/FunnyLab/Blogging/change-comments-to-utterances/">
+        댓글 시스템 utterances로 변경
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/FunnyLab/Blogging/how-to-deploy-api-server-to-heroku/" title="OGP API 서버 Heroku에 배포하기" class="dd-item ">
+        <a href="/FunnyLab/Blogging/how-to-deploy-api-server-to-heroku/">
+        OGP API 서버 Heroku에 배포하기
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> </a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p style="position:absolute;right:5%">
+    © 2019 MSFL :: ccambo (Morris Chang)
+  </p>
+  </br>
+  
+  <p style="position:absolute;right:5%">
+    Powered by
+    <a href="//gohugo.io" target="_blank">HUGO</a>
+  </p>
+  </br>
+  <p style="position:absolute;right:5%">
+    Theme by
+    <a href="//themes.gohugo.io/hugo-theme-learn/" target="_blank">LEARN (Mathieu Cornic)</a>
+  </p>
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                  <div id="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                    <span id="sidebar-toggle-span" itemprop="itemListElement" itemscope itemtype="'http://schema.org/ListItem">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu" itemprop="itemListElement" itemscope itemtype="'http://schema.org/ListItem"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links" itemprop="itemListElement" itemscope itemtype="'http://schema.org/ListItem">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/' itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>MSFL</a> > <a href='/Dev/' itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>Dev</a> > <a href='/Dev/Nuxt/' itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>Nuxt</a> > Nuxt 활용 팁들 정리
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#host-port-변경하기">Host / Port 변경하기</a>
+<ul>
+<li><a href="#yarn-npm-스트립트-수정-direct-arguments">Yarn (NPM) 스트립트 수정 (Direct Arguments)</a></li>
+<li><a href="#환경설정-nuxt-config-js-ts">환경설정 (nuxt.config.[js|ts])</a></li>
+<li><a href="#환경-변수-활용">환경 변수 활용</a></li>
+<li><a href="#package-json에-설정">package.json에 설정</a></li>
+</ul></li>
+<li><a href="#개발할-때-자동으로-브라우저-실행시키기">개발할 때 자동으로 브라우저 실행시키기</a>
+<ul>
+<li><a href="#package-json을-사용하는-방법">package.json을 사용하는 방법</a></li>
+</ul></li>
+<li><a href="#opn-https-github-com-sindresorhus-open-모듈-사용"><a href="https://github.com/sindresorhus/open">opn</a> 모듈 사용</a>
+<ul>
+<li><a href="#nuxt-config-js-javascript-환경인-경우">nuxt.config.js (javascript 환경인 경우)</a></li>
+<li><a href="#nuxt-config-ts-typescript-환경인-경우">nuxt.config.ts (Typescript 환경인 경우)</a></li>
+</ul></li>
+<li><a href="#module-parse-failed-identifier-installcomponents-has-already-been-declared"><strong>Module parse failed: Identifier &lsquo;installComponents&rsquo; has already been declared</strong></a></li>
+<li><a href="#기본-폴더-재-정의하기">기본 폴더 재 정의하기</a></li>
+<li><a href="#err-action-access-undefined-오류">&ldquo;ERR_ACTION_ACCESS_UNDEFINED&rdquo; 오류</a></li>
+<li><a href="#참고-자료">참고 자료</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+<div class="tags">
+
+  <a class="tag-link" href="/tags/Nuxt">Nuxt</a>
+
+  <a class="tag-link" href="/tags/Vue">Vue</a>
+
+  <a class="tag-link" href="/tags/Vuetify">Vuetify</a>
+
+  <a class="tag-link" href="/tags/Tips">Tips</a>
+
+  <a class="tag-link" href="/tags/Errors">Errors</a>
+
+  <a class="tag-link" href="/tags/Typescript">Typescript</a>
+
+  <a class="tag-link" href="/tags/Module-parse-failed-Identifier-installComponents-has-already-been-declared">Module parse failed: Identifier &#39;installComponents&#39; has already been declared</a>
+
+  <a class="tag-link" href="/tags/folder-rename-/-move">folder rename / move</a>
+
+  <a class="tag-link" href="/tags/ERR_ACTION_ACCESS_UNDEFINED">ERR_ACTION_ACCESS_UNDEFINED</a>
+
+  <a class="tag-link" href="/tags/Host-Port-change">Host Port change</a>
+
+</div>
+
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Nuxt 활용 팁들 정리
+            </h1>
+          
+
+        
+
+
+
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1122795820579236"
+     data-ad-slot="8454132912"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+
+
+<div class="notices info" ><p>- 이 문서에서는 Nuxt 환경에서 활용할 수 있는 팁이나 오류 해결 방법들을 정리하고 있으며 수시로 변경될 수 있습니다.</p>
+</div>
+
+
+<h2 id="host-port-변경하기">Host / Port 변경하기</h2>
+
+<p>Nuxt는 기본 값으로 <font style="color:red;font-weight:bold">
+  Host: localhost, Port: 3000
+</font>
+으로 설정되어 있다. 당연히 변경 가능하며 여러가지 방법이 있다.</p>
+
+<h3 id="yarn-npm-스트립트-수정-direct-arguments">Yarn (NPM) 스트립트 수정 (Direct Arguments)</h3>
+
+<p><strong>package.json</strong> 파일의 <font style="color:red;font-weight:bold">
+  scripts
+</font>
+ 부분을 아래와 같이 수정하면 된다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>package.json 파일의 scripts 수정</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    <span style="color:#e6db74">&#34;dev&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;nuxt-ts --hostname &lt;host&gt; --port &lt;port&gt;&#34;</span>,
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>    <span style="color:#e6db74">&#34;build&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;nuxt-ts build&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>  },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>...
+</code></pre></div>
+  </div>
+</figure>
+
+<h3 id="환경설정-nuxt-config-js-ts">환경설정 (nuxt.config.[js|ts])</h3>
+
+<p><strong>nuxt.config.[js|ts]</strong> 내에 서버에 대한 설정을 추가해서 적용할 수 있다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>package.json 파일의 scripts 수정</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  <span style="color:#75715e">/*
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#75715e">  ** Server Configuration
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#75715e">  */</span>
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  <span style="color:#a6e22e">server</span><span style="color:#f92672">:</span> {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#a6e22e">port</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">4444</span>,
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    <span style="color:#a6e22e">host</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;0.0.0.0&#39;</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  },
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>...
+</code></pre></div>
+  </div>
+</figure>
+
+<h3 id="환경-변수-활용">환경 변수 활용</h3>
+
+<p>환경 변수를 직접 <strong>package.json</strong> 파일에 환경 변수를 설정하는 방식</p>
+
+<p><strong>package.json</strong> 파일의 <font style="color:red;font-weight:bold">
+  scripts
+</font>
+ 부분을 아래와 같이 수정하면 된다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>package.json 파일의 scripts 수정</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    <span style="color:#e6db74">&#34;dev&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;NUXT_HOST=0.0.0.0 NUXT_PORT=3333 nuxt-ts&#34;</span>,
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>    <span style="color:#e6db74">&#34;dev&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;HOST=0.0.0.0 PORT=3333 nuxt-ts&#34;</span>,
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>  },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>...
+</code></pre></div>
+  </div>
+</figure>
+
+<p>Cross Platform을 위해서 <a href="https://www.npmjs.com/package/cross-env">cross-env</a> 패키지를 설치해서도 사용할 수 있다.</p>
+
+<blockquote>
+<p>yarn add -D cross-env</p>
+</blockquote>
+
+<figure class="code">
+  <figcaption>
+    <span>package.json 파일의 scripts 수정</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    <span style="color:#e6db74">&#34;dev&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;cross-env NUXT_HOST=0.0.0.0 NUXT_PORT=3333 nuxt-ts&#34;</span>,
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>    <span style="color:#e6db74">&#34;dev&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;HOST=0.0.0.0 PORT=3333 nuxt-ts&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>  },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>...
+</code></pre></div>
+  </div>
+</figure>
+
+<h3 id="package-json에-설정">package.json에 설정</h3>
+
+<p>package.json 파일에 <font style="color:red;font-weight:bold">
+  config
+</font>
+ 설정을 아래와 같이 추가해서 사용할 수 있다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>package.json 파일의 config 설정</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>...
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  <span style="color:#e6db74">&#34;config&#34;</span><span style="color:#f92672">:</span> {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>      <span style="color:#e6db74">&#34;nuxt&#34;</span><span style="color:#f92672">:</span> {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>          <span style="color:#e6db74">&#34;host&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0.0.0.0&#34;</span>,
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>          <span style="color:#e6db74">&#34;port&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;3333&#34;</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>      }
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>  },
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>...
+</code></pre></div>
+  </div>
+</figure>
+
+<h2 id="개발할-때-자동으로-브라우저-실행시키기">개발할 때 자동으로 브라우저 실행시키기</h2>
+
+<p>딱히 획기적인 팁은 아니지만 터미널에서 개발서버를 구동시키고 브라우저로 확인하는 것이 기본이다 보니 브라우저를 다시 실행하는 것이 귀찮을때가 많다. 물론 한번 실행하고 안 닫으면 되겠지만&hellip;</p>
+
+<h3 id="package-json을-사용하는-방법">package.json을 사용하는 방법</h3>
+
+<p>package.json에 구성한 스크립트에 <code>--open</code> 옵션을 추가하면 된다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>package.json - 개발서버 실행할 때 브라우저 실행하기</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  <span style="color:#a6e22e">scripts</span><span style="color:#f92672">:</span> {
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    <span style="color:#e6db74">&#39;dev&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;nuxt-ts --open&#39;</span>   <span style="color:#75715e">// typescript가 아닌 경우는 &#34;nuxt --open&#34; 사용
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#75715e"></span>    ...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>...
+</code></pre></div>
+  </div>
+</figure>
+
+<ul>
+<li>빌드되는 동안 브라우저에 살짝 진행 과정이 표시된다.</li>
+<li>시스템 기본 브라우저가 실행된다.</li>
+</ul>
+
+<h2 id="opn-https-github-com-sindresorhus-open-모듈-사용"><a href="https://github.com/sindresorhus/open">opn</a> 모듈 사용</h2>
+
+<p>위의 방식이 편하지만 맥북의 경우는 크롬이 아니라 사파리가 열린다. 물론 기본 브라우저를 바꾸면 되지만 시스템 설정을 바꾸지 않고 처리하는 방법은 opn 모듈을 설치해서 사용하는 것이다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>opn 패키지 설치</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ yarn add -D opn   // 개발 의존성으로 설치</code></pre></div>
+  </div>
+</figure>
+
+<p>기본적인 사용방법은 아래와 같이 <code>URL, 옵션</code> 방식이다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>opn 실행 방법</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 크롬 실행
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">opn</span>(<span style="color:#e6db74">&#39;http://ccambo.github.io&#39;</span>, {<span style="color:#a6e22e">app</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;chrome&#39;</span>});    <span style="color:#75715e">// &#39;google chrome&#39;, &#39;firefox&#39;, ...
+</span></code></pre></div>
+  </div>
+</figure>
+
+<p>추가적인 정보와 옵션들은 위의 opn 링크를 참조하면 된다.</p>
+
+<p>Nuxt에 적용하는 방법은 간단한다. <code>nuxt.config.ts</code> 파일에 opn 패키지를 import하고 nuxt의 <code>hooks</code> 를 이용해서 호스트의 변경이 발생하면 브라우저를 실행해 주는 방식이다.</p>
+
+<h3 id="nuxt-config-js-javascript-환경인-경우">nuxt.config.js (javascript 환경인 경우)</h3>
+
+<figure class="code">
+  <figcaption>
+    <span>nuxt.config.js - opn 패키지 적용</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">opn</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;opn&#39;</span>)
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  ...
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>  <span style="color:#a6e22e">hooks</span><span style="color:#f92672">:</span> {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    <span style="color:#a6e22e">listen</span>(<span style="color:#a6e22e">server</span>, { <span style="color:#a6e22e">host</span>, <span style="color:#a6e22e">port</span> }) {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>      <span style="color:#a6e22e">opn</span>(<span style="color:#e6db74">`http://</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">host</span><span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">port</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, { <span style="color:#a6e22e">app</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;google chrome&#39;</span>, <span style="color:#e6db74">&#39;--incognito&#39;</span>]});
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    }
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  }
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  ...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>}
+</code></pre></div>
+  </div>
+</figure>
+
+<h3 id="nuxt-config-ts-typescript-환경인-경우">nuxt.config.ts (Typescript 환경인 경우)</h3>
+
+<figure class="code">
+  <figcaption>
+    <span>nuxt.config.ts - opn 패키지 적용</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">opn</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;opn&#39;</span>)    <span style="color:#75715e">// 형식 노출이 없어서 import 문에 오류 발생하므로...
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#75715e"></span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  ...
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>  <span style="color:#a6e22e">hooks</span><span style="color:#f92672">:</span> {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    <span style="color:#a6e22e">listen</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">_server</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">any</span>, { <span style="color:#a6e22e">host</span>, <span style="color:#a6e22e">port</span> }<span style="color:#f92672">:</span> <span style="color:#a6e22e">any</span>) =&gt; {    <span style="color:#75715e">// _server는 no-unused-var 오류를 피하는 방법
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">opn</span>(<span style="color:#e6db74">`http://</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">host</span><span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">port</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, { <span style="color:#a6e22e">app</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;google chrome&#39;</span>, <span style="color:#e6db74">&#39;--incognito&#39;</span>]})
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    }
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  }
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  ...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>}
+</code></pre></div>
+  </div>
+</figure>
+
+<h2 id="module-parse-failed-identifier-installcomponents-has-already-been-declared"><strong>Module parse failed: Identifier &lsquo;installComponents&rsquo; has already been declared</strong></h2>
+
+<figure class="code">
+  <figcaption>
+    <span>Nuxt App run dev</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ yarn run dev  <span style="color:#75715e"># 또는 npm run dev 또는 npx run dev</span></code></pre></div>
+  </div>
+</figure>
+
+<p>위의 명령으로 개발환경으로 처리할 때는 문제가 없이 동작을 했지만 배포 테스트를 위해서 아래와 같이 빌드 명령을 수행하면 오류가 발생한다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>Nuxt App run build/generate</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ yarn run build  <span style="color:#75715e"># 또는 npm run build 또는 npx run build</span></code></pre></div>
+  </div>
+</figure>
+
+<p>발생하는 오류는 다음과 같다.</p>
+
+<blockquote>
+<p>Module parse failed: Identifier &lsquo;installComponents&rsquo; has already been declared</p>
+</blockquote>
+
+<p>오류를 해석해 보면 &ldquo;installComponents&rdquo;가 선언되었기 때문에 중복으로 선언되어 Moudle 파싱을 처리할 수 없다는 내용이다. 이런 문제가 발생하는 이유는 Vuetify가 두번 로드되고 있다고 생각하면 된다.</p>
+
+<p>Nuxt에서는 Webpack이 내부적으로 구성되어 동작하고 Vuetify를 Module로 처리하고 있기 때문에 이런 중복에 관련된 것은 설정상의 문제 (nuxt.config.[js|ts]]) 뿐이 없다. 물론 Webpack을 커스텀하게 구성하고 있다면 다른 문제가 된다.</p>
+
+<p>여기서는 기본적인 Nuxt를 사용하고 있다는 가정하게 아래와 같이 nuxt.config.[js|ts] 파일에 중복 설정된 것을 확인해 보면 된다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>nuxt.config.ts - Vuetify Module 설정</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  <span style="color:#75715e">/*
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#75715e">  ** Nuxt.js Build modules
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#75715e">  */</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>  <span style="color:#a6e22e">buildModules</span><span style="color:#f92672">:</span> [
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    <span style="color:#e6db74">&#39;@nuxt/typescript-build&#39;</span>,
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#e6db74">&#39;@nuxtjs/vuetify&#39;</span>,
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  ],
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  <span style="color:#75715e">/*
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#75715e">  ** Nuxt.js modules
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#75715e">  */</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  <span style="color:#a6e22e">modules</span><span style="color:#f92672">:</span> [
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    [
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>      <span style="color:#e6db74">&#39;@nuxtjs/axios&#39;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>      {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>        <span style="color:#a6e22e">debug</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">NODE_ENV</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;development&#39;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>      }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    ],
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>    <span style="color:#e6db74">&#39;@nuxtjs/vuetify&#39;</span>
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>    <span style="color:#75715e">// &#39;@nuxtjs/auth&#39;,
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span style="color:#75715e"></span>    <span style="color:#75715e">// &#39;nuxt-material-design-icons&#39;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span style="color:#75715e"></span>  ],
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>...
+</code></pre></div>
+  </div>
+</figure>
+
+<p>위의 예시와 같이 <strong>buildModules</strong>, <strong>Modules</strong> 두 곳에 <strong>@nuxtjs/vuetify</strong>가 등록되어 있는 것을 확인할 수 있다. 이런 문제가 생기는 이유는 아마도 Vuetify 버전을 Upgrade 등을 수행하면서 처리된 것이다.</p>
+
+<blockquote>
+<p><font style="color:red;font-weight:bold">
+  <strong>buildModules</strong> 에서 @nuxtjs/vuetify를 제거
+</font>
+해 주면 문제가 해결된다.</p>
+</blockquote>
+
+<h2 id="기본-폴더-재-정의하기">기본 폴더 재 정의하기</h2>
+
+<p>Nuxt는 기본적인 폴더 구조를 제공하고 있다. 그런데 실제 프로젝트를 진행하다 보면 이를 재 구성해서 의미론적으로 운영할 때가 많다. 예를 들면 &ldquo;layout&rdquo;과 &ldquo;pages&rdquo;를 모두 &ldquo;Views&rdquo;라는 폴더 밑의 서브 폴더로 통합운영하는 것 등이다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>Nuxt 기본 폴더</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">.<span style="color:#f92672">/</span>
+  <span style="color:#a6e22e">assets</span><span style="color:#f92672">/</span>
+  <span style="color:#a6e22e">components</span><span style="color:#f92672">/</span>
+  <span style="color:#a6e22e">layouts</span><span style="color:#f92672">/</span>
+  ...
+  <span style="color:#a6e22e">pages</span><span style="color:#f92672">/</span>
+  ...
+  <span style="color:#a6e22e">store</span><span style="color:#f92672">/</span>
+</code></pre></div>
+  </div>
+</figure>
+
+<p>위의 기본 폴더를 아래와 같이 기능별로 묶어서 구성할 수 있다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>Nuxt 기본 폴더</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">.<span style="color:#f92672">/</span>
+  <span style="color:#a6e22e">assets</span><span style="color:#f92672">/</span>
+  <span style="color:#a6e22e">components</span><span style="color:#f92672">/</span>
+  ...
+  <span style="color:#a6e22e">store</span><span style="color:#f92672">/</span>
+  <span style="color:#a6e22e">views</span><span style="color:#f92672">/</span>
+    <span style="color:#a6e22e">layouts</span><span style="color:#f92672">/</span>
+    <span style="color:#a6e22e">pages</span><span style="color:#f92672">/</span>
+</code></pre></div>
+  </div>
+</figure>
+
+<p>위와 같이 폴더를 재 구성하는 경우는 아래와 같이 &ldquo;nuxt.config.[js|ts]&rdquo; 를 변경하면 된다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>nuxt.config.ts - 폴더 재 구성</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">...
+  <span style="color:#a6e22e">dir</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">layouts</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;views/layouts&#39;</span>,
+    <span style="color:#a6e22e">pages</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;views/pages&#39;</span>
+  }
+...
+</code></pre></div>
+  </div>
+</figure>
+
+<h2 id="err-action-access-undefined-오류">&ldquo;ERR_ACTION_ACCESS_UNDEFINED&rdquo; 오류</h2>
+
+<p>nuxt.js에서 Store의 Action을 &ldquo;vuex-module-decorators&rdquo; 패키지를 이용해서 사용할 때 아래와 같은 오류가 발생할 수 있다.</p>
+
+<blockquote>
+<p>Namespaces do not function. Throws &ldquo;ERR_ACTION_ACCESS_UNDEFINED&rdquo; when using namespaces</p>
+</blockquote>
+
+<p>vuex-module-decorators 내부에서 처리하는 과정에 발생하는 것으로 설정에 따라서 다양한 원인으로 발생할 수 있다. 다만, 그 중에 한가지는 <strong>Store Action에서 사용자 정의 Error를 반환할 떄 발생</strong>하는 것이며, 아래와 같이 Action 선언을 처리해 주면 된다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>@/store/user.ts - 사용자 정의 오류 반환</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>...
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  <span style="color:#66d9ef">@Action</span>({ <span style="color:#a6e22e">rawError</span>: <span style="color:#66d9ef">true</span> })
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">signup</span>(<span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">email</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">password</span>: <span style="color:#66d9ef">string</span>) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    <span style="color:#75715e">// TODO: password 암호화
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">$axios</span>.<span style="color:#a6e22e">$post</span>(<span style="color:#e6db74">&#39;/signup&#39;</span>, { <span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">email</span>, <span style="color:#a6e22e">password</span> })
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>      .<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">res</span>) <span style="color:#f92672">=&gt;</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">res</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">IUserState</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">set_user</span>(<span style="color:#a6e22e">user</span>)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">user</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>      })
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>      .<span style="color:#66d9ef">catch</span>((<span style="color:#a6e22e">err</span>) <span style="color:#f92672">=&gt;</span> {
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">config</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">url</span>)
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>          <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#34;API Server 환경을 검토하십시오.&#34;</span>)
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>        <span style="color:#66d9ef">else</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>          <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">message</span>)
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>      })
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>...</code></pre></div>
+  </div>
+</figure>
+
+<blockquote>
+<p>위의 코드에서와 같이 <font style="color:red;font-weight:bold">
+  <strong>@Action({ rawError: true })</strong>
+</font>
+ 를 설정하면 해결된다. 단, 다른 원인에 의해서 발생하는 경우는 해당 원인을 파악해 본후에 적용해야 한다.</p>
+</blockquote>
+
+
+<div class="notices warning" ><p><strong>[갱신일자 : 2020/01/14]</strong><br/><br/>
+만일 위의 증상을 해결해서 정상동작하고 있는 상태라고 해도 <a href="https://auth.nuxtjs.org/">nuxt-auth</a> 모듈 패키지를 설치해서 운영하는 경우라면 위와 같은 오류가 발생한다. 인증 부분을 처리하기 위해서 도입하고 설정해서 사용하는 중에 지속적으로 같은 오류가 발생한다. 따라서 결국은 들어내고 수동으로 구현하는 것이외에는 아직 해결 방법이 없는 것 같다.</p>
+</div>
+
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+<li><a href="https://github.com/sindresorhus/open">opn</a></li>
+</ul>
+
+
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1122795820579236"
+     data-ad-slot="8454132912"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="ccambo/blog-comments"
+        issue-term="title"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/Dev/Nuxt/" title="Nuxt"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/Dev/Nuxt/6.how-to-use-axios-in-nuxt/" title="Nuxt에 AXIOS 적용하기" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1580265496"></script>
+    <script src="/js/perfect-scrollbar.min.js?1580265496"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1580265496"></script>
+    <script src="/js/jquery.sticky.js?1580265496"></script>
+    <script src="/js/featherlight.min.js?1580265496"></script>
+    <script src="/js/highlight.pack.js?1580265496"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1580265496"></script>
+    <script src="/js/learn.js?1580265496"></script>
+    <script src="/js/hugo-learn.js?1580265496"></script>
+
+    <link href="/mermaid/mermaid.css?1580265496" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1580265496"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+
