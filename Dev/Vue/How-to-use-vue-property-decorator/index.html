@@ -1,0 +1,2365 @@
+<!DOCTYPE html>
+<html lang="ko" class="js csstransforms3d" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# website: http://ogp.me/ns/website#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.58.3" />
+    <meta name="description" content="MSFL 운영 중에 접한 각종 정보들을 정리한 지식 저장소입니다.">
+<meta name="author" content="MSFL">
+
+
+<meta property="og:title" content="vue-property-decorator 정리">
+
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2020-01-02">
+
+    <meta property="og:description" content="">
+    <meta property="og:url" content="http://ccambo.github.io/Dev/Vue/How-to-use-vue-property-decorator/">
+    <meta property="og:site_name" content="[ MSFL-지식 저장소 ]">
+
+
+    <meta property="og:tags" content="Vue">
+
+    <meta property="og:tags" content="vue-property-decorator">
+
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-83841390-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    <title>vue-property-decorator 정리 :: [ MSFL-지식 저장소 ]</title>
+
+    
+    <link href="/css/nucleus.css?1578997311" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1578997311" rel="stylesheet">
+    <link href="/css/hybrid.css?1578997311" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1578997311" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1578997311" rel="stylesheet">
+    <link href="/css/auto-complete.css?1578997311" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1578997311" rel="stylesheet">
+    <link href="/css/theme.css?1578997311" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1578997311" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1578997311"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    <script data-ad-client="ca-pub-1122795820579236" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  </head>
+  <body class="" data-url="/Dev/Vue/How-to-use-vue-property-decorator/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+   <img src="/images/logo.png" alt="[ MSFL-지식 저장소 ]">
+   <span>[ MSFL-지식 저장소 ]</span>
+</a>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1578997311"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1578997311"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/ccambo.github.io\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1578997311"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Git/" title="Git" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Git/">
+          <b>1. </b>Git
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Git/Basics/" title="Basics" class="dd-item 
+        
+        
+        parent
+        ">
+      <a href="/Git/Basics/">
+          Basics
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Git/Submdule/" title="Submodule" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Git/Submdule/">
+          Submodule
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Git/Submdule/what-is-the-submodule/" title="What is the submodule" class="dd-item ">
+        <a href="/Git/Submdule/what-is-the-submodule/">
+        What is the submodule
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Git/Tips/" title="Tips" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Git/Tips/">
+          Tips
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Git/Tips/how-to-change-users/" title="How to Change Users" class="dd-item ">
+        <a href="/Git/Tips/how-to-change-users/">
+        How to Change Users
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Cloud/" title="Cloud" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Cloud/">
+          <b>2. </b>Cloud
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Cloud/Concepts/" title="Concepts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Cloud/Concepts/">
+          Concepts
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Cloud/Concepts/edge-computing/" title="Edge Computing" class="dd-item ">
+        <a href="/Cloud/Concepts/edge-computing/">
+        Edge Computing
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Cloud/Docker/" title="Docker" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Cloud/Docker/">
+          Docker
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Cloud/Docker/Tips/" title="Tips" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Cloud/Docker/Tips/">
+          Tips
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Cloud/Kubernetes/" title="Kubernetes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Cloud/Kubernetes/">
+          Kubernetes
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/Dev/" title="Dev" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/Dev/">
+          <b>3. </b>Dev
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Dev/Vue/" title="Vue" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/Dev/Vue/">
+          Vue
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Vue/intro_key_of_vue/" title="Vue 키 포인트 소개" class="dd-item ">
+        <a href="/Dev/Vue/intro_key_of_vue/">
+        Vue 키 포인트 소개
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Vue/vue/" title="Vue 기본 개념" class="dd-item ">
+        <a href="/Dev/Vue/vue/">
+        Vue 기본 개념
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Vue/How-to-solving-the-problems-in-vuetify-upgrade-to-v2.x/" title="Vuetify v2.x 업그레이드" class="dd-item ">
+        <a href="/Dev/Vue/How-to-solving-the-problems-in-vuetify-upgrade-to-v2.x/">
+        Vuetify v2.x 업그레이드
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Vue/what-is-the-store-in-vuex/" title="Vuex의 Store란 무엇일까?" class="dd-item ">
+        <a href="/Dev/Vue/what-is-the-store-in-vuex/">
+        Vuex의 Store란 무엇일까?
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Vue/How-to-use-vue-property-decorator/" title="vue-property-decorator 정리" class="dd-item active">
+        <a href="/Dev/Vue/How-to-use-vue-property-decorator/">
+        vue-property-decorator 정리
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Dev/Nuxt/" title="Nuxt" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Dev/Nuxt/">
+          Nuxt
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Nuxt/nuxt-tips/" title="Nuxt 활용 팁들 정리" class="dd-item ">
+        <a href="/Dev/Nuxt/nuxt-tips/">
+        Nuxt 활용 팁들 정리
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Nuxt/how-to-use-axios-in-nuxt/" title="Nuxt에 AXIOS 적용하기" class="dd-item ">
+        <a href="/Dev/Nuxt/how-to-use-axios-in-nuxt/">
+        Nuxt에 AXIOS 적용하기
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Dev/Go/" title="Go" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Dev/Go/">
+          Go
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/Go/How-to-use-mongodb-with-go/" title="Golang으로 MongoDB 연결해 보기" class="dd-item ">
+        <a href="/Dev/Go/How-to-use-mongodb-with-go/">
+        Golang으로 MongoDB 연결해 보기
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/Dev/ETC/" title="ETC" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/Dev/ETC/">
+          ETC
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/Dev/ETC/1.npm_vs_yarn/" title="NPM vs YARN" class="dd-item ">
+        <a href="/Dev/ETC/1.npm_vs_yarn/">
+        NPM vs YARN
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/FunnyLab/" title="FunnyLab" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/FunnyLab/">
+          <b>4. </b>FunnyLab
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/FunnyLab/Blogging/" title="Blogging" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/FunnyLab/Blogging/">
+          Blogging
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/FunnyLab/Blogging/change-comments-to-utterances/" title="댓글 시스템 utterances로 변경" class="dd-item ">
+        <a href="/FunnyLab/Blogging/change-comments-to-utterances/">
+        댓글 시스템 utterances로 변경
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/FunnyLab/Blogging/how-to-deploy-api-server-to-heroku/" title="OGP API 서버 Heroku에 배포하기" class="dd-item ">
+        <a href="/FunnyLab/Blogging/how-to-deploy-api-server-to-heroku/">
+        OGP API 서버 Heroku에 배포하기
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> </a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p style="position:absolute;right:5%">
+    © 2019 MSFL :: ccambo (Morris Chang)
+  </p>
+  </br>
+  
+  <p style="position:absolute;right:5%">
+    Powered by
+    <a href="//gohugo.io" target="_blank">HUGO</a>
+  </p>
+  </br>
+  <p style="position:absolute;right:5%">
+    Theme by
+    <a href="//themes.gohugo.io/hugo-theme-learn/" target="_blank">LEARN (Mathieu Cornic)</a>
+  </p>
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>MSFL</a> > <a href='/Dev/'>Dev</a> > <a href='/Dev/Vue/'>Vue</a> > vue-property-decorator 정리
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#특이한-코드-설정-readonly">특이한 코드 설정 (readonly, !)</a>
+<ul>
+<li><a href="#readonly">readonly</a></li>
+<li><a href="#toc_2">!</a></li>
+</ul></li>
+<li><a href="#component-vue-class-component-vue-class-component">@Component (<a href="vue-class-component">vue-class-component</a>)</a></li>
+<li><a href="#prop">@Prop</a></li>
+<li><a href="#watch">@Watch</a></li>
+<li><a href="#propsync">@PropSync</a></li>
+<li><a href="#emit">@Emit</a></li>
+<li><a href="#ref">@Ref</a></li>
+<li><a href="#model">@Model</a></li>
+<li><a href="#provide-inject">@Provide / @Inject</a></li>
+<li><a href="#providereactive-injectreactive">@ProvideReactive / @InjectReactive</a></li>
+<li><a href="#참고-자료">참고 자료</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+<div class="tags">
+
+  <a class="tag-link" href="/tags/Vue">Vue</a>
+
+  <a class="tag-link" href="/tags/vue-property-decorator">vue-property-decorator</a>
+
+</div>
+
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              vue-property-decorator 정리
+            </h1>
+          
+
+        
+
+
+
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1122795820579236"
+     data-ad-slot="8454132912"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+
+<p>현재 진행 중인 Vue.js + Typescript 기반의 프로젝트에서 컴포넌트 구성에 필요한 부분을 정리한 것으로 Typescript로 구성하면 자바스크립트로 어떻게 구성되는지를 비교하면서 진행하도록 한다.</p>
+
+<h2 id="특이한-코드-설정-readonly">특이한 코드 설정 (readonly, !)</h2>
+
+<p>Typescript를 사용하면서 <font style="color:red;font-weight:bold">
+  &lsquo;?&rsquo;
+</font>
+는 생략 가능 또는 null / undefined도 가능하다라는 코드는 많이 봤을테지만 vue-property-decorator 샘플들을 보면 <font style="color:red;font-weight:bold">
+  &lsquo;readonly, !:&rsquo;
+</font>
+ 와 같은 생소한 코드를 보게 된다.</p>
+
+<h3 id="readonly">readonly</h3>
+
+<p>대상 멤버를 읽기 전용으로 한정하겠다는 한정자 (OOP 언어에서는 많이 사용)로 Vue에서 Prop이나 Model 등에 readonly를 한정했을 떄 할당을 하면 오류가 발생하게 된다. 따라서 데코레이터들을 사용할 때는 @Prop이나 @Model 등에 readonly 한정자를 선언하는 것이 좋다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>Typescript - reaonly 한정자 선언</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ts&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Component</span>, <span style="color:#a6e22e">Model</span>, <span style="color:#a6e22e">Prop</span>, <span style="color:#a6e22e">PropSync</span>, <span style="color:#a6e22e">Vue</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue-property-decorator&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#66d9ef">@Component</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SampleComponent</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Vue</span> {
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>  <span style="color:#66d9ef">@Prop</span>(String) <span style="color:#a6e22e">readonly</span> <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>;
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  <span style="color:#66d9ef">@Model</span>(<span style="color:#e6db74">&#39;update&#39;</span>, { <span style="color:#a6e22e">type</span>: <span style="color:#66d9ef">Object</span> }) <span style="color:#a6e22e">readonly</span> <span style="color:#a6e22e">profile</span>: <span style="color:#66d9ef">IProfile</span>;
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  <span style="color:#66d9ef">@PropSync</span>(String) <span style="color:#a6e22e">value</span>: <span style="color:#66d9ef">string</span>;    <span style="color:#75715e">// 할당 가능
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#75715e"></span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>...</code></pre></div>
+  </div>
+</figure>
+
+<h3 id="toc_2">!</h3>
+
+<p>대상 멤버에 대한 <a href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#non-null-assertion-operatorhttps://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#non-null-assertion-operator">NonNullAssersion</a> 오퍼레이터로 &ldquo;!&ldquo;가 붙은 경우는 null / Undefined를 설정할 수 없음을 나타내는 것이다. 그러나 너무 남용하면 특정 형식에 대한 값을 확정하고 처리하는 것이 때문에 확장성에 제한을 받는 상황이 될 수 있으므로 가능하면 &ldquo;required: true&rdquo; 이거나 &ldquo;기본 값&rdquo;을 설정하는 경우에 지정하는 것이 좋다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>Typescript - reaonly 한정자 선언</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ts&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Component</span>, <span style="color:#a6e22e">Prop</span>, <span style="color:#a6e22e">Vue</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue-property-decorator&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#66d9ef">@Component</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SampleComponent</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Vue</span> {
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>  <span style="color:#66d9ef">@Prop</span>({ <span style="color:#a6e22e">type</span>: <span style="color:#66d9ef">String</span>, <span style="color:#a6e22e">required</span>: <span style="color:#66d9ef">true</span> }) <span style="color:#a6e22e">readonly</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">!:</span> <span style="color:#66d9ef">string</span>;
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  <span style="color:#66d9ef">@Prop</span>({ <span style="color:#a6e22e">type</span>: <span style="color:#66d9ef">Array</span>, <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span> () <span style="color:#f92672">=&gt;</span> [] }) <span style="color:#a6e22e">readonly</span> <span style="color:#a6e22e">items</span><span style="color:#f92672">!:</span> <span style="color:#66d9ef">string</span>[];
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  <span style="color:#66d9ef">@Prop</span>(Object) <span style="color:#a6e22e">readonly</span> <span style="color:#a6e22e">profile?</span>: <span style="color:#66d9ef">IProfile</span>;    <span style="color:#75715e">// null / undefined 가능
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#75715e"></span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>...</code></pre></div>
+  </div>
+</figure>
+
+<h2 id="component-vue-class-component-vue-class-component">@Component (<a href="vue-class-component">vue-class-component</a>)</h2>
+
+<p><font style="color:red;font-weight:bold">
+  @Component
+</font>
+는 정의한 클래스를 Vue 가 인식할 수 있는 형태로 변환하는 것을 의미한다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>Typescript - @Component 선언</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ts&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Component</span>, <span style="color:#a6e22e">Vue</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue-property-decorator&#39;</span>;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#66d9ef">@Component</span>
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SampleComponent</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Vue</span> {}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>...</code></pre></div>
+  </div>
+</figure>
+
+<figure class="code">
+  <figcaption>
+    <span>Javascript 변환 - Vue Component</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;SampleComponent&#39;</span>
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>};
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>...</code></pre></div>
+  </div>
+</figure>
+
+<p>컴포넌트의 내부 구성을 처리하기 전에 컴포넌트 자체의 옵션들을 설정할 수 있으며 이를 통해서 각 종 Vue 객체들과 연동 정보를 구성할 수 있다. 많이 사용되는 것들은 아래와 같다.</p>
+
+<ul>
+<li>Child Components</li>
+<li>Directives</li>
+<li>Filters</li>
+<li>Mixins</li>
+<li>Data</li>
+<li>DOM</li>
+<li>Life-cycle Hooks</li>
+<li>Asset</li>
+<li>Configuration</li>
+</ul>
+
+<figure class="code">
+  <figcaption>
+    <span>Typescript - @Component 옵션 설정</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ts&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Component</span>, <span style="color:#a6e22e">Vue</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue-property-decorator&#39;</span>;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#66d9ef">@Component</span>({
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#a6e22e">AppButton</span>,
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    <span style="color:#a6e22e">ProductList</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  },
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  <span style="color:#a6e22e">directives</span><span style="color:#f92672">:</span> {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    <span style="color:#a6e22e">resize</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>  },
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  <span style="color:#a6e22e">filters</span><span style="color:#f92672">:</span> {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    <span style="color:#a6e22e">dateFormat</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>  },
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>  <span style="color:#a6e22e">mixins</span><span style="color:#f92672">:</span> [
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    <span style="color:#a6e22e">PageMixin</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>  ]
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>})
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SampleComponent</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Vue</span> {}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>...</code></pre></div>
+  </div>
+</figure>
+
+<figure class="code">
+  <figcaption>
+    <span>Javascript 변환 - Vue Component</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;SampleComponent&#39;</span>,
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    <span style="color:#a6e22e">AppButton</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#a6e22e">ProductList</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  <span style="color:#a6e22e">directives</span><span style="color:#f92672">:</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    <span style="color:#a6e22e">resize</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>  },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>  <span style="color:#a6e22e">filters</span><span style="color:#f92672">:</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    <span style="color:#a6e22e">dateFormat</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>  },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>  <span style="color:#a6e22e">mixins</span><span style="color:#f92672">:</span> [
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    <span style="color:#a6e22e">PageMixin</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>  ]
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>...</code></pre></div>
+  </div>
+</figure>
+
+<h2 id="prop">@Prop</h2>
+
+<p>컴포넌트 내의 지정한 멤버들을 속성(props)으로 사용할 수 있도록 구성한다.</p>
+
+<blockquote>
+<p>@Prop(options: (PropOptions | Constructor[] | Constructor) = {})</p>
+</blockquote>
+
+<figure class="code">
+  <figcaption>
+    <span>Typescript - @Prop 선언</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ts&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Component</span>, <span style="color:#a6e22e">Prop</span>, <span style="color:#a6e22e">Vue</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue-property-decorator&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#66d9ef">@Component</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SampleComponent</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Vue</span> {
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>  <span style="color:#66d9ef">@Prop</span>(Number) <span style="color:#a6e22e">readonly</span> <span style="color:#a6e22e">propA</span>: <span style="color:#66d9ef">number</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">undefined</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  <span style="color:#66d9ef">@Prop</span>({ <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;default value&#39;</span> }) <span style="color:#a6e22e">readonly</span> <span style="color:#a6e22e">propB</span><span style="color:#f92672">!:</span> <span style="color:#66d9ef">string</span>
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  <span style="color:#66d9ef">@Prop</span>([String, Boolean]) <span style="color:#a6e22e">readonly</span> <span style="color:#a6e22e">propC</span>: <span style="color:#66d9ef">string</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">boolean</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">undefined</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>...</code></pre></div>
+  </div>
+</figure>
+
+<figure class="code">
+  <figcaption>
+    <span>Javascript 변환 - Vue Component</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;SampleComponent&#39;</span>,
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>  <span style="color:#a6e22e">props</span><span style="color:#f92672">:</span> {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    <span style="color:#a6e22e">propA</span><span style="color:#f92672">:</span> {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>      <span style="color:#a6e22e">type</span>: <span style="color:#66d9ef">Number</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    },
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    <span style="color:#a6e22e">propB</span><span style="color:#f92672">:</span> {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>      <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;default value&#39;</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    },
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    <span style="color:#a6e22e">propC</span><span style="color:#f92672">:</span> {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>      <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> [String, Boolean]
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    }
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>...</code></pre></div>
+  </div>
+</figure>
+
+<h2 id="watch">@Watch</h2>
+
+<p>지정한 대상을 모니터링해서 변경되었을 떄 처리를 수행한다.</p>
+
+<ul>
+<li>첫번째 인수 : 모니터링 대상 값</li>
+<li>두번쨰 인수 : 모니터링 옵션</li>
+</ul>
+
+<blockquote>
+<p>@Watch(path: string, opitons: WatchOptions = {})</p>
+</blockquote>
+
+<figure class="code">
+  <figcaption>
+    <span>Typescript - @Watch 선언</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ts&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Component</span>, <span style="color:#a6e22e">Watch</span>, <span style="color:#a6e22e">Vue</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue-property-decorator&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#66d9ef">@Component</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SampleComponent</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Vue</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>  <span style="color:#66d9ef">@Watch</span>(<span style="color:#e6db74">&#39;child&#39;</span>)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  <span style="color:#a6e22e">onChildChanged</span>(<span style="color:#a6e22e">val</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">oldVal</span>: <span style="color:#66d9ef">string</span>) {}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  <span style="color:#66d9ef">@Watch</span>(<span style="color:#e6db74">&#39;person&#39;</span>, { <span style="color:#a6e22e">immediate</span>: <span style="color:#66d9ef">true</span>, <span style="color:#a6e22e">deep</span>: <span style="color:#66d9ef">true</span> })
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>  <span style="color:#a6e22e">onPersonChanged1</span>(<span style="color:#a6e22e">val</span>: <span style="color:#66d9ef">Person</span>, <span style="color:#a6e22e">oldVal</span>: <span style="color:#66d9ef">Person</span>) {}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  <span style="color:#66d9ef">@Watch</span>(<span style="color:#e6db74">&#39;person&#39;</span>)
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>  <span style="color:#a6e22e">onPersonChanged2</span>(<span style="color:#a6e22e">val</span>: <span style="color:#66d9ef">Person</span>, <span style="color:#a6e22e">oldVal</span>: <span style="color:#66d9ef">Person</span>) {}
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>}
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>...</span></code></pre></div>
+  </div>
+</figure>
+
+<figure class="code">
+  <figcaption>
+    <span>Javascript 변환 - Vue Component</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;SampleComponent&#39;</span>,
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>  <span style="color:#a6e22e">watch</span><span style="color:#f92672">:</span> {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    <span style="color:#a6e22e">child</span><span style="color:#f92672">:</span> [
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>      {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>        <span style="color:#a6e22e">handler</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;onChildChanged&#39;</span>,
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>        <span style="color:#a6e22e">immediate</span>: <span style="color:#66d9ef">false</span>,
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>        <span style="color:#a6e22e">deep</span>: <span style="color:#66d9ef">false</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>      }
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    ],
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    <span style="color:#a6e22e">person</span><span style="color:#f92672">:</span> [
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>      {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>        <span style="color:#a6e22e">handler</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;onPersonChanged1&#39;</span>,
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>        <span style="color:#a6e22e">immediate</span>: <span style="color:#66d9ef">true</span>,
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>        <span style="color:#a6e22e">deep</span>: <span style="color:#66d9ef">true</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>      },
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>      {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>        <span style="color:#a6e22e">handler</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;onPersonChanged2&#39;</span>,
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>        <span style="color:#a6e22e">immediate</span>: <span style="color:#66d9ef">false</span>,
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>        <span style="color:#a6e22e">deep</span>: <span style="color:#66d9ef">false</span>
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>      }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>    ]
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>  },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>    <span style="color:#a6e22e">onChildChanged</span>(<span style="color:#a6e22e">val</span>, <span style="color:#a6e22e">oldVal</span>) {},
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>    <span style="color:#a6e22e">onPersonChanged1</span>(<span style="color:#a6e22e">val</span>, <span style="color:#a6e22e">oldVal</span>) {},
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>    <span style="color:#a6e22e">onPersonChanged2</span>(<span style="color:#a6e22e">val</span>, <span style="color:#a6e22e">oldVal</span>) {}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>...</code></pre></div>
+  </div>
+</figure>
+
+<p>위의 코드에서 Watch 옵션으로 지정한 <strong>immediate</strong>는 컴포넌트 초기화시에도 실행할지 여부를 지정한 것이다.</p>
+
+<blockquote>
+<p>@Watch는 대상 변경에 따른 이벤트 처리기와 같은 기능을 수행하기 때문에 동일한 대상을 여러 번 지정할 경우는 가장 마지막에 지정한 것만 유효하다.</p>
+</blockquote>
+
+<h2 id="propsync">@PropSync</h2>
+
+<p>Vue.js에서는 props를 정의할 때 <strong>.sync</strong> 를 지정해서 자식 컴포넌트에서 부모 컴포넌트의 값을 변경할 수 있도록 처리할 수 있으며 <strong>@update:<Prop name></strong> 이벤트를 수신하면 Data에 적용하는 처리가 암시적으로 진행된다.</p>
+
+<blockquote>
+<p>@PropSync(propName: string, options: (PropOptions | Constructor[] | Constructor) = {})</p>
+</blockquote>
+
+<figure class="code">
+  <figcaption>
+    <span>Template - 부모 컴포넌트</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>&lt;<span style="color:#f92672">template</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  <span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">아래의</span> <span style="color:#a6e22e">두</span> <span style="color:#a6e22e">가지</span> <span style="color:#a6e22e">Child</span> <span style="color:#a6e22e">컴포넌트</span> <span style="color:#a6e22e">설정은</span> <span style="color:#a6e22e">동일한</span> <span style="color:#a6e22e">의미를</span> <span style="color:#a6e22e">가진다</span>. <span style="color:#a6e22e">단지</span> <span style="color:#a6e22e">명시적인</span> <span style="color:#a6e22e">표현</span> <span style="color:#a6e22e">여부만</span> <span style="color:#a6e22e">다르다</span>. <span style="color:#f92672">--&gt;</span>
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  &lt;<span style="color:#f92672">ChildComponent</span> <span style="color:#f92672">:childValue.sync</span><span style="color:#e6db74">=&#34;value&#34;</span> /&gt;
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>  &lt;<span style="color:#f92672">ChildComponent</span> <span style="color:#f92672">:childValue</span><span style="color:#e6db74">=&#34;value&#34;</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">update</span><span style="color:#f92672">:</span><span style="color:#a6e22e">childValue</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;value = $event&#34;</span> /&gt;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>&lt;/<span style="color:#f92672">template</span>&gt;</code></pre></div>
+  </div>
+</figure>
+
+<p><strong>@PropSync</strong>는 자식 컴포넌트에서 부모 컴포넌트의 <strong>.sync</strong> 속성을 전달할때 사용하는 데코레이터로 아래와 같이 사용해서 값을 할당하는 것만으로 처리가 가능하다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>Typescript - 자식 컴포넌트에서 @PropSync 선언</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ts&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Component</span>, <span style="color:#a6e22e">PropSync</span>, <span style="color:#a6e22e">Vue</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue-property-decorator&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#66d9ef">@Component</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SampleComponent</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Vue</span> {
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>  <span style="color:#66d9ef">@PropSync</span>({ <span style="color:#a6e22e">type</span>: <span style="color:#66d9ef">String</span> }) <span style="color:#a6e22e">childValue</span>: <span style="color:#66d9ef">string</span>;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  ...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  <span style="color:#75715e">// 값 변경 적용
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">updateValue</span>(<span style="color:#a6e22e">newVal</span>: <span style="color:#66d9ef">string</span>) {
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">childValue</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">newVal</span>;   <span style="color:#75715e">// 이 시점에서 부모 컴포넌트로 전달된다.
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#75715e"></span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>...</code></pre></div>
+  </div>
+</figure>
+
+<p>@PropSync를 사용하지 않는다면 아래와 같이 이벤트 호출을 처리해 줘야 한다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>Typescript - 자식 컴포넌트에서 직접 처리하는 경우</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ts&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Component</span>, <span style="color:#a6e22e">Prop</span>, <span style="color:#a6e22e">Vue</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue-property-decorator&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#66d9ef">@Component</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SampleComponent</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Vue</span> {
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>  <span style="color:#66d9ef">@Prop</span>({ <span style="color:#a6e22e">type</span>: <span style="color:#66d9ef">String</span> }) <span style="color:#a6e22e">childValue</span>: <span style="color:#66d9ef">string</span>;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  ...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  <span style="color:#75715e">// 값 변경 적용
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">updateValue</span>(<span style="color:#a6e22e">newVal</span>: <span style="color:#66d9ef">string</span>) {
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$emit</span>(<span style="color:#e6db74">&#39;update:childValue&#39;</span>, <span style="color:#a6e22e">newVal</span>);  <span style="color:#75715e">// 값 설정 및, 부모 컴포넌트로 이벤트 전달
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#75715e"></span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>...</code></pre></div>
+  </div>
+</figure>
+
+<h2 id="emit">@Emit</h2>
+
+<p>Vue.js에서는 컴포넌트간의 데이터 연동이 가능하다.</p>
+
+<ul>
+<li>부모에서 자식으로 전달은 props 사용</li>
+<li>자식에서 부모로 전달은 event 사용</li>
+</ul>
+
+<p>자식에서 부모로 값을 전달하는 event 처리에 사용하는 것이 @Emit다.</p>
+
+<blockquote>
+<p>@Emit(event?: string)</p>
+</blockquote>
+
+<figure class="code">
+  <figcaption>
+    <span>Typescript - 자식 컴포넌트</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">template</span><span style="color:#f92672">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">form</span> <span style="color:#66d9ef">@submit</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;onSubmit&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;value&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Submit</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>  <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/form&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/template&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ts&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Component</span>, <span style="color:#a6e22e">Vue</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue-property-decorator&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#66d9ef">@Component</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ChildComponent</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Vue</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>  <span style="color:#75715e">// 부모로 값 전달
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">onSubmit() {</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$emit</span>(<span style="color:#e6db74">&#39;submit&#39;</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span>);
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>  }
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span></code></pre></div>
+  </div>
+</figure>
+
+<figure class="code">
+  <figcaption>
+    <span>Typescript - 부모 컴포넌트</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">template</span><span style="color:#f92672">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ChildComponent</span> <span style="color:#66d9ef">@submit</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;onReceiveSubmit&#34;</span> <span style="color:#f92672">/&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/template&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ts&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Component</span>, <span style="color:#a6e22e">Vue</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue-property-decorator&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ChildComponent</span> <span style="color:#a6e22e">form</span> <span style="color:#e6db74">&#39;@/components/childcomponent.vue&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#66d9ef">@Component</span>({
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    <span style="color:#a6e22e">ChildComponent</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>})
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ParentComponent</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Vue</span> {
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>  <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">onReceiveSubmit</span>(<span style="color:#a6e22e">newVal</span>: <span style="color:#66d9ef">string</span>) {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    <span style="color:#75715e">// $emit을 통해서 전달된 값 수신
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">await</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$request</span>.<span style="color:#a6e22e">post</span>(<span style="color:#a6e22e">newVal</span>);
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span></code></pre></div>
+  </div>
+</figure>
+
+<p>위의 예제에서 ChildComponent는 직접 $emit 처리를 했지만 이를 @Emit 사용하는 버전으로 바꾸면 좀 더 단순하게 코드를 구성할 수 있다. 처리되는 이벤트의 이름은 @emit의 옵션을 설정해서 구분할 수도 있지만 생략할 경우는 메서드의 이름을 그대로 이벤트 이름으로 사용한다.</p>
+
+<figure class="code">
+  <figcaption>
+    <span>Typescript - 자식 컴포넌트 @Emit 선언</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">template</span><span style="color:#f92672">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">form</span> <span style="color:#66d9ef">@submit</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;onSubmit&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;value&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Submit</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>  <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/form&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/template&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ts&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Component</span>, <span style="color:#a6e22e">Emit</span>, <span style="color:#a6e22e">Vue</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue-property-decorator&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#66d9ef">@Component</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ChildComponent</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Vue</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>  <span style="color:#75715e">// 부모로 값 전달, 옵션이 없더라도 &#39;()&#39;를 생략할 수 없다.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#75715e"></span>  <span style="color:#75715e">// return으로 반환된 값이 전달되며, 메서드 이름을 사용할 경우는 &#39;on&#39; 접두사가 붙어서 처리된다.
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">@Emit</span>()
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>  <span style="color:#a6e22e">submit() {</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span>;
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>  }
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span></code></pre></div>
+  </div>
+</figure>
+
+<h2 id="ref">@Ref</h2>
+
+<p>@Ref는 $refs에서 참조할 수 있는 요소 또는 컴포넌트를 정의하는 것으로 사전에 정의함으로서 오타나 수정에 대응하기 쉽도록 하는 역할을 담당한다.</p>
+
+<blockquote>
+<p>@Ref(refKey?: string)</p>
+</blockquote>
+
+<figure class="code">
+  <figcaption>
+    <span>Typescript - @Ref 선언</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">template</span><span style="color:#f92672">&gt;</span>
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ChildComponent</span> <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;childComponent&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submitButton&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Submit</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/template&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ts&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Component</span>, <span style="color:#a6e22e">Ref</span>, <span style="color:#a6e22e">Vue</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue-property-decorator&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#66d9ef">@Component</span>({
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    <span style="color:#a6e22e">ChildComponent</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>})
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SampleComponent</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Vue</span> {
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>  <span style="color:#66d9ef">@Ref</span>() <span style="color:#a6e22e">childComponent</span>: <span style="color:#66d9ef">ChildComponent</span>;
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>  <span style="color:#66d9ef">@Ref</span>() <span style="color:#a6e22e">submitButton</span>: <span style="color:#66d9ef">HTMLButtomElement</span>;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>  <span style="color:#a6e22e">mounted() {</span>
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    <span style="color:#75715e">// 자식 컴포넌트 메서드 실행
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">childComponent</span>.<span style="color:#a6e22e">updateValue</span>();
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>    <span style="color:#75715e">// 버튼에 포커스 설정
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">submitButton</span>.<span style="color:#a6e22e">focus</span>()
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span></code></pre></div>
+  </div>
+</figure>
+
+<h2 id="model">@Model</h2>
+
+<p>Vue.js의 Model을 정의하는 것으로 여러 가지 옵션을 정의할 수 있다. @Model이 정의되면 해당 변수가 @Prop 선언을 동반하게 된다.</p>
+
+<blockquote>
+<p>@Model(event?: string, options: (PropOptions | Constructor[] | Constructor) = {})</p>
+</blockquote>
+
+<figure class="code">
+  <figcaption>
+    <span>Typescript - @Model 선언</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ts&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Component</span>, <span style="color:#a6e22e">Model</span>, <span style="color:#a6e22e">Vue</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue-property-decorator&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#66d9ef">@Component</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SampleComponent</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Vue</span> {
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>  <span style="color:#66d9ef">@Model</span>(<span style="color:#e6db74">&#39;change&#39;</span>, { <span style="color:#a6e22e">type</span>: <span style="color:#66d9ef">Boolean</span> }) <span style="color:#a6e22e">readonly</span> <span style="color:#a6e22e">checked</span><span style="color:#f92672">!:</span> <span style="color:#66d9ef">boolean</span>
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>...</code></pre></div>
+  </div>
+</figure>
+
+<figure class="code">
+  <figcaption>
+    <span>Javascript 변환 - Vue Component</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;SampleComponent&#39;</span>,
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>  <span style="color:#a6e22e">model</span><span style="color:#f92672">:</span> {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    <span style="color:#a6e22e">prop</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;checked&#39;</span>,
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#a6e22e">event</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;change&#39;</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  },
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  <span style="color:#a6e22e">props</span><span style="color:#f92672">:</span> {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    <span style="color:#a6e22e">checked</span><span style="color:#f92672">:</span> {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>      <span style="color:#a6e22e">type</span>: <span style="color:#66d9ef">Boolean</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    }
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  }
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>...</code></pre></div>
+  </div>
+</figure>
+
+<h2 id="provide-inject">@Provide / @Inject</h2>
+
+<p>부모 컴포넌트에서 @Provide로 정의된 대상을 자식 컴포넌트에서 @Inject로 참조할 수 있다.</p>
+
+<blockquote>
+<p>@Provide(key?: string | Symbole) </br>
+@Inject(options?: { from?: InjectKey, default?: any } | InjectKey)</p>
+</blockquote>
+
+<figure class="code">
+  <figcaption>
+    <span>Typescript - @Provide / @Inject 선언</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ts&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Component</span>, <span style="color:#a6e22e">Inject</span>, <span style="color:#a6e22e">Provide</span>, <span style="color:#a6e22e">Vue</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue-property-decorator&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">symbol</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Symbol</span>(<span style="color:#e6db74">&#39;baz&#39;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#66d9ef">@Component</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SampleComponent</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Vue</span> {
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  <span style="color:#66d9ef">@Inject</span>() <span style="color:#a6e22e">readonly</span> <span style="color:#a6e22e">foo</span><span style="color:#f92672">!:</span> <span style="color:#66d9ef">string</span>;
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  <span style="color:#66d9ef">@Inject</span>(<span style="color:#e6db74">&#39;bar&#39;</span>) <span style="color:#a6e22e">readonly</span> <span style="color:#a6e22e">bar</span><span style="color:#f92672">!:</span> <span style="color:#66d9ef">string</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>  <span style="color:#66d9ef">@Inject</span>({ <span style="color:#a6e22e">from</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;optional&#39;</span>, <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;default&#39;</span> }) <span style="color:#a6e22e">readonly</span> <span style="color:#a6e22e">optional</span><span style="color:#f92672">!:</span> <span style="color:#66d9ef">string</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>  <span style="color:#66d9ef">@Inject</span>(<span style="color:#a6e22e">symbol</span>) <span style="color:#a6e22e">readonly</span> <span style="color:#a6e22e">baz</span><span style="color:#f92672">!:</span> <span style="color:#66d9ef">string</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>  <span style="color:#66d9ef">@Provide</span>() <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;foo&#39;</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>  <span style="color:#66d9ef">@Provide</span>(<span style="color:#e6db74">&#39;bar&#39;</span>) <span style="color:#a6e22e">baz</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;bar&#39;</span>
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>...</code></pre></div>
+  </div>
+</figure>
+
+<figure class="code">
+  <figcaption>
+    <span>Javascript 변환 - Vue Component</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">symbol</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Symbol</span>(<span style="color:#e6db74">&#39;baz&#39;</span>)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;SampleComponent&#39;</span>,
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>  <span style="color:#a6e22e">inject</span><span style="color:#f92672">:</span> {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;foo&#39;</span>,
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    <span style="color:#a6e22e">bar</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;bar&#39;</span>,
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    <span style="color:#a6e22e">optional</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">from</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;optional&#39;</span>, <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;default&#39;</span> },
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    [<span style="color:#a6e22e">symbol</span>]<span style="color:#f92672">:</span> <span style="color:#a6e22e">symbol</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>  },
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  <span style="color:#a6e22e">data() {</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    <span style="color:#66d9ef">return</span> {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>      <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;foo&#39;</span>,
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>      <span style="color:#a6e22e">baz</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;bar&#39;</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    }
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>  },
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>  <span style="color:#a6e22e">provide() {</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>    <span style="color:#66d9ef">return</span> {
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>      <span style="color:#a6e22e">foo</span>: <span style="color:#66d9ef">this.foo</span>,
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>      <span style="color:#a6e22e">bar</span>: <span style="color:#66d9ef">this.baz</span>
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>    }
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>  }
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>...</code></pre></div>
+  </div>
+</figure>
+
+<h2 id="providereactive-injectreactive">@ProvideReactive / @InjectReactive</h2>
+
+<p>&rdquo;@Provide / @Inject&rdquo; 의 확장 기능으로 부모 컴포넌트에서 @ProvideReactive로 제공된 대상이 변경되면 자식 컴포넌트에서 인식할 수 있다.</p>
+
+<blockquote>
+<p>@ProvideReactive(key?: string | symbol) </br>
+@InjectReactive(options?: { from?: InjectKey, default?: any } | InjectKey )</p>
+</blockquote>
+
+<figure class="code">
+  <figcaption>
+    <span>Typescript - @ProvideReactive / @InjectReactive 선언</span>
+  </figcaption>
+  <div class="codewrapper">
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ts&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Component</span>, <span style="color:#a6e22e">InjectReactive</span>, <span style="color:#a6e22e">ProvideReactive</span>, <span style="color:#a6e22e">Vue</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue-property-decorator&#39;</span>;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Symbol</span>()
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#75715e">// 부모 컴포넌트
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#75715e"></span><span style="color:#66d9ef">@Component</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ParentComponent</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Vue</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  <span style="color:#66d9ef">@ProvideReactive</span>() <span style="color:#a6e22e">one</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;value&#39;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>  <span style="color:#66d9ef">@ProvideReactive</span>(<span style="color:#a6e22e">key</span>) <span style="color:#a6e22e">two</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;value&#39;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#75715e">// 자식 컴포넌트
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#75715e"></span><span style="color:#66d9ef">@Component</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ChildComponent</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Vue</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>  <span style="color:#66d9ef">@InjectReactive</span>() <span style="color:#a6e22e">one</span><span style="color:#f92672">!:</span> <span style="color:#66d9ef">string</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>  <span style="color:#66d9ef">@InjectReactive</span>(<span style="color:#a6e22e">key</span>) <span style="color:#a6e22e">two</span><span style="color:#f92672">!:</span> <span style="color:#66d9ef">string</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>...</code></pre></div>
+  </div>
+</figure>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+<li><a href="https://github.com/kaorun343/vue-property-decorator#readme">Vue Property Decorator - Github</a></li>
+</ul>
+
+
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1122795820579236"
+     data-ad-slot="8454132912"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="ccambo/blog-comments"
+        issue-term="title"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/Dev/Vue/what-is-the-store-in-vuex/" title="Vuex의 Store란 무엇일까?"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/Dev/Nuxt/" title="Nuxt" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1578997311"></script>
+    <script src="/js/perfect-scrollbar.min.js?1578997311"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1578997311"></script>
+    <script src="/js/jquery.sticky.js?1578997311"></script>
+    <script src="/js/featherlight.min.js?1578997311"></script>
+    <script src="/js/highlight.pack.js?1578997311"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1578997311"></script>
+    <script src="/js/learn.js?1578997311"></script>
+    <script src="/js/hugo-learn.js?1578997311"></script>
+
+    <link href="/mermaid/mermaid.css?1578997311" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1578997311"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+
